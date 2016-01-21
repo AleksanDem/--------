@@ -1,0 +1,49 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                КС "Георгиевская" ПУ
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!>	вход
+
+*use, pipespec, 5
+
+y = 2.62
+*use, otvod
+z = 4.05
+*use, opora
+z = 1.25
+*use, kran, 5
+z = 1.25
+*use, opora
+z = 1.95
+*use, otvod
+y = 6.04
+*use, otvod
+z = 3.5
+*use, otvod
+y = -2.1
+*use, end
+*get,temp,node,0,num,maxd
+
+branch, , nx(temp), ny(temp)-1.55, nz(temp)+1.5
+z = 1.63
+*use, otvod
+y = -2.4
+*use, otvod
+z = 1.25
+*use, opora
+z = 1.75
+*use, kran, 5
+z = 1.25
+*use, opora
+z = 4.62
+*use, otvod
+y = -2.91
+*use, end
+/eof
+
+
+
+!<

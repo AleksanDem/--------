@@ -1,0 +1,539 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                УПХГ"Краснодарская" Г-10
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+finish
+/clear
+/filnam, PHG, 1
+
+*ulib,_mymac1,mlib
+
+*use,nachalo
+
+*use, svoistva
+
+_raspar
+
+visota_opori_pod_zemlei=0.50
+
+!> геометрия
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!
+!!!!!							Г Е О М Е Т Р И Я
+!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+POPT, nc
+
+
+!> g10_01-g10_1
+
+kol_g10 = 1
+
+kol_g10_1 = 21
+kol_g10_2 = 22
+kol_g10_3 = 23
+kol_g10_4 = 24
+kol_g10_5 = 25
+kol_g10_6 = 26
+
+kol_g7 = 2
+kol_g8 = 5
+kol_g11 = 6
+
+kol_g11_1 = 31
+kol_g11_2 = 32
+kol_g11_3 = 33
+kol_g11_4 = 34
+kol_g11_5 = 35
+
+C200E_vhod = 3
+c200E_vihod = 4
+c200E_ = 15
+
+C200D_vhod = 7
+c200D_vihod = 8
+c200D_ = 16
+
+C200C_vhod = 9
+c200C_vihod = 10
+C200C_ = 17
+
+C200B_vhod = 11
+c200B_vihod = 12
+C200B_ = 18
+
+C200A_vhod = 13
+c200A_vihod = 14
+C200A_ = 19
+
+pechka = 20
+
+mater = kol_g7
+
+BRANCH, , , 1.4,
+
+x = 0
+y = 0
+z = 0
+
+*use, pipespec, 3
+
+*get,g10_01,node,0,num,maxd
+
+z = -1.3
+*use, kran1, 3
+
+z = -2.2
+*use, kran1, 3
+
+z = -1.3
+*use, opora
+
+z = -2.76
+*use, otvod
+
+x = -1.1
+*use, opora
+
+x = -0.77
+*use, end
+
+*get,g10_1,node,0,num,maxd
+!<
+
+!> g10_02-g10_1
+
+branch, , nx(g10_1)+4.505, ny(g10_1), nz(g10_1)-6.09
+*get,g10_02,node,0,num,maxd
+
+x = -0.48
+*use, opora
+
+x = -4.025
+*use, otvod
+
+z = 1.2
+*use, opora
+
+z = 4.89
+*use, end
+
+!<
+
+
+!<
+
+!> g10_1-g10_2
+
+branch, g10_1
+*use, pipespec, 3
+
+x = -3.19
+*use, otvod
+
+z = -2.1
+*use, opora
+
+z = -1.225
+*use, kran1,3
+
+z = -0.225
+*use, end
+
+z = -1
+
+*get,g11_60,node,0,num,maxd
+*use, opora
+
+z = -5.95
+*use, opora
+
+z = -1.21
+*use, otvod
+
+y = 1.697
+*use, end
+*get,tr10(1,4),node,0,num,maxd
+
+mater = kol_g10_1
+
+y = 2
+*use, end
+*get,g10_2,node,0,num,maxd
+*get,tr10(1,1),node,0,num,maxd
+!<
+
+!> g10_2-10_25
+
+x = 2
+*use, end
+*get,tr10(1,3),node,0,num,maxd
+
+mater = kol_g10_2
+
+x = 1.96
+*use, end
+*get,pod_14_12,node,0,num,maxd
+
+
+x = 10
+*use, end
+*get,pod_14_13,node,0,num,maxd
+
+x = 3.89
+*use, end
+*get,tr10(2,2),node,0,num,maxd
+
+x = 2
+*use, end
+*get,g10_11,node,0,num,maxd
+*get,tr10(2,1),node,0,num,maxd
+
+x = 2
+*use, end
+*get,tr10(2,3),node,0,num,maxd
+
+mater = kol_g10_3
+
+x = 2.11
+*use, end
+*get,pod_14_15,node,0,num,maxd
+
+x = 3.89
+*use, end
+*get,tr10(3,2),node,0,num,maxd
+
+x = 2
+*use, end
+*get,g10_12,node,0,num,maxd
+*get,tr10(3,1),node,0,num,maxd
+
+x = 2
+*use, end
+*get,tr10(3,3),node,0,num,maxd
+
+mater = kol_g10_4
+
+x = 2.31
+*use, end
+*get,pod_14_17,node,0,num,maxd
+
+x = 3.69
+*use, end
+*get,tr10(4,2),node,0,num,maxd
+
+x = 2
+*use, end
+*get,g10_13,node,0,num,maxd
+*get,tr10(4,1),node,0,num,maxd
+
+x = 2
+*use, end
+*get,tr10(4,3),node,0,num,maxd
+
+mater = kol_g10_5
+
+x = 2.11
+*use, end
+*get,pod_14_19,node,0,num,maxd
+
+x = 3.89
+*use, end
+*get,tr10(5,2),node,0,num,maxd
+
+x = 1
+*use, end
+*get,t201_11,node,0,num,maxd
+
+x = 1
+*use, end
+*get,g10_14,node,0,num,maxd
+*get,tr10(5,1),node,0,num,maxd
+
+x = 1
+*use, end
+*get,t201_21,node,0,num,maxd
+
+x = 1
+*use, end
+*get,tr10(5,3),node,0,num,maxd
+
+mater = kol_g10_6
+
+x = 2.11
+*use, end
+*get,pod_14_21,node,0,num,maxd
+
+x = 5.89
+*use, otvod
+
+y = -3.2
+*use, otvod
+
+z = 1.2
+*use, opora
+
+z = 5.37
+*use, end
+*get,g10_25,node,0,num,maxd
+
+
+_c200A
+!<
+
+!> g10_1x-g10_2x
+
+branch, g10_11
+*use, pipespec, 3
+mater = kol_g10_2
+
+y = -2
+*use, end
+*get,tr10(2,4),node,0,num,maxd
+
+mater = c200E_vhod
+
+y = -1.2
+*use, otvod
+
+z = 1.2
+*use, opora
+
+z = 5.37
+*use , end
+*get,g10_21,node,0,num,maxd
+
+_c200E
+
+branch, g10_12
+*use, pipespec, 3
+mater = kol_g10_3
+
+y = -2
+*use, end
+*get,tr10(3,4),node,0,num,maxd
+
+mater = c200D_vhod
+
+y = -1.2
+*use, otvod
+
+z = 1.2
+*use, opora
+
+z = 5.37
+*use , end
+*get,g10_22,node,0,num,maxd
+
+_c200D
+
+branch, g10_13
+*use, pipespec, 3
+mater = kol_g10_4
+
+y = -2
+*use, end
+*get,tr10(4,4),node,0,num,maxd
+
+mater = c200C_vhod
+
+y = -1.2
+*use, otvod
+
+z = 1.2
+*use, opora
+
+z = 5.37
+*use , end
+*get,g10_23,node,0,num,maxd
+
+_c200C
+
+branch, g10_14
+*use, pipespec, 3
+mater = kol_g10_5
+
+y = -1
+*use, end
+*get,t201_31,node,0,num,maxd
+
+y = -1
+*use, end
+*get,tr10(5,4),node,0,num,maxd
+
+mater = c200B_vhod
+
+y = -1.2
+*use, otvod
+
+z = 1.2
+*use, opora
+
+z = 5.37
+*use , end
+*get,g10_24,node,0,num,maxd
+
+_c200B
+
+!<
+
+!> g10_2-g10_3
+branch, g10_2
+*use, pipespec, 3
+mater = kol_g10_1
+
+x = -2
+*use, end
+*get,tr10(1,2),node,0,num,maxd
+
+x = -4.04
+*use, end
+*get,pod_14_9,node,0,num,maxd
+
+x = -10
+*use, end
+*get,pod_14_8,node,0,num,maxd
+
+x = -1.4
+*use, otvod
+
+z = 1.06
+y = -3.35
+*use, otvod
+
+x = -0.85
+*use, end
+*get,g10_3,node,0,num,maxd
+!<
+
+!> g10_3-g10-4
+branch, g10_3
+*use, pipespec, 3
+
+x = -5.75
+*use, opora
+
+x = -8.73
+*use, otvod
+
+z = 1.64
+*use, opora
+
+z = 8.14
+*use, end
+*get,g10_102,node,0,num,maxd
+
+z = 3.58
+*use, otvod
+
+x = -3.52
+*use, opora
+
+x = -3.53
+*use, opora
+
+x = -0.81
+*use, kran, 3
+
+x = -1.65
+
+*use, end
+*get,pod_14_51,node,0,num,maxd
+
+x = -1.29
+*use, kran, 3
+
+
+x = -3.71
+*use, end
+*get,pod_14_52,node,0,num,maxd
+
+x = -5.36
+*use, otvod
+
+z = 1.35
+*use, end
+*get,pod_14_4,node,0,num,maxd
+
+z = 1.3
+*use, otvod
+
+y = 3.375
+*use, end
+*get,pod_14_3,node,0,num,maxd
+
+y = 3.4
+*use, otvod
+
+z = 3.7
+*use, end
+*get,pod_14_3_1,node,0,num,maxd
+
+z = 0.95
+*use, otvod
+
+y = 0.95
+*use, end
+*get,pod_14_2,node,0,num,maxd
+
+y = 3.905
+*use, end
+*get,pod_14_1,node,0,num,maxd
+
+y = 1.525
+*use, otvod
+
+x = 5.6
+
+*use, end
+*get,g10_6,node,0,num,maxd
+
+pspec, pechka, , , 3, 0.03
+run, , -12
+*get,g10_03,node,0,num,maxd
+
+_g7
+
+_g8
+
+_g11
+
+NUMMRG, node,
+
+!<
+
+!>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!
+!!!!                                      Г Р А Н И Ч Н Ы Е   У С Л О В И Я
+!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+_gu_us1
+!_gu_pro
+
+!tunif, 20
+
+_temp_a270
+
+!<
+
+acel,0,9.81,0
+
+/solu
+
+solve
+
+_tr10res_4_4
+_t10res_otv
+
+PARSAV,ALL,'a270par',' ',' '

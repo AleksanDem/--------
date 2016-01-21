@@ -1,0 +1,242 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                КС "Балашовская" ГПА
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+finish
+/clear
+/filnam, bal, 1
+
+*ulib,_mymac1,mlib
+
+*use,nachalo
+
+*use, svoistva
+
+_raspar
+
+visota_opori_pod_zemlei=0.50
+
+!> геометрия
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!
+!!!!!							Г Е О М Е Т Р И Я
+!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+POPT, nc
+
+!> рециркуляция
+
+BRANCH, , ,-2 ,
+*get, b1,node,0,num,maxd
+
+x = 0
+y = 0
+z = 0
+
+*use, pipespec, 3
+
+x = 2
+*use, end
+*get, b25,node,0,num,maxd
+x = 2
+*use, end
+*get, b2,node,0,num,maxd
+
+branch, b25
+*use, pipespec, 1
+y = 3
+*use, otvod
+x = -5.9
+*use, otvod
+z = 5.4
+*use, opora
+z = 1.6
+*use, kran, 1
+z = 1.45
+*use, opora
+z = 3.35
+*use, opora
+z = 3.2
+*use, otvod
+x = 2.8
+*use, opora
+x = 2
+*use, end
+
+*get,agrvh,node,0,num,maxd
+*get,agrvhx,node,agrvh,loc,x
+*get,agrvhy,node,agrvh,loc,y
+*get,agrvhz,node,agrvh,loc,z
+
+branch,,agrvhx+4.4,agrvhy,agrvhz
+
+*get,agrvih,node,0,num,maxd
+x = 2
+*use, opora
+x = 2.8
+*use, otvod
+z = -1.9
+*use, end
+*get,rec,node,0,num,maxd
+z = -1.3
+*use, opora
+z = -1.7
+*use, kran, 1
+z = -1.65
+*use, opora
+z = -1.4
+*use, kran, 1
+z = -1.65
+*use, opora
+z = -2.7
+*use, otvod
+x = -6
+*use, otvod
+y = -3
+*use, end
+*get, c25,node,0,num,maxd
+*use, pipespec, 3
+x = -2
+*use, end
+*get, c1,node,0,num,maxd
+branch, c25
+x = 2
+*use, end
+*get, c2,node,0,num,maxd
+
+
+branch, rec
+*use, pipespec, 2
+x = 2
+*use, otvod
+z = -1.3
+*use, opora
+z = -3.35
+*use, opora
+z = -1.45
+*use, kran, 2
+z = -1.6
+*use, opora
+z = -4.1
+*use, otvod
+x = -4.15
+*use, otvod
+y = -3
+*use, end
+*get, a25,node,0,num,maxd
+*use, pipespec, 1
+x = -2
+*use, end
+*get, a1,node,0,num,maxd
+branch, a25
+x = 2
+*use, end
+*get, a2,node,0,num,maxd
+
+NUMMRG, node, 
+
+!>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!
+!!!!                                      Г Р А Н И Ч Н Ы Е   У С Л О В И Я
+!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*do,k,1,i,1
+d,opora2(k),uy
+*enddo
+
+!<
+!> obrezki kollektorov
+
+d, a1, all
+d, a2, all
+d, b1, all
+d, b2, all
+d, c1, all
+d, c2, all
+
+!<
+
+!> flanci GPA
+
+d, agrvh, all
+d, agrvih, all
+
+
+!<
+!> nagruzki
+
+FLST,5,141,2,ORDE,4 
+FITEM,5,68  
+FITEM,5,-172
+FITEM,5,233 
+FITEM,5,-268
+ESEL,U, , ,P51X 
+
+
+esel, all
+
+FLST,5,215,2,ORDE,2 
+FITEM,5,120 
+FITEM,5,-334
+ESEL,S, , ,P51X 
+
+
+sfe, all, , pres,, 5200000
+
+
+esel, all
+
+FLST,5,119,2,ORDE,2 
+FITEM,5,1   
+FITEM,5,-119
+ESEL,S, , ,P51X 
+
+sfe, all, , pres,, 4480000
+
+esel, all
+
+
+!sfe, all, , pres,, 5500000
+
+
+acel,0,9.81,0
+
+uvh = 0
+uvih = 0
+urec = 0
+
+d, a1, uy, urec
+d, a2, uy, urec
+d, b1, uy, uvh
+d, b2, uy, uvh
+d, c1, uy, uvih
+d, c2, uy, uvih
+
+!> bez davleniya
+
+/solu
+
+solve
+
+/DSCALE, , 1
+
+FLST,5,42,2,ORDE,6  
+FITEM,5,1   
+FITEM,5,-14 
+FITEM,5,219 
+FITEM,5,-232
+FITEM,5,321 
+FITEM,5,-334
+ESEL,U, , ,P51X 
+
+!<
+!<

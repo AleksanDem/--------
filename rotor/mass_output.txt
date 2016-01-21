@@ -1,0 +1,76 @@
+
+ *****  ANSYS PSOLVE   COMMAND  *****
+
+ *** NOTE ***                            CP =     239.025   TIME= 09:52:07
+ There is no title defined for this analysis.                            
+
+ *** NOTE ***                            CP =     239.025   TIME= 09:52:07
+ No modes are being expanded (MXPAND command) and therefore the element  
+ results will not be written to the mode file.  For more efficient       
+ calculation of element results in the expansion pass of any downstream  
+ mode superposition analyses, expand all modes during the modal          
+ analysis.                                                               
+
+                       S O L U T I O N   O P T I O N S
+
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ   ROTX ROTY ROTZ
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .MODAL                
+      EXTRACTION METHOD. . . . . . . . . . . . . .BLOCK LANCZOS
+   NUMBER OF MODES TO EXTRACT. . . . . . . . . . .   100
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
+
+ *** WARNING ***                         CP =     239.025   TIME= 09:52:07
+ Element 1 (PIPE16) uses material 1 for which Poisson's ratio is         
+ undefined.  A default value of 0.3 will be used.  Input MP,PRXY, 1,0.3  
+ to eliminate this warning.                                              
+
+ *** NOTE ***                            CP =     239.025   TIME= 09:52:07
+ The step data was checked and warning messages were found.              
+  Please review output or errors file (                                  
+ D:\work\ansys_work\ansys_work\rotor\bal.err ) for these warning         
+ messages.                                                               
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+
+ Element Formation Element= 1000 Cum.  Iter.= 1 CP= 239.181              
+  Load Step= 1 Mode= 1.                                                  
+
+
+
+            **** CENTER OF MASS, MASS, AND MASS MOMENTS OF INERTIA ****
+
+  CALCULATIONS ASSUME ELEMENT MASS AT ELEMENT CENTROID
+
+  TOTAL MASS =   545.28    
+
+                           MOM. OF INERTIA         MOM. OF INERTIA
+  CENTER OF MASS            ABOUT ORIGIN        ABOUT CENTER OF MASS
+
+  XC =   0.0000          IXX =    185.8          IXX =    90.22    
+  YC =   0.0000          IYY =    185.8          IYY =    90.22    
+  ZC = -0.41867          IZZ =    0.000          IZZ =    0.000    
+                         IXY =    0.000          IXY =    0.000    
+                         IYZ =    0.000          IYZ =    0.000    
+                         IZX =    0.000          IZX =    0.000    
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+     1   545.280    
+
+ Range of element maximum matrix coefficients in global coordinates
+ Maximum = 3.489818564E+14 at element 201.                               
+ Minimum = 5.089886807E+10 at element 1.                                 
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+  TYPE  NUMBER   ENAME      TOTAL CP  AVE CP
+
+     1    1604  PIPE16        0.187   0.000117
+ Time at end of element matrix formulation CP = 239.243134.              
+
+ *** NOTE ***                            CP =     239.243   TIME= 09:52:07
+ Solution is done!                                                       

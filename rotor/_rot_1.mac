@@ -1,0 +1,306 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                КС "Балашовская" ГПА
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+finish
+/clear
+/filnam, bal, 1
+
+*ulib,_mymac1,mlib
+
+/prep7  
+*afun,deg
+/PLOPTS, minm, 0
+/PLOPTS, FRAME, 0
+/PLOPTS, leg1, 0
+/triad,lbot 
+
+  emod1=2.05e+11  			!модуль упругости
+  dens1=7850				!плотность
+  mp,ex,1,emod1
+  mp,dens,1,dens1
+  mp,alpx,1,13.1e-6
+  mp,mu,101,0.2
+  
+  ad = 10e+10
+  
+  emod2=ad 			!модуль упругости
+  dens2=7850				!плотность
+  mp,ex,2,emod2
+  mp,dens,2,dens2
+  
+  emod3=ad 			!модуль упругости
+  dens3=7850				!плотность
+  mp,ex,3,emod3
+  mp,dens,3,dens3
+  
+    emod4=ad 			!модуль упругости
+  dens3=7850				!плотность
+  mp,ex,4,emod4
+  mp,dens,4,dens4
+  
+    emod5=ad  			!модуль упругости
+  dens3=7850				!плотность
+  mp,ex,5,emod5
+  mp,dens,5,dens5
+
+
+!> геометрия
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!
+!!!!!							Г Е О М Е Т Р И Я
+!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+lesize = 0.01
+
+POPT, nc
+
+l1 = 0.062
+l2 = 0.049
+l3 = 0.063
+l4 = 0.05
+l5 = 0.048
+l6 = 0
+
+d1 = 0.165
+d2 = d1 + d1*0.33*l1
+d3 = d2 + d2*0.33*l2
+d4 = 0.795
+d5 = 0
+d6 = 0
+
+
+
+branch
+*get, bb1,node,0,num,maxd					! начало ротора
+
+*do, step, 1, 100, 1
+pspec, 1, , , d1+(d2-d1)*step/100, d1/2+((d2-d1)/2)*step/100
+run, , , -l1/100
+*enddo
+
+*do, step, 1, 100, 1
+pspec, 1, , , 0.026 + d2+(d3-d2)*step/100, 0.026/2 + d2/2+((d3-d2)/2)*step/100
+run, , , -l2/100
+*enddo
+
+*do, step, 1, 100, 1
+pspec, 1, , , 0.1 + d3+(d4-d3)*step/100, 0.1/2 + d3/2+((d4-d3)/2)*step/100
+run, , , -l3/100
+*enddo
+
+*do, step, 1, 100, 1
+pspec, 1, , , 0.165 + d4/5+(0.15)*step**2/10000, 0.165/2 + d4/10+(0.15)*step**2/20000
+run, , , -l4/100
+*enddo
+
+*do, step, 1, 100, 1
+pspec, 1, , , 0.985 + (0.22 - 0.985)*step/100, 0.985/2 + (0.22 - 0.985)*step/200
+run, , , -l5/100
+*enddo
+
+pspec, 1, , , 0.21, 0.21/2
+run, , , -0.078, 78
+
+pspec, 1, , , 0.165, 0.165/2
+run, , , -0.21, 210
+
+*get, b1 , node, 0, num, maxd				! первая опора
+
+run, , , -0.463, 463
+
+pspec, 1, , , 0.332, 0.332/2
+run, , , -0.042, 42
+
+pspec, 1, , , 0.165, 0.165/2
+run, , , -0.151, 151
+
+*get, b2 , node, 0, num, maxd				! вторая опора
+
+run, , , -0.279, 279
+
+*get, b3 , node, 0, num, maxd				! вторая опора
+
+
+!d, b1, uz
+d, b1, uy
+d, b1, ux
+
+d, b2, uy
+d, b2, uz
+d, b2, ux
+
+d, b3, uy
+d, b3, uz
+d, b3, ux
+
+!acel, ,9.81
+
+antype, 2
+modopt, lanb, 100
+
+/solu
+solve
+
+
+
+
+/eof
+
+branch, ,nx(b1), -1
+pspec, 2, , , 0.01, 0.005
+run, , 0.8, , 20
+*get, a1, node, 0, num, maxd
+
+branch, ,nx(b1), ,-1
+pspec, 3, , , 0.01, 0.005
+run, , ,0.8,20
+*get, a2, node, 0, num, maxd
+
+branch, ,nx(b2), -1
+pspec, 4, , , 0.01, 0.005
+run, , 0.8, , 20
+*get, c1, node, 0, num, maxd
+
+branch, ,nx(b2), ,-1
+pspec, 5, , , 0.01, 0.005
+run, , ,0.8,20
+*get, c2, node, 0, num, maxd
+
+!cp, 1, uy, b1, a1
+!cp, 2, uz, b1, a2
+!cp, 3, uy, b2, c1
+!cp, 4, uz, b2, c2
+
+!nsel, s, loc, y, -1, -1
+!nsel, a, loc, z, -1, -1
+
+d, all, all
+nsel, all
+d, b1, ux
+d, b1, rotx
+
+d, b1, ux
+d, b1, uy
+d, b1, uz
+
+d, b2, uy
+d, b2, uz
+
+
+!acel, ,9.81
+
+antype, 2
+modopt, lanb, 100
+
+/solu
+solve
+
+
+
+
+/eof
+
+!>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!
+!!!!                                      Г Р А Н И Ч Н Ы Е   У С Л О В И Я
+!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*do,k,1,i,1
+d,opora2(k),uy
+*enddo
+
+!<
+!> obrezki kollektorov
+
+d, a1, all
+d, a2, all
+d, b1, all
+d, b2, all
+d, c1, all
+d, c2, all
+
+!<
+
+!> flanci GPA
+
+d, agrvh, all
+d, agrvih, all
+
+
+!<
+!> nagruzki
+
+FLST,5,141,2,ORDE,4 
+FITEM,5,68  
+FITEM,5,-172
+FITEM,5,233 
+FITEM,5,-268
+ESEL,U, , ,P51X 
+
+
+esel, all
+
+FLST,5,215,2,ORDE,2 
+FITEM,5,120 
+FITEM,5,-334
+ESEL,S, , ,P51X 
+
+
+sfe, all, , pres,, 5200000
+
+
+esel, all
+
+FLST,5,119,2,ORDE,2 
+FITEM,5,1   
+FITEM,5,-119
+ESEL,S, , ,P51X 
+
+sfe, all, , pres,, 4480000
+
+esel, all
+
+
+!sfe, all, , pres,, 5500000
+
+
+acel,0,9.81,0
+
+uvh = 0
+uvih = 0
+urec = 0
+
+d, a1, uy, urec
+d, a2, uy, urec
+d, b1, uy, uvh
+d, b2, uy, uvh
+d, c1, uy, uvih
+d, c2, uy, uvih
+
+!> bez davleniya
+
+/solu
+
+solve
+
+/DSCALE, , 1
+
+FLST,5,42,2,ORDE,6  
+FITEM,5,1   
+FITEM,5,-14 
+FITEM,5,219 
+FITEM,5,-232
+FITEM,5,321 
+FITEM,5,-334
+ESEL,U, , ,P51X 
+
+!<
+!<

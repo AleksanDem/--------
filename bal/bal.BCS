@@ -1,0 +1,40 @@
+
+ ===========================
+ = multifrontal statistics =
+ ===========================
+
+     number of equations                     =            1957
+     no. of nonzeroes in lower triangle of a =            4185
+     number of compressed nodes              =             317
+     no. of compressed nonzeroes in l. tri.  =             304
+     amount of workspace currently in use    =           46696
+     max. amt. of workspace used             =         1999996
+     no. of nonzeroes in the factor l        =           21575.
+     number of super nodes                   =             164
+     number of compressed subscripts         =             906
+     size of stack storage                   =             219
+     maximum order of a front matrix         =              18
+     maximum size of a front matrix          =             171
+     maximum size of a front trapezoid       =             153
+     no. of floating point ops for factor    =      3.1894D+05
+     no. of floating point ops for solve     =      4.9215D+04
+     near zero pivot monitoring activated
+     number of pivots adjusted               =             16.
+     first pivot adjusted                    =           1343.
+     minimum adjustment                      =      1.3241D+09
+     maximum adjustment                      =      1.3241D+09
+     negative pivot monitoring activated
+     number of negative pivots encountered   =              6.
+     first negative pivot                    =           1739.
+     minimum negative pivot                  =     -1.4305D-06
+     maximum negative pivot                  =     -1.4305D-06
+     factorization panel size                =              18
+     factorization update panel size         =              18
+     solution block size                     =               2
+     number of cores used                    =               4
+     time (cpu & wall) for structure input   =        0.000000        0.001909
+     time (cpu & wall) for ordering          =        0.015602        0.000228
+     time (cpu & wall) for symbolic factor   =        0.000000        0.000082
+     time (cpu & wall) for value input       =        0.000000        0.000748
+
+     no input or output performed

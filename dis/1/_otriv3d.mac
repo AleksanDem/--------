@@ -1,0 +1,155 @@
+finish
+/clear
+/FILNAME, sdvig, 1  
+/TRIAD,LBOT 
+/prep7
+
+! свойства материала
+
+nl_mat
+
+! √еометри€
+
+h_p = 0.0002
+h = 0.004
+h_big = 0.1
+
+
+k, 1, 0.002
+k, 2, -0.04
+k, 3, -0.04, 0.028
+k, 31, -0.04, 0.112
+k, 32, 0.04, -0.112
+k, 4, 0.04, 0.028
+k, 5, 0.04, h_p
+k, 6, (h_p)+0.002, (h_p)
+k, 7, (h_p)+0.002
+
+l, 1, 2
+l, 2, 3
+l, 3, 4
+l, 4, 5
+l, 5, 6
+circle, 7, h_p, , 6, 90
+
+
+
+NUMMRG, all
+
+al, 1, 2, 3, 4, 5, 6
+
+k, 8, 
+k, 9, 0.112-0.018-0.028
+
+l, 2, 31
+circle, 8, 0.112, , , 90, 6
+circle, 8, 0.112, , 16, 30
+circle, 9, 0.028, , , 90
+l, 10, 19
+l, 20, 4
+LOVLAP, all
+
+FLST,2,12,4 
+FITEM,2,18  
+FITEM,2,19  
+FITEM,2,13  
+FITEM,2,12  
+FITEM,2,11  
+FITEM,2,10  
+FITEM,2,9   
+FITEM,2,8   
+FITEM,2,16  
+FITEM,2,15  
+FITEM,2,17  
+FITEM,2,3   
+AL,P51X 
+
+! сетка
+
+et, 1, plane183, , , 0!3
+!r, 1, h
+!r, 2, h_big
+
+k = 2
+k1 =4
+
+rectng, kx(1)-0.001*k1/2, kx(1)+0.001*k1/10, ky(1), ky(1)+0.001*k1/4
+
+AOVLAP, 3,1
+Adele, 4
+
+
+
+lesize, 27, , , 25*k, 20
+lesize, 22, , , 10*k
+lesize, 23, , , 4*k
+lesize, 28, , , 16*k, 1/10
+lesize, 25, , , 8*k, 5
+lesize, 6, , , 24*k
+
+lesize, 29, , , k*20, 1/20
+lesize, 30, , , k*20, 1/20
+
+esize, 0.005
+
+type, 1
+real, 1
+
+NUMMRG, all
+
+amesh, 5
+amesh, 6
+
+type, 1
+real, 2
+amesh, 2
+
+et, 5, solid95
+type, 5
+
+k, 101, kx(1), ky(1), kz(1)-0.002
+l, 1, 101
+lesize, 1, , , 24*4*k
+vdrag, 5, , , , , , 1
+
+/eof
+
+VOFFST, 5, 0.002
+VOFFST, 6, 0.002
+
+lesize, 26, , , 25*k
+lesize, 31, , , 25*k
+
+/eof
+
+voffst, 2, 0.01
+
+MSHKEY, 0
+mshape, 1
+vmesh, 1
+vmesh, 2
+
+/eof
+
+da, 4, uy
+da, 1, uz	!27
+dk, 2, uz	!27
+
+fk, 16, fy, 100	!10
+fk, 29, fy, 100	!10
+! решение
+
+
+
+/solu
+ ANTYPE,STATIC
+ NLGEOM,ON                     ! INCLUDE LARGE DEFORMATION EFFECTS 
+ OUTRES,,1                     ! WRITE SOLUTION FOR EVERY SUBSTEP
+ SOLVE
+
+
+
+
+
+
+

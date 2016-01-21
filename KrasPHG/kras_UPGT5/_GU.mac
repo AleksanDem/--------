@@ -1,0 +1,738 @@
+d, 121, all
+
+!перемещение пружин
+!>
+y_14_12 = 0.041
+y_14_13 = 0.041
+y_14_15 = 0.086
+y_14_17 = 0.034
+y_14_19 = 0.042
+y_14_21 = 0.08
+y_14_9 = 0.071
+y_14_8 = 0.07
+y_14_5 = 0.07
+y_14_4 = 0.051
+y_14_3 = 0.044
+y_14_3_1 = 0.071
+y_14_1 = 0.081
+
+y_7_6 = 0.049				! пружина адсорбера
+
+y_10_1 = 0.07
+y_10_2 = 0.074
+y_10_3 = 0.08
+y_10_4 = 0.082
+y_10_5 = 0.075
+y_10_6 = 0.059
+
+y_29_10 = 0.078
+y_29_16 = y_29_10
+y_29_22 = y_29_10
+
+y_29_9 = 0.094
+y_29_15 = y_29_9
+y_29_21 = y_29_9
+
+!<
+
+d, g10_01, all
+d, g10_02, all
+d, g10_102, all
+d, g10_03, all
+d, g7_111, all
+d, g7_110, all
+d, g7_109, all
+d, g7_108, all
+d, g7_107, all
+
+
+!> pod_14_12
+
+delta_14_12 = 0.221
+
+n, , nx(pod_14_12), ny(pod_14_12)-delta_14_12, nz(pod_14_12)
+*get,nad_14_12,node,0,num,maxd
+
+r, 10001, 375000
+type, 100
+real, 10001
+
+e, pod_14_12, nad_14_12
+
+d, nad_14_12, uy, y_14_12
+
+!<
+
+!> pod_14_13
+
+delta_14_13 = 0.221
+
+n, , nx(pod_14_13), ny(pod_14_13)-delta_14_13, nz(pod_14_13)
+*get,nad_14_13,node,0,num,maxd
+
+r, 10002, 375000
+type, 100
+real, 10002
+
+e, pod_14_13, nad_14_13
+
+d, nad_14_13, uy, y_14_13
+
+!<
+
+!> pod_14_15
+
+delta_14_15 = 0.399
+
+n, , nx(pod_14_15), ny(pod_14_15)-delta_14_15, nz(pod_14_15)
+*get,nad_14_15,node,0,num,maxd
+
+r, 10003, 188000
+type, 100
+real, 10003
+
+e, pod_14_15, nad_14_15
+
+d, nad_14_15, uy, y_14_15
+
+!<
+
+!> pod_14_17
+
+delta_14_17 = 0.277
+
+n, , nx(pod_14_17), ny(pod_14_17)-delta_14_17, nz(pod_14_17)
+*get,nad_14_17,node,0,num,maxd
+
+r, 10004, 472000
+type, 100
+real, 10004
+
+e, pod_14_17, nad_14_17
+
+d, nad_14_17, uy, y_14_17
+
+!<
+
+!> pod_14_19
+
+delta_14_19 = 0.221
+
+n, , nx(pod_14_19), ny(pod_14_19)-delta_14_19, nz(pod_14_19)
+*get,nad_14_19,node,0,num,maxd
+
+r, 10005, 378000
+type, 100
+real, 10005
+
+e, pod_14_19, nad_14_19
+
+d, nad_14_19, uy, y_14_19
+
+!<
+
+!> pod_14_21
+
+delta_14_21 = 0.399
+
+n, , nx(pod_14_21), ny(pod_14_21)-delta_14_21, nz(pod_14_21)
+*get,nad_14_21,node,0,num,maxd
+
+r, 10006, 189000
+type, 100
+real, 10006
+
+e, pod_14_21, nad_14_21
+
+d, nad_14_21, uy, y_14_21
+
+!<
+
+!> pod_14_9
+
+delta_14_9 = 0.277
+
+n, , nx(pod_14_9), ny(pod_14_9)-delta_14_9, nz(pod_14_9)
+*get,nad_14_9,node,0,num,maxd
+
+r, 10007, 436000
+type, 100
+real, 10007
+
+e, pod_14_9, nad_14_9
+
+d, nad_14_9, uy, y_14_9
+
+!<
+
+!> pod_14_8
+
+delta_14_8 = 0.528
+
+n, , nx(pod_14_8), ny(pod_14_8)-delta_14_8, nz(pod_14_8)
+*get,nad_14_8,node,0,num,maxd
+
+r, 10008, 285000
+type, 100
+real, 10008
+
+e, pod_14_8, nad_14_8
+
+d, nad_14_8, uy, y_14_8
+
+!<
+
+!> pod_14_5
+
+!delta_14_5 = 0.528
+
+!n, , nx(pod_14_5), ny(pod_14_5)-delta_14_5, nz(pod_14_5)
+!*get,nad_14_5,node,0,num,maxd
+
+!r, 10009, 285000
+!type, 100
+!real, 10009
+
+!e, pod_14_5, nad_14_5
+
+!d, nad_14_5, uy, y_14_5
+
+!<
+
+!> pod_14_4
+
+delta_14_4 = 0.277
+
+n, , nx(pod_14_4), ny(pod_14_4)-delta_14_4, nz(pod_14_4)
+*get,nad_14_4,node,0,num,maxd
+
+r, 10010, 463000
+type, 100
+real, 10010
+
+e, pod_14_4, nad_14_4
+
+d, nad_14_4, uy, y_14_4
+
+!<
+
+!> pod_14_3
+
+delta_14_3 = 0.277
+
+n, , nx(pod_14_3), ny(pod_14_3)-delta_14_3, nz(pod_14_3)
+*get,nad_14_3,node,0,num,maxd
+
+r, 10011, 278000
+type, 100
+real, 10011
+
+e, pod_14_3, nad_14_3
+
+d, nad_14_3, uy, y_14_3
+
+!<
+
+!> pod_14_3_1
+
+!delta_14_3_1 = 0.277
+
+!n, , nx(pod_14_3_1), ny(pod_14_3_1)-delta_14_3_1, nz(pod_14_3_1)
+!*get,nad_14_3_1,node,0,num,maxd
+
+!r, 10012, 463000
+!type, 100
+!real, 10012
+
+!e, pod_14_3_1, nad_14_3_1
+
+!d, nad_14_3_1, uy, y_14_3_1
+
+!<
+
+d, pod_14_2, ux
+
+!> pod_14_1
+
+delta_14_1 = 0.507
+
+n, , nx(pod_14_1), ny(pod_14_1)-delta_14_1, nz(pod_14_1)
+*get,nad_14_1,node,0,num,maxd
+
+r, 10013, 233000
+type, 100
+real, 10013
+
+e, pod_14_1, nad_14_1
+
+d, nad_14_1, uy, y_14_1
+
+!<
+
+
+!> C200A
+
+!d, C200A_g10_1, ux
+d, C200A_g7_5, ux
+
+!> C200A_g7_6
+
+delta_C200A_g7_6 = 0.304
+
+n, , nx(C200A_g7_6), ny(C200A_g7_6)-delta_C200A_g7_6, nz(C200A_g7_6)
+*get,C200A_g7_6_nad,node,0,num,maxd
+
+r, 10101, 694500
+type, 100
+real, 10101
+
+e, C200A_g7_6, C200A_g7_6_nad
+
+d, C200A_g7_6_nad, uy, y_7_6
+
+!<
+
+d, C200A_g7_7, ux
+d, C200A_31, all
+d, C200A_32, all
+
+d, c200A_g7_4, ux
+d, c200A_g7_3, ux
+d, c200A_g7_2, ux
+d, c200A_g7_1, ux
+
+d, c200A_g8_1, uz
+d, c200A_g8_2, uz
+d, c200A_g8_3, ux
+d, c200A_g8_4, ux
+d, c200A_g8_5, ux
+d, c200A_g8_6, ux
+
+d, c200A_g11_1, ux
+!<
+
+!> C200B
+
+!d, C200B_g10_1, ux
+d, C200B_g7_5, ux
+
+!> C200B_g7_6
+
+delta_C200B_g7_6 = 0.304
+
+n, , nx(C200B_g7_6), ny(C200B_g7_6)-delta_C200B_g7_6, nz(C200B_g7_6)
+*get,C200B_g7_6_nad,node,0,num,maxd
+
+r, 10101, 694500
+type, 100
+real, 10101
+
+e, C200B_g7_6, C200B_g7_6_nad
+
+d, C200B_g7_6_nad, uy, y_7_6
+
+!<
+
+d, C200B_g7_7, ux
+d, C200B_31, all
+d, C200B_32, all
+
+d, C200B_g7_4, ux
+d, C200B_g7_3, ux
+d, C200B_g7_2, ux
+d, C200B_g7_1, ux
+
+d, C200B_g8_1, uz
+d, C200B_g8_2, uz
+d, C200B_g8_3, ux
+d, C200B_g8_4, ux
+d, C200B_g8_5, ux
+d, C200B_g8_6, ux
+
+d, C200B_g11_1, ux
+!<
+
+!> C200C
+
+!d, C200C_g10_1, ux
+d, C200C_g7_5, ux
+
+!> C200C_g7_6
+
+delta_C200C_g7_6 = 0.304
+
+n, , nx(C200C_g7_6), ny(C200C_g7_6)-delta_C200C_g7_6, nz(C200C_g7_6)
+*get,C200C_g7_6_nad,node,0,num,maxd
+
+r, 10101, 694500
+type, 100
+real, 10101
+
+e, C200C_g7_6, C200C_g7_6_nad
+
+d, C200C_g7_6_nad, uy, y_7_6
+
+!<
+
+d, C200C_g7_7, ux
+d, C200C_31, all
+d, C200C_32, all
+
+d, C200C_g7_4, ux
+d, C200C_g7_3, ux
+d, C200C_g7_2, ux
+d, C200C_g7_1, ux
+
+d, C200C_g8_1, uz
+d, C200C_g8_2, uz
+d, C200C_g8_3, ux
+d, C200C_g8_4, ux
+d, C200C_g8_5, ux
+d, C200C_g8_6, ux
+
+d, C200C_g11_1, ux
+!<
+
+!> C200D
+
+!d, C200D_g10_1, ux
+d, C200D_g7_5, ux
+
+!> C200D_g7_6
+
+delta_C200D_g7_6 = 0.304
+
+n, , nx(C200D_g7_6), ny(C200D_g7_6)-delta_C200D_g7_6, nz(C200D_g7_6)
+*get,C200D_g7_6_nad,node,0,num,maxd
+
+r, 10101, 694500
+type, 100
+real, 10101
+
+e, C200D_g7_6, C200D_g7_6_nad
+
+d, C200D_g7_6_nad, uy, y_7_6
+
+!<
+
+d, C200D_g7_7, ux
+d, C200D_31, all
+d, C200D_32, all
+
+d, C200D_g7_4, ux
+d, C200D_g7_3, ux
+d, C200D_g7_2, ux
+d, C200D_g7_1, ux
+
+d, C200D_g8_1, uz
+d, C200D_g8_2, uz
+d, C200D_g8_3, ux
+d, C200D_g8_4, ux
+d, C200D_g8_5, ux
+d, C200D_g8_6, ux
+
+d, C200D_g11_1, ux
+!<
+
+!> C200E
+
+!d, C200E_g10_1, ux
+d, C200E_g7_5, ux
+
+!> C200E_g7_6
+
+delta_C200E_g7_6 = 0.304
+
+n, , nx(C200E_g7_6), ny(C200E_g7_6)-delta_C200E_g7_6, nz(C200E_g7_6)
+*get,C200E_g7_6_nad,node,0,num,maxd
+
+r, 10101, 694500
+type, 100
+real, 10101
+
+e, C200E_g7_6, C200E_g7_6_nad
+
+d, C200E_g7_6_nad, uy, y_7_6
+
+!<
+
+d, C200E_g7_7, ux
+d, C200E_31, all
+d, C200E_32, all
+
+d, C200E_g7_4, ux
+d, C200E_g7_3, ux
+d, C200E_g7_2, ux
+d, C200E_g7_1, ux
+
+d, C200E_g8_1, uz
+d, C200E_g8_2, uz
+d, C200E_g8_3, ux
+d, C200E_g8_4, ux
+d, C200E_g8_5, ux
+d, C200E_g8_6, ux
+
+d, C200E_g11_1, ux
+!<
+
+!> G7
+
+d, pod_5_7, uz
+
+d, pod_5_9, uz
+d, g7_k1, all
+d, g7_k2, all
+
+!<
+
+!> G8
+
+d, c200E_g8_7, ux
+d, c200D_g8_7, ux
+d, c200C_g8_7, ux
+d, c200B_g8_7, ux
+d, c200A_g8_7, ux
+
+d, pod_7_9, uz
+d, pod_7_10, ux
+
+d, g8_k1, all
+d, g8_k2, all
+
+!<
+
+!> G11
+
+!> pod_10_1
+
+delta_10_1 = 0.507
+
+n, , nx(pod_10_1), ny(pod_10_1)-delta_10_1, nz(pod_10_1)
+*get,nad_10_1,node,0,num,maxd
+
+r, 10201, 231000
+type, 100
+real, 10201
+
+e, pod_10_1, nad_10_1
+
+d, nad_10_1, uy, y_10_1
+
+!<
+
+!> pod_10_2
+
+delta_10_2 = 0.549
+
+n, , nx(pod_10_2), ny(pod_10_2)-delta_10_2, nz(pod_10_2)
+*get,nad_10_2,node,0,num,maxd
+
+r, 10202, 348000
+type, 100
+real, 10202
+
+e, pod_10_2, nad_10_2
+
+d, nad_10_2, uy, y_10_2
+
+!<
+
+!> pod_10_3
+
+delta_10_3 = 0.528
+
+n, , nx(pod_10_3), ny(pod_10_3)-delta_10_3, nz(pod_10_3)
+*get,nad_10_3,node,0,num,maxd
+
+r, 10203, 286000
+type, 100
+real, 10203
+
+e, pod_10_3, nad_10_3
+
+d, nad_10_3, uy, y_10_3
+
+!<
+
+!> pod_10_4
+
+delta_10_4 = 0.549
+
+n, , nx(pod_10_4), ny(pod_10_4)-delta_10_4, nz(pod_10_4)
+*get,nad_10_4,node,0,num,maxd
+
+r, 10204, 349000
+type, 100
+real, 10204
+
+e, pod_10_4, nad_10_4
+
+d, nad_10_4, uy, y_10_4
+
+!<
+
+!> pod_10_5
+
+delta_10_5 = 0.528
+
+n, , nx(pod_10_5), ny(pod_10_5)-delta_10_5, nz(pod_10_5)
+*get,nad_10_5,node,0,num,maxd
+
+r, 10205, 287000
+type, 100
+real, 10205
+
+e, pod_10_5, nad_10_5
+
+d, nad_10_5, uy, y_10_5
+
+!<
+
+!> pod_10_6
+
+delta_10_6 = 0.507
+
+n, , nx(pod_10_6), ny(pod_10_6)-delta_10_6, nz(pod_10_6)
+*get,nad_10_6,node,0,num,maxd
+
+r, 10206, 233000
+type, 100
+real, 10206
+
+e, pod_10_6, nad_10_6
+
+d, nad_10_6, uy, y_10_6
+
+!<
+
+!d, g11_k1, all
+D, G11_K1, UX
+D, G11_K1, UY
+d, g11_k2, all
+d, g11_k3, all
+d, g11_k4, all
+
+d, g11_a1, all
+d, g11_a2, all
+d, g11_a3, all
+d, g11_a4, all
+
+d, g11_b1, all
+d, g11_b2, all
+d, g11_b3, all
+d, g11_b4, all
+
+d, g11_c1, all
+d, g11_c2, all
+d, g11_c3, all
+d, g11_c4, all
+
+!> pod_29_10
+
+delta_29_10 = 0.414
+
+n, , nx(pod_29_10), ny(pod_29_10)-delta_29_10, nz(pod_29_10)
+*get,nad_29_10,node,0,num,maxd
+
+r, 10207, 141000
+type, 100
+real, 10207
+
+e, pod_29_10, nad_29_10
+
+d, nad_29_10, uy, y_29_10
+
+!<
+
+!> pod_29_16
+
+delta_29_16 = 0.414
+
+n, , nx(pod_29_16), ny(pod_29_16)-delta_29_16, nz(pod_29_16)
+*get,nad_29_16,node,0,num,maxd
+
+r, 10207, 141000
+type, 100
+real, 10207
+
+e, pod_29_16, nad_29_16
+
+d, nad_29_16, uy, y_29_16
+
+!<
+
+!> pod_29_22
+
+delta_29_22 = 0.414
+
+n, , nx(pod_29_22), ny(pod_29_22)-delta_29_22, nz(pod_29_22)
+*get,nad_29_22,node,0,num,maxd
+
+r, 10207, 141000
+type, 100
+real, 10207
+
+e, pod_29_22, nad_29_22
+
+d, nad_29_22, uy, y_29_22
+
+!<
+
+!> pod_29_9
+
+delta_29_9 = 0.369
+
+n, , nx(pod_29_9), ny(pod_29_9)-delta_29_9, nz(pod_29_9)
+*get,nad_29_9,node,0,num,maxd
+
+r, 10208, 141000
+type, 100
+real, 10208
+
+e, pod_29_9, nad_29_9
+
+d, nad_29_9, uy, y_29_9
+
+!<
+
+!> pod_29_15
+
+delta_29_15 = 0.369
+
+n, , nx(pod_29_15), ny(pod_29_15)-delta_29_15, nz(pod_29_15)
+*get,nad_29_15,node,0,num,maxd
+
+r, 10208, 141000
+type, 100
+real, 10208
+
+e, pod_29_15, nad_29_15
+
+d, nad_29_15, uy, y_29_15
+
+!<
+
+!> pod_29_21
+
+delta_29_21 = 0.369
+
+n, , nx(pod_29_21), ny(pod_29_21)-delta_29_21, nz(pod_29_21)
+*get,nad_29_21,node,0,num,maxd
+
+r, 10208, 141000
+type, 100
+real, 10208
+
+e, pod_29_21, nad_29_21
+
+d, nad_29_21, uy, y_29_21
+
+!<
+
+d, pod_539, uz
+
+d, g11_15, all
+
+!<
+
+/eof

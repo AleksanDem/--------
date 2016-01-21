@@ -1,0 +1,17 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+!
+!    Graphics Options 
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ /window,,full
+ /graphics,power
+ /eshape,1
+ /gline,,-1
+ /triad,lbot
+ /replot
+
+/eof
+

@@ -1,0 +1,18 @@
+*dim,reac,,10000
+
+*do,nim,1,i,1
+*get,reac(nim),node,opora2(nim),RF,FY
+*enddo
+!!<<
+
+!!>>  Вывод результатов в Txt
+*VSCfun,r_m,max,reac
+*VSCfun,ind_m,lmax,reac
+
+
+*cfopen,Grunt_Gr_new,dat
+*vwrite,sequ,reac(1)
+(f8.0,f12.2)
+*cfclose
+
+

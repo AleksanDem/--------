@@ -1,0 +1,145 @@
+
+
+pall = 9800000
+sfe, all, , pres,, pall
+
+temp_g7 = 0
+
+temp_g8 = 0
+
+temp_g10_1 = 180
+
+temp_g10_2 = 0
+
+temp_g10_3 = 0
+
+temp_g10_4 = 0
+
+temp_g10_5 = 0
+
+temp_g10_6 = 0
+
+temp_g11 = 0
+
+temp_vhodA = 0
+temp_vihodA = 0
+
+temp_vhodB = 0
+temp_vihodB = 0
+
+temp_vhodC = 0
+temp_vihodC = 0
+
+temp_vhodD = 0
+temp_vihodD = 0
+
+temp_vhodE = 0
+temp_vihodE = 0
+
+!> g7
+esel, r, mat, , kol_g7
+nsel, r, ext
+MP,REFT,kol_g7, -temp_g7
+esel, all
+nsel, all
+!<
+
+!> g8
+esel, r, mat, , kol_g8
+nsel, r, ext
+MP,REFT,kol_g8, -temp_g8
+esel, all
+nsel, all
+!<
+
+!> g10
+MP,REFT,kol_g10_1, -temp_g10_1
+!<
+
+!> g10_2
+MP,REFT,kol_g10_2, -temp_g10_2
+!<
+
+!> g10_3
+MP,REFT,kol_g10_3, -temp_g10_3
+!<
+
+!> g10_4
+MP,REFT,kol_g10_4, -temp_g10_4
+!<
+
+!> g10_5
+MP,REFT,kol_g10_5, -temp_g10_5
+!<
+
+!> g10_6
+MP,REFT,kol_g10_6, -temp_g10_6
+!<
+
+!> g11
+MP,REFT,kol_g11, -temp_g11
+!<
+
+!> C200A_vhod
+MP,REFT,C200A_vhod, -temp_vhodA
+!<
+
+!> C200A_vihod
+MP,REFT,C200A_vihod, -temp_vihodA
+!<
+
+!> C200A_
+MP,REFT,C200A_, -tempA
+!<
+
+!> C200B_vhod
+MP,REFT,C200B_vhod, -temp_vhodB
+!<
+
+!> C200B_vihod
+MP,REFT,C200B_vihod, -temp_vihodB
+!<
+
+!> C200B_
+MP,REFT,C200B_, -tempB
+!<
+
+!> C200C_vhod
+MP,REFT,C200C_vhod, -temp_vhodC
+!<
+
+!> C200C_vihod
+MP,REFT,C200C_vihod, -temp_vihodC
+!<
+
+!> C200C_
+MP,REFT,C200C_, -tempC
+!<
+
+!> C200D_vhod
+MP,REFT,C200D_vhod, -temp_vhodD
+!<
+
+!> C200D_vihod
+MP,REFT,C200D_vihod, -temp_vihodD
+!<
+
+!> C200D_
+MP,REFT,C200D_, -tempD
+!<
+
+!> C200E_vhod
+MP,REFT,C200E_vhod, -temp_vhodE
+!<
+
+!> C200E_vihod
+MP,REFT,C200E_vihod, -temp_vihodE
+!<
+
+!> C200E_
+MP,REFT,C200E_, -tempE
+!<
+
+
+
+

@@ -1,0 +1,158 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                КС "Балашовская" ГПА
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+finish
+/clear
+/filnam, bal, 1
+
+*ulib,_mymac1,mlib
+
+/prep7  
+*afun,deg
+/PLOPTS, minm, 0
+/PLOPTS, FRAME, 0
+/PLOPTS, leg1, 0
+/triad,lbot 
+
+  emod1=2.05e+11  			!модуль упругости
+  dens1=7850				!плотность
+  mp,ex,1,emod1
+  mp,dens,1,dens1
+  mp,alpx,1,13.1e-6
+  mp,mu,101,0.2
+
+
+!> геометрия
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!
+!!!!!							Г Е О М Е Т Р И Я
+!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+lesize = 0.01
+
+POPT, nc
+
+k = 1e+10
+c_pr1x = k
+c_pr1y = k
+c_pr2x = k
+c_pr2y = k
+
+r, 2, c_pr1x
+r, 3, c_pr1y
+r, 4, c_pr2x
+r, 5, c_pr2y
+
+d1 = 0.1
+d2 = 0.1
+
+branch
+*get, bb1,node,0,num,maxd					! начало ротора
+
+pspec, 1, , , d1, d1/2
+
+run, 0.3, 0, 0,3
+*get, b1,node,0,num,maxd					! первая опора
+
+run, 1, 0, 0,6
+pspec, 1, , , d2, d2/2
+
+run, 1, 0, 0,6
+*get, b2 , node, 0, num, maxd				! вторая опора
+
+
+run, 0.3, , , 3
+*get, bb2 , node, 0, num, maxd				! конец ротора
+
+et, 2, combin14
+
+n, 1001, nx(b1), -0.1
+n, 1002, nx(b1), , -0.1
+n, 1003, nx(b2), -0.1
+n, 1004, nx(b2), , -0.1
+
+type, 2
+real, 3
+KEYOPT,2,3
+e, 1001, b1
+real, 2
+KEYOPT,2,4
+e, 1002, b1
+real, 5
+KEYOPT,2,3
+e, 1003, b2
+real, 4
+KEYOPT,2,4
+e, 1004, b2
+
+d, b1, ux
+d, 1001, all
+d, 1002, all
+d, 1003, all
+d, 1004, all
+
+!acel, ,9.81
+
+antype, 2
+modopt, lanb, 100
+
+/solu
+solve
+
+/eof
+
+
+branch, ,nx(b1), -1
+pspec, 2, , , 0.01, 0.005
+run, , 0.8, , 20
+*get, a1, node, 0, num, maxd
+
+branch, ,nx(b1), ,-1
+pspec, 3, , , 0.01, 0.005
+run, , ,0.8,20
+*get, a2, node, 0, num, maxd
+
+branch, ,nx(b2), -1
+pspec, 4, , , 0.01, 0.005
+run, , 0.8, , 20
+*get, c1, node, 0, num, maxd
+
+branch, ,nx(b2), ,-1
+pspec, 5, , , 0.01, 0.005
+run, , ,0.8,20
+*get, c2, node, 0, num, maxd
+
+!cp, 1, uy, b1, a1
+!cp, 2, uz, b1, a2
+!cp, 3, uy, b2, c1
+!cp, 4, uz, b2, c2
+
+!nsel, s, loc, y, -1, -1
+!nsel, a, loc, z, -1, -1
+
+d, all, all
+nsel, all
+d, b1, ux
+d, b1, rotx
+
+d, b1, ux
+d, b1, uy
+d, b1, uz
+
+d, b2, uy
+d, b2, uz
+
+
+
+
+/solu
+solve
+
+
+
+
+/eof

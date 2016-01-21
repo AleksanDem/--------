@@ -1,0 +1,67 @@
+finish
+/clear
+
+/TRIAD,LBOT 
+
+/prep7  
+
+! свойства материала
+
+nl_mat
+
+! Геометрия
+
+w = 0.07983
+a = 0.03953
+t = 0.00393
+
+fy = 1000
+
+
+BLC4,,,a,w
+blc4, , w, a, w/4
+
+n, 1, a/2, w+w/8
+
+et, 1, plane183, , , 3
+r, 1, t
+r, 2, 10*t
+
+esize, 0.001
+type, 1
+real, 1
+
+amesh, 1,
+
+type, 1
+real, 2
+
+amesh, 2
+
+nummrg, all
+
+dl, 1, 1, symm
+!dl, 1, 1, uz
+
+dk, 1, ux
+
+f, 1, fy, fy
+
+/eof
+
+! решение
+
+/solu
+ ANTYPE,STATIC
+ kbc, 0
+ NLGEOM,ON                     ! INCLUDE LARGE DEFORMATION EFFECTS 
+ NSUBST,10                      ! SPECIFY NUMBER OF SUBSTEPS IN LOAD STEP
+ OUTRES,,1                     ! WRITE SOLUTION FOR EVERY SUBSTEP
+ SOLVE
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+*dim,tr10res5,,5, 10, 10
+*dim,tr10res51,,100, 10
+*dim, tr10_5, , 5
+
+tr10_5(1) = 562
+tr10_5(2) = 4469
+tr10_5(3) = 3493
+tr10_5(4) = 2516
+tr10_5(5) = 1539
+
+*do,tro10,1,5,1
+tr10res5(tro10,1,1) = tro10
+tr10res5(tro10,1,2) = 1
+tr10res5(tro10,1,3) = ux(node(nx(tr10_5(tro10)), ny(tr10_5(tro10)), nz(tr10_5(tro10)+1.82)))
+tr10res5(tro10,1,4) = uy(node(nx(tr10_5(tro10)), ny(tr10_5(tro10)), nz(tr10_5(tro10)+1.82)))
+tr10res5(tro10,1,5) = uz(node(nx(tr10_5(tro10)), ny(tr10_5(tro10)), nz(tr10_5(tro10)+1.82)))
+tr10res5(tro10,1,6) = rotx(node(nx(tr10_5(tro10)), ny(tr10_5(tro10)), nz(tr10_5(tro10)+1.82)))
+tr10res5(tro10,1,7) = roty(node(nx(tr10_5(tro10)), ny(tr10_5(tro10)), nz(tr10_5(tro10)+1.82)))
+tr10res5(tro10,1,8) = rotz(node(nx(tr10_5(tro10)), ny(tr10_5(tro10)), nz(tr10_5(tro10)+1.82)))
+
+tr10res5(tro10,2,1) = tro10
+tr10res5(tro10,2,2) = 2
+tr10res5(tro10,2,3) = ux(node(nx(tr10_5(tro10)), ny(tr10_5(tro10)), nz(tr10_5(tro10)-1.45)))
+tr10res5(tro10,2,4) = uy(node(nx(tr10_5(tro10)), ny(tr10_5(tro10)), nz(tr10_5(tro10)-1.45)))
+tr10res5(tro10,2,5) = uz(node(nx(tr10_5(tro10)), ny(tr10_5(tro10)), nz(tr10_5(tro10)-1.45)))
+tr10res5(tro10,2,6) = rotx(node(nx(tr10_5(tro10)), ny(tr10_5(tro10)), nz(tr10_5(tro10)-1.45)))
+tr10res5(tro10,2,7) = roty(node(nx(tr10_5(tro10)), ny(tr10_5(tro10)), nz(tr10_5(tro10)-1.45)))
+tr10res5(tro10,2,8) = rotz(node(nx(tr10_5(tro10)), ny(tr10_5(tro10)), nz(tr10_5(tro10)-1.45)))
+
+tr10res5(tro10,3,1) = tro10
+tr10res5(tro10,3,2) = 3
+tr10res5(tro10,3,3) = ux(node(nx(tr10_5(tro10))+1.19, ny(tr10_5(tro10)), nx(tr10_5(tro10)-1.39)))
+tr10res5(tro10,3,4) = uy(node(nx(tr10_5(tro10))+1.19, ny(tr10_5(tro10)), nx(tr10_5(tro10)-1.39)))
+tr10res5(tro10,3,5) = uz(node(nx(tr10_5(tro10))+1.19, ny(tr10_5(tro10)), nx(tr10_5(tro10)-1.39)))
+tr10res5(tro10,3,6) = rotx(node(nx(tr10_5(tro10))+1.19, ny(tr10_5(tro10)), nx(tr10_5(tro10)-1.39)))
+tr10res5(tro10,3,7) = roty(node(nx(tr10_5(tro10))+1.19, ny(tr10_5(tro10)), nx(tr10_5(tro10)-1.39)))
+tr10res5(tro10,3,8) = rotz(node(nx(tr10_5(tro10))+1.19, ny(tr10_5(tro10)), nx(tr10_5(tro10)-1.39)))
+
+*enddo
+
+*cfopen,tr10_res_5_3,dat
+
+tro10 = 1
+t_tro = 1
+
+*do,tro10,1,5,1
+*vwrite,'N krana', 'N tochki', 'UX', 'UY', 'UZ', 'ROTX', 	'ROTY', 'ROTZ'
+(A8,'	',A8,'	', A8,'	', A8,'	', A8,'	', A8,'	', A8,'	', A8)
+*do, t_tro, 1, 3, 1
+*VLEN, 1
+*vwrite,tr10res5(tro10,t_tro,1), tr10res5(tro10,t_tro,2), tr10res5(tro10,t_tro,3), tr10res5(tro10,t_tro,4), tr10res5(tro10,t_tro,5), tr10res5(tro10,t_tro,6), tr10res5(tro10,t_tro,7), tr10res5(tro10,t_tro,8)
+(f2.0,'	',f2.0,'	', e12.3,'	', e12.3,'	', e12.3,'	', e12.3,'	', e12.3,'	', e12.3)
+
+*enddo
+*enddo
+*cfclose
+
+
+
+
+
+
+

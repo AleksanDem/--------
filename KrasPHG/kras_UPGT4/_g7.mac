@@ -1,0 +1,149 @@
+
+!> рециркул€ци€
+
+BRANCH, , nx(g10_25)+0.675, ny(g10_25)+3.32, nz(g10_25)-3.42-3.83+2.48+0.41
+
+mater = kol_g7
+
+*get,g7_1,node,0,num,maxd
+
+x = 0
+y = 0
+z = 0
+
+*use, pipespec, 1
+mater = kol_g7
+
+!>	входной коллектор 720
+
+x = -1.865
+*use, end
+*get,g7_2,node,0,num,maxd
+
+x = -4.7
+*use, end
+*get,pod_5_7,node,0,num,maxd
+
+x = -5.3
+*use, end
+*get,g7_3,node,0,num,maxd
+
+x = -4.7
+*use, opora
+
+x = -5.3
+*use, end
+*get,g7_4,node,0,num,maxd
+
+x = -4.5
+*use, end
+*get,pod_5_9,node,0,num,maxd
+
+x = -5.5
+*use, end
+*get,g7_5,node,0,num,maxd
+
+x = -0.98
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.72-(0.72-0.53)*step/100, 0.025-(0.025-0.022)*step/100
+run, -0.7/100, , 
+*enddo
+
+*use, pipespec, 2
+x = -3.02
+*use, opora
+
+x = -5.3
+*use, otvod
+y = -1.66
+*use, end
+y = -1.66
+*use, otvod
+z = 1
+*use, end
+
+!<
+
+!> входы в сепараторы 530
+
+!> g7_5-g7_51
+branch, g7_5
+*use, pipespec, 2
+y = -3.32
+*use, otvod
+z = 1
+*use, end
+*get,g7_51,node,0,num,maxd
+!<
+
+!> g7_4-g7_41
+branch, g7_4
+*use, pipespec, 2
+y = -3.32
+*use, otvod
+z = 1
+*use, end
+*get,g7_41,node,0,num,maxd
+!<
+
+!> g7_3-g7_31
+branch, g7_3
+*use, pipespec, 2
+y = -3.32
+*use, otvod
+z = 1
+*use, end
+*get,g7_31,node,0,num,maxd
+!<
+
+!> g7_2-g7_21
+branch, g7_2
+*use, pipespec, 2
+y = -3.32
+*use, otvod
+z = 1
+*use, end
+*get,g7_21,node,0,num,maxd
+!<
+!<
+!<
+
+!> g7_1 - g7_k2 - g7_k2
+BRANCH, g7_1
+*use, pipespec, 1
+
+x = 0.83
+*use, end
+*get,G7_tr1,node,0,num,maxd
+
+x = 2.505
+*use, otvod
+
+y = -3.81
+*use, otvod
+
+z = 1.6
+*use, opora
+
+z = 3.46
+*use, end
+
+*get,G7_k1,node,0,num,maxd
+
+branch, g7_tr1
+*use, pipespec, 1
+
+y = -3.76
+*use, otvod
+
+z = -3.875
+*use, opora
+
+z = -1.8
+*use, end
+
+*get,G7_k2,node,0,num,maxd
+!<
+

@@ -1,0 +1,101 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                КС "Георгиевская" ГПА
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!>	вход
+
+*use, pipespec, 5
+
+y = 2.6
+*use, otvod
+x = -5.5
+*use, otvod
+z = 1.56
+*use, opora
+z = 7.25
+*use, opora
+z = 1.5
+*use, kran, 5
+z = 1.5
+*use, opora
+z = 1.5
+*use, kran, 5
+z = 2.9
+*use, opora
+z = 0.72
+*use, otvod
+z = 1.62
+y = 1.32
+*use, otvod
+x = 4
+*use, opora
+x = 2.5
+*use, end
+*get,temp,node,0,num,maxd
+d, temp, all
+!<
+
+!> выход
+branch, , nx(temp)+4, ny(temp), nz(temp)-0.7
+*get,temp,node,0,num,maxd
+d, temp, all
+x = 3.85
+*use, opora
+x = 3.5
+*use, otvod
+z = -1.62
+y = -1.32
+*use, otvod
+z = -2.16
+*use, opora
+z = -0.93
+*use, end
+*get,temp,node,0,num,maxd
+z = -1.79
+*use, kran, 5
+z = -1.6
+*use, opora
+z = -1.4
+*use, kran, 5
+z = -1.4
+*use, opora
+z = -3.95
+*use, otvod
+x = -6.5
+*use, otvod
+y = -2.6
+*use, end
+!<
+
+!> рециркуляция
+
+branch, temp
+*use, pipespec, 8
+y = -0.147
+x = 2
+*use, otvod
+z = -1
+*use, opora
+z = -1.7
+*use, opora
+z = -1.4
+*use, kran, 6
+z = -1.3
+*use, opora
+z = -1.1
+*use, kran, 6
+z = -1.1
+*use, opora
+z = -3
+*use, opora
+z = -1.04
+*use, otvod
+x = -4
+*use, otvod
+y = -2.603
+*use, end
+
+!<

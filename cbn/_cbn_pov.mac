@@ -1,0 +1,126 @@
+finish
+/clear
+
+/prep7  
+*afun,deg
+
+!>	Параметры
+
+!>	Материал
+
+emod1	=	2.05e+11  			!	модуль упругости
+dens1	=	7850				!	плотность
+alpx1	=	13.1e-6				!	коэффициент температурного расширения
+!mu1		=	0.2				!	модуль сдвига
+EX1		=	2.06e11				!	Модуль Юнга
+NUXY	=	0.3					!	Коэффициент Пуассона
+
+!<
+
+!>	 Свойства материала 
+
+	mp,	ex,	1,	emod1
+	mp,	dens,	1,	dens1
+	mp,	alpx,	1,	alpx1
+!	mp,	mu,	1,	mu1
+	mp,	EX,	1,	EX1
+	mp,	NUXY,	1,	0.3
+
+!<
+
+!>	Геометрия
+
+! цбн
+
+D = 1.52
+h = 0.075
+Pin = 6400000
+Pkol = (Pin*D)/(2*h)
+esize, 0.025
+
+cyl4, , , D-h, 0, D, 90, -0.1
+
+!дефект
+
+hz = 0.001						! глубина залегания
+dd = 0.005						! диаметр дефекта
+hd = 0.003						! высота дефекта
+dspace = 20
+dsize = 32
+csize = 32
+
+k, 11, 0, D-h-hz
+k, 12, dd/2, D-h-hz
+k, 13, 0, D-h+hd
+
+local,11,1,0,D-h-hz,0,,,,(hd+hz)/(dd/2)						! задание локальной системы координат для левого внешнего эллипса (1)
+csys, 11
+l, 12, 13
+
+csys, 0
+
+l, 11, 12
+l, 11, 13
+
+al, 13, 14, 15
+
+vrotat, 7, , , , , , 11, 13, 90, 
+
+block, , dd, d-h+3*hd, d-h-hz, , -dd
+
+vovlap, all
+
+vdele, 4, , , 1
+vdele, 5, , , 1
+vdele, 7, , , 1
+
+lesize, 25, , , dsize/2
+lesize, 30, , , dsize/2
+lesize, 40, , , dsize/2
+lesize, 43, , , dsize/2
+
+lesize, 36, , , dsize*3
+
+lesize, 33, , , dsize, dspace
+lesize, 35, , , dsize, dspace
+
+lesize, 45, , , dsize/4, dspace
+lesize, 46, , , dsize/4, dspace
+lesize, 47, , , dsize/4, dspace
+
+
+et, 1, solid95
+
+mshape, 1
+vmesh, all
+
+! GU
+
+DA, 26, symm
+DA, 27, symm
+
+DA, 35, symm
+DA, 36, symm
+
+SFA, 34, , pres, Pin
+SFA, 20, , pres, Pin
+SFA, 28, , pres, Pin
+
+SFA, 1, , pres, -Pkol/2
+
+da, 5, symm
+
+/solu
+ANTYPE,STATIC   
+nlgeom, on
+OUTPR,BASIC,ALL
+
+solve
+
+/ANG,1,75,YS,1 
+
+
+/EXPAND,2,RECT,HALF,,,0.00001   
+/REPLOT 
+
+/eof

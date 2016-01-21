@@ -1,0 +1,586 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                КС "Долматовская"
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+finish
+/clear
+/filnam, dol, 1
+
+*ulib,_mymac1,mlib
+
+*use,nachalo
+
+*use, svoistva
+
+_raspar
+
+visota_opori_pod_zemlei=0.50
+
+p = 7500000
+temp = 30
+
+
+!> геометрия
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!
+!!!!!							Г Е О М Е Т Р И Я
+!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+POPT, nc
+
+!> выход 1
+
+BRANCH, , , -1.5,
+
+*get,nach,node,0,num,maxd
+
+x = 0
+y = 0
+z = 0
+
+*use, pipespec, 3
+
+!> начало - тройник 1
+x = 65
+*use, podzem
+*use, otvod
+z = 83
+*use, podzem
+*use, otvod
+x = 52
+*use, podzem
+*use, otvod
+z = -14
+*use, podzem
+*use, end
+*get,vih_tr_1,node,0,num,maxd
+
+z = -16
+*use, podzem
+*use, otvod
+x = 9
+*use, end
+
+*get,vih_tr_11,node,0,num,maxd
+
+z = -3
+*use, end
+*get,avo_1_2_5,node,0,num,maxd
+z = -6
+*use, podzem
+*use, end
+*get,avo_1_2_6,node,0,num,maxd
+z = -6
+*use, podzem
+*use, end
+*get,avo_1_2_7,node,0,num,maxd
+z = -6
+*use, podzem
+*use, end
+*get,avo_1_2_8,node,0,num,maxd
+z = -4
+*use, end
+
+branch, vih_tr_11
+
+z = 3
+*use, end
+*get,avo_1_2_4,node,0,num,maxd
+z = 6
+*use, podzem
+*use, end
+*get,avo_1_2_3,node,0,num,maxd
+z = 6
+*use, podzem
+*use, end
+*get,avo_1_2_2,node,0,num,maxd
+z = 6
+*use, podzem
+*use, end
+*get,avo_1_2_1,node,0,num,maxd
+z = 4
+*use, end
+
+!< тройник 1
+
+!> тройник 1 - тр 2
+
+branch, vih_tr_1
+
+x = 6
+*use, otvod
+z = 14
+*use, podzem
+*use, otvod
+x = 15
+*use, podzem
+*use, kran, 3
+x = 13
+*use, podzem
+*use, otvod
+z = -11
+*use, podzem
+*use, end
+*get,vih_tr_21,node,0,num,maxd
+z = -26
+*use, podzem
+*use, end
+*get,vih_tr_2,node,0,num,maxd
+
+branch, vih_tr_21
+x = -4
+*use, otvod
+z = -17
+*use, podzem
+*use, otvod
+x = -5
+*use, end
+*get,vih_tr_22,node,0,num,maxd
+z = -5
+*use, end
+*get,avo_1_1_5,node,0,num,maxd
+z = -6
+*use, podzem
+*use, end
+*get,avo_1_1_6,node,0,num,maxd
+z = -6
+*use, podzem
+*use, end
+*get,avo_1_1_7,node,0,num,maxd
+z = -6
+*use, podzem
+*use, end
+*get,avo_1_1_8,node,0,num,maxd
+z = -4
+*use, end
+
+branch, vih_tr_22
+z = 1
+*use, end
+*get,avo_1_1_4,node,0,num,maxd
+z = 6
+*use, podzem
+*use, end
+*get,avo_1_1_3,node,0,num,maxd
+z = 6
+*use, podzem
+*use, end
+*get,avo_1_1_2,node,0,num,maxd
+z = 6
+*use, podzem
+*use, end
+*get,avo_1_1_1,node,0,num,maxd
+z = 4
+*use, end
+
+!<
+
+!> тр 2 - конец входа
+
+branch, vih_tr_2
+
+x = 5
+*use, otvod
+z = 39
+*use, podzem
+*use, otvod
+x = 35
+*use, podzem
+*use, otvod
+z = -21.5
+*use, podzem
+*use, end
+*get,vih_gpa1,node,0,num,maxd
+z = -24
+*use, podzem
+*use, end
+z = -24
+*use, podzem
+*use, end
+z = -2.5
+*use, end
+z = -21.5
+*use, podzem
+*use, end
+z = -24
+*use, podzem
+*use, end
+z = -24
+*use, podzem
+*use, end
+z = -24
+*use, podzem
+*use, end
+z = -2										
+*use, end
+
+*get,vih_end,node,0,num,maxd
+!< 
+!<
+
+!> выход 2
+branch, , nx(nach), ny(nach), nz(nach)-14
+*get,nach2,node,0,num,maxd
+x = 80
+*use, podzem
+*use, otvod
+z = 40
+*use, podzem
+*use, otvod
+x = 38
+*use, podzem
+*use, otvod
+z = -30
+*use, podzem
+*use, end
+*get,vih_tr_5,node,0,num,maxd
+
+z = -14
+*use, podzem
+*use, otvod
+x = 8
+*use, podzem
+*use, end
+*get,vih_tr_51,node,0,num,maxd
+z = -3
+*use, end
+*get,avo_2_2_5,node,0,num,maxd
+z = -6
+*use, podzem
+*use, end
+*get,avo_2_2_6,node,0,num,maxd
+z = -6
+*use, podzem
+*use, end
+*get,avo_2_2_7,node,0,num,maxd
+z = -6
+*use, podzem
+*use, end
+*get,avo_2_2_8,node,0,num,maxd
+z = -4
+*use, end
+
+branch, vih_tr_51
+
+z = 3
+*use, end
+*get,avo_2_2_4,node,0,num,maxd
+z = 6
+*use, podzem
+*use, end
+*get,avo_2_2_3,node,0,num,maxd
+z = 6
+*use, podzem
+*use, end
+*get,avo_2_2_2,node,0,num,maxd
+z = 6
+*use, podzem
+*use, end
+*get,avo_2_2_1,node,0,num,maxd
+z = 4
+*use, end
+
+branch, vih_tr_5
+
+x = 2
+*use, otvod
+z = 17
+*use, podzem
+*use, otvod
+x = 19
+*use, podzem
+*use, kran, 3
+x = 12
+*use, podzem
+*use, end
+
+*get,vih_tr_4,node,0,num,maxd
+
+z = 33
+*use, podzem
+*use, end
+
+branch, vih_tr_4
+
+z = -14
+*use, podzem, use, end
+*use, end
+
+*get,vih_tr_41,node,0,num,maxd
+
+z = -21
+*use, podzem
+*use, otvod
+x = 6
+*use, otvod
+z = 35
+*use, podzem
+*use, otvod
+x = 28
+*use, podzem
+*use, otvod
+y = 3.2
+*use, otvod
+x = 6
+*use, otvod
+y = -3.2
+*use, end
+
+branch, vih_tr_41
+x = -4
+*use, otvod
+z = -15
+*use, podzem
+*use, otvod
+x = -5
+*use, end
+
+*get,vih_tr_42,node,0,num,maxd
+
+
+z = -5
+*use, end
+*get,avo_2_1_5,node,0,num,maxd
+z = -6
+*use, podzem
+*use, end
+*get,avo_2_1_6,node,0,num,maxd
+z = -6
+*use, podzem
+*use, end
+*get,avo_2_1_7,node,0,num,maxd
+z = -6
+*use, podzem
+*use, end
+*get,avo_2_1_8,node,0,num,maxd
+z = -4
+*use, end
+
+branch, vih_tr_42
+z = 1
+*use, end
+*get,avo_2_1_4,node,0,num,maxd
+z = 6
+*use, podzem
+*use, end
+*get,avo_2_1_3,node,0,num,maxd
+z = 6
+*use, podzem
+*use, end
+*get,avo_2_1_2,node,0,num,maxd
+z = 6
+*use, podzem
+*use, end
+*get,avo_2_1_1,node,0,num,maxd
+z = 4
+*use, end
+
+!<
+
+!> вход
+
+branch, ,nx(vih_gpa1)-3.91, ny(vih_gpa1), nz(vih_gpa1)+2+13.5
+*use, pipespec, 3
+z = -2
+*use, end
+*get,gpa_1,node,0,num,maxd
+z = -24
+*use, podzem 
+*use, end
+*get,gpa_2,node,0,num,maxd
+z = -24
+*use, podzem 
+*use, end
+*get,gpa_3,node,0,num,maxd
+z = -24
+*use, podzem 
+*use, end
+*get,gpa_4,node,0,num,maxd
+z = -5.5
+*use, otvod
+x = -11.5
+*use, podzem
+*use, otvod
+z = -15.2
+*use, podzem
+*use, end
+*get,vh_tr10,node,0,num,maxd
+x = 11.5
+*use, podzem
+*use, otvod
+z = -3.3
+*use, end
+*get,gpa_5,node,0,num,maxd
+z = -24
+*use, podzem
+*use, end
+*get,gpa_6,node,0,num,maxd
+z = -24
+*use, podzem
+*use, end
+*get,gpa_7,node,0,num,maxd
+z = -7.7
+*use, podzem
+*use, otvod
+x = -11.5
+*use, podzem
+*use, end
+x = -139.5
+*use, podzem
+*use, otvod
+z = 31
+*use, podzem
+*use, otvod
+x = -36.09
+*use, podzem
+*use, end
+*get,nach4,node,0,num,maxd
+
+branch, vh_tr10
+
+z = -55.4
+*use, podzem
+*use, otvod
+
+x = -5.7
+!*use, podzem
+*use, end
+
+x = -130
+*use, podzem
+*use, otvod
+
+z = 42
+*use, podzem
+*use, otvod
+
+x = -38.9
+*use, podzem
+*use, end
+*get,nach3,node,0,num,maxd
+
+!<
+
+!> рециркуляция
+
+branch, ,nx(vih_gpa1)-1.75, ny(vih_gpa1), nz(vih_gpa1)+2+13.5-6
+*use, pipespec, 5
+
+z = -4.29
+*use, end
+
+z = -24
+*use, podzem
+*use, end
+
+z = -24
+*use, podzem
+*use, end
+
+z = -24
+*use, podzem
+*use, end
+
+z = -2
+*use, otvod
+
+x = -11.5
+*use, podzem
+*use, otvod
+
+z = -6
+*use, podzem
+*use, otvod
+
+x = 11.5
+*use, podzem
+*use, end
+
+*get,rec_tr11,node,0,num,maxd
+
+z = 4
+*use, end
+
+branch, rec_tr11
+z = -16
+*use, podzem
+*use, end
+
+z = -24
+*use, podzem
+*use, end
+
+z = -24
+*use, podzem
+*use, end
+
+z = -2
+*use, otvod
+
+x = -13.66
+*use, podzem
+*use, end
+*get,rec_tr12,node,0,num,maxd
+
+x = -5.7
+*use, otvod
+
+y = 2
+*use, otvod
+
+z = 6.19
+*use, otvod
+
+y = -2
+*use, end
+
+branch, rec_tr12
+
+z = 2.59
+*use, end
+!<
+
+
+
+!>
+
+*do, gpa, 1, 7, 1
+branch, gpa_%gpa%
+_gpa
+*enddo
+
+*do, i1, 1, 2, 1
+*do, i2, 1, 2, 1
+*do, i3, 1, 8, 1
+
+branch, avo_%i1%_%i2%_%i3%
+_avo
+
+*enddo
+*enddo
+*enddo
+
+*do,k,1,i,1
+d,opora2(k),uy
+*enddo
+
+d, nach, all
+d, nach2, all
+d, nach3, all
+d, nach4, all
+
+sfe, all, , pres,, 7500000
+acel,0,9.81,0
+MP,REFT,1, -30
+
+!<
+nummrg, all
+
+/solu
+
+solve

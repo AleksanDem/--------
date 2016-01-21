@@ -1,0 +1,740 @@
+
+BRANCH, , nx(g10_25)-4.84, ny(g10_25)+0.16, nz(g10_25)-2.519
+
+*get,g11_1,node,0,num,maxd
+
+x = 0
+y = 0
+z = 0
+
+*use, pipespec, 3
+mater = kol_g11
+
+!> g11_1 - g11_5
+
+z = -1
+*use, otvod
+
+y = 4.52
+*use, otvod
+
+x = -2.05
+*use, end
+*get,pod_10_1,node,0,num,maxd
+
+x = -8
+*use, end
+*get,pod_10_2,node,0,num,maxd
+
+x = -5.15
+*use, end
+
+*get,g11_2,node,0,num,maxd
+
+x = -1.6
+*use, end
+
+*get,g11_3,node,0,num,maxd
+
+x = -3.05
+*use, end
+*get,pod_10_3,node,0,num,maxd
+
+x = -12.2
+*use, end
+*get,pod_10_4,node,0,num,maxd
+
+x = -1.15
+*use, end
+
+*get,g11_4,node,0,num,maxd
+
+x = -1.6
+*use, end
+
+*get,g11_5,node,0,num,maxd
+!<
+
+!> g11_x-c200_x
+
+branch, g11_2
+
+*use, pipespec, 3
+
+y = -2.45
+*use, otvod
+
+x = 5.2
+*use, otvod
+
+y = -2.07
+*use, otvod
+
+z = 1
+*use, end
+
+
+branch, g11_3
+
+*use, pipespec, 3
+
+y = -2.45
+*use, otvod
+
+x = -3.2
+*use, otvod
+
+y = -2.07
+*use, otvod
+
+z = 1
+*use, end
+
+
+branch, g11_4
+
+*use, pipespec, 3
+
+y = -2.45
+*use, otvod
+
+x = 3.2
+*use, otvod
+
+y = -2.07
+*use, otvod
+
+z = 1
+*use, end
+
+
+branch, g11_5
+
+*use, pipespec, 3
+
+y = -2.45
+*use, otvod
+
+x = -5.2
+*use, otvod
+
+y = -2.07
+*use, otvod
+
+z = 1
+*use, end
+!<
+
+!> g11_5 - g11_6
+
+branch, g11_5
+*use, pipespec, 3
+
+x = -7.25
+*use, end
+*get,pod_10_5,node,0,num,maxd
+
+x = -10
+*use, end
+*get,pod_10_6,node,0,num,maxd
+
+x = -3.57
+*use, otvod
+
+y = -5.15
+*use, otvod
+
+z = -1
+*use, opora
+
+z = -3.2
+*use, otvod
+
+x = -2.105
+*use, opora
+
+x = -3.455
+*use, otvod
+
+z = 4.3
+*use, end
+*get,g11_6,node,0,num,maxd
+
+!<
+
+!> g11_6 - g11_7
+
+z = 3
+*use, end
+*get,g11_k1,node,0,num,maxd
+
+z = 3.2
+*use, otvod
+
+x = 2.445
+*use, opora
+
+x = 2.445
+*use, otvod
+
+z = 5.35
+*use, opora
+
+z = 5
+*use, end
+
+*get,g11_7,node,0,num,maxd
+!<
+
+!> g11_7 - g11_11
+
+x = -1.045
+*use, end
+
+*get,g11_8,node,0,num,maxd
+
+x = -1.27
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.426-(0.426-0.325)*step/100, 0.028+(0.028-0.020)*step/100
+run, -0.22/100
+*enddo
+
+*use, pipespec, 6
+
+x = -1.78
+*use, opora
+
+x = -3.63
+*use, otvod
+
+z = 0.45
+*use, opora
+
+z = 0.9
+*use, end
+
+*get,g11_11,node,0,num,maxd
+
+!<
+
+!> g11_11 - выходы АВО 1
+
+!> g11_11 - g11_a1
+
+z = 1.36
+*use, kran, 4
+
+z = 0.865
+*use, opora
+
+z = 1.295
+*use, otvod
+
+x = 1.22
+*use, kran, 4
+
+x = 1.945
+*use, end
+*get,g11_k2,node,0,num,maxd
+
+x = 1.26
+*use, otvod
+
+y = 4.1
+*use, otvod
+
+z = 1.58
+*use, end
+*get,pod_29_9,node,0,num,maxd
+
+z = 0.7
+*use, otvod
+
+y = 6.55
+*use, otvod
+
+z = 1.64
+*use, end
+*get,pod_29_10a,node,0,num,maxd
+
+z = 0.62
+*use, end
+*get,pod_29_10,node,0,num,maxd
+
+z = 0.73
+*use, end
+
+*get,g11_12a,node,0,num,maxd
+
+x = - 0.6
+*use, end
+
+*get,g11_12a1,node,0,num,maxd
+
+x = -1.3
+*use, otvod
+
+z = 0.65
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325-(0.325-0.159)*step/100, 0.02+(0.02-0.012)*step/100
+run, , , 0.14/100
+*enddo
+
+*use, pipespec, 7
+
+z = 0.765
+*use, otvod
+
+y = -1.025
+*use, end
+
+*get,g11_a1,node,0,num,maxd
+!<
+
+!> g11_12a1 - g11_a2
+branch, g11_12a1
+
+*use, pipespec, 6
+
+z = 0.65
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325-(0.325-0.159)*step/100, 0.02+(0.02-0.012)*step/100
+run, , , 0.14/100
+*enddo
+
+*use, pipespec, 7
+
+z = 0.765
+*use, otvod
+
+y = -1.025
+*use, end
+
+*get,g11_a2,node,0,num,maxd
+
+!<
+
+!> g11_120 - g11_a4
+
+branch, g11_12a
+*use, pipespec, 6
+
+x = 0.6
+*use, end
+
+*get,g11_12a2,node,0,num,maxd
+
+x = 1.3
+*use, otvod
+
+z = 0.65
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325-(0.325-0.159)*step/100, 0.02+(0.02-0.012)*step/100
+run, , , 0.14/100
+*enddo
+
+*use, pipespec, 7
+
+z = 0.765
+*use, otvod
+
+y = -1.025
+*use, end
+
+*get,g11_a4,node,0,num,maxd
+
+!<
+
+!> g11_12a2 - g11_a3
+branch, g11_12a2
+
+*use, pipespec, 6
+
+z = 0.65
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325-(0.325-0.159)*step/100, 0.02+(0.02-0.012)*step/100
+run, , , 0.14/100
+*enddo
+
+*use, pipespec, 7
+
+z = 0.765
+*use, otvod
+
+y = -1.025
+*use, end
+
+*get,g11_a3,node,0,num,maxd
+
+!<
+!<
+
+!> g11_8 - выходы АВО 2
+
+branch, g11_8
+*use, pipespec, 6
+
+z = 1.35
+*use, opora
+
+z = 0.3
+*use, end
+
+*get,g11_12,node,0,num,maxd
+
+
+!> g11_12 - g11_b1
+
+z = 1.36
+*use, kran, 4
+
+z = 0.865
+*use, opora
+
+z = 1.295
+*use, otvod
+
+x = 1.22
+*use, kran, 4
+
+x = 1.945
+*use, end
+*get,g11_k3,node,0,num,maxd
+
+x = 1.26
+*use, otvod
+
+y = 4.1
+*use, otvod
+
+z = 1.58
+*use, end
+*get,pod_29_15,node,0,num,maxd
+
+z = 0.7
+*use, otvod
+
+y = 6.55
+*use, otvod
+
+z = 1.64
+*use, end
+*get,pod_29_16a,node,0,num,maxd
+
+z = 0.62
+*use, end
+*get,pod_29_16,node,0,num,maxd
+
+z = 0.73
+*use, end
+
+*get,g11_12b,node,0,num,maxd
+
+x = - 0.6
+*use, end
+
+*get,g11_12b1,node,0,num,maxd
+
+x = -1.3
+*use, otvod
+
+z = 0.65
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325-(0.325-0.159)*step/100, 0.02+(0.02-0.012)*step/100
+run, , , 0.14/100
+*enddo
+
+*use, pipespec, 7
+
+z = 0.765
+*use, otvod
+
+y = -1.025
+*use, end
+
+*get,g11_b1,node,0,num,maxd
+!<
+
+!> g11_12b1 - g11_b2
+branch, g11_12b1
+
+*use, pipespec, 6
+
+z = 0.65
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325-(0.325-0.159)*step/100, 0.02+(0.02-0.012)*step/100
+run, , , 0.14/100
+*enddo
+
+*use, pipespec, 7
+
+z = 0.765
+*use, otvod
+
+y = -1.025
+*use, end
+
+*get,g11_b2,node,0,num,maxd
+
+!<
+
+!> g11_12b - g11_b4
+
+branch, g11_12b
+*use, pipespec, 6
+
+x = 0.6
+*use, end
+
+*get,g11_12b2,node,0,num,maxd
+
+x = 1.3
+*use, otvod
+
+z = 0.65
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325-(0.325-0.159)*step/100, 0.02+(0.02-0.012)*step/100
+run, , , 0.14/100
+*enddo
+
+*use, pipespec, 7
+
+z = 0.765
+*use, otvod
+
+y = -1.025
+*use, end
+
+*get,g11_b4,node,0,num,maxd
+
+!<
+
+!> g11_12b2 - g11_b3
+branch, g11_12b2
+
+*use, pipespec, 6
+
+z = 0.65
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325-(0.325-0.159)*step/100, 0.02+(0.02-0.012)*step/100
+run, , , 0.14/100
+*enddo
+
+*use, pipespec, 7
+
+z = 0.765
+*use, otvod
+
+y = -1.025
+*use, end
+
+*get,g11_b3,node,0,num,maxd
+
+!<
+!<
+
+!> g11_7 - выходы АВО c
+
+branch, g11_7
+
+*use, pipespec, 3
+
+x = 1.27
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.426-(0.426-0.325)*step/100, 0.028-(0.028-0.02)*step/100
+run, 0.22/100
+*enddo
+
+*use, pipespec, 6
+
+x = 1.5
+*use, opora
+
+x = 2.865
+*use, otvod
+
+z = 1.35
+*use, opora
+
+z = 0.3
+*use, end
+
+*get,g11_13,node,0,num,maxd
+
+!> g11_13 - g11_c1
+
+z = 1.36
+*use, kran, 4
+
+z = 0.865
+*use, opora
+
+z = 1.295
+*use, otvod
+
+x = 1.22
+*use, kran, 4
+
+x = 1.945
+*use, end
+*get,g11_k4,node,0,num,maxd
+
+x = 1.26
+*use, otvod
+
+y = 4.1
+*use, otvod
+
+z = 1.58
+*use, end
+*get,pod_29_21,node,0,num,maxd
+
+z = 0.7
+*use, otvod
+
+y = 6.55
+*use, otvod
+
+z = 1.64
+*use, end
+*get,pod_29_22a,node,0,num,maxd
+
+z = 0.62
+*use, end
+*get,pod_29_22,node,0,num,maxd
+
+z = 0.73
+*use, end
+
+*get,g11_12c,node,0,num,maxd
+
+x = - 0.6
+*use, end
+
+*get,g11_12c1,node,0,num,maxd
+
+x = -1.3
+*use, otvod
+
+z = 0.65
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325-(0.325-0.159)*step/100, 0.02+(0.02-0.012)*step/100
+run, , , 0.14/100
+*enddo
+
+*use, pipespec, 7
+
+z = 0.765
+*use, otvod
+
+y = -1.025
+*use, end
+
+*get,g11_c1,node,0,num,maxd
+!<
+
+!> g11_12c1 - g11_c2
+branch, g11_12c1
+
+*use, pipespec, 6
+
+z = 0.65
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325-(0.325-0.159)*step/100, 0.02+(0.02-0.012)*step/100
+run, , , 0.14/100
+*enddo
+
+*use, pipespec, 7
+
+z = 0.765
+*use, otvod
+
+y = -1.025
+*use, end
+
+*get,g11_c2,node,0,num,maxd
+
+!<
+
+!> g11_12c - g11_c4
+
+branch, g11_12c
+*use, pipespec, 6
+
+x = 0.6
+*use, end
+
+*get,g11_12c2,node,0,num,maxd
+
+x = 1.3
+*use, otvod
+
+z = 0.65
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325-(0.325-0.159)*step/100, 0.02+(0.02-0.012)*step/100
+run, , , 0.14/100
+*enddo
+
+*use, pipespec, 7
+
+z = 0.765
+*use, otvod
+
+y = -1.025
+*use, end
+
+*get,g11_c4,node,0,num,maxd
+
+!<
+
+!> g11_12c2 - g11_c3
+branch, g11_12c2
+
+*use, pipespec, 6
+
+z = 0.65
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325-(0.325-0.159)*step/100, 0.02+(0.02-0.012)*step/100
+run, , , 0.14/100
+*enddo
+
+*use, pipespec, 7
+
+z = 0.765
+*use, otvod
+
+y = -1.025
+*use, end
+
+*get,g11_c3,node,0,num,maxd
+
+!<
+!<

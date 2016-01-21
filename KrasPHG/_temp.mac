@@ -1,0 +1,106 @@
+temp_g7 = 20
+p_g7 = 7000000
+
+temp_g8 = 20
+p_g8 = 7000000
+
+temp_g10 = 270
+p_g10 = 7000000
+
+temp_g11 = 270
+p_g11 = 7000000
+
+temp_vhodA = 270
+temp_vihodA = 270
+tempA = 20
+p_vhodA = 7000000
+p_vihodA = 7000000
+
+temp_vhodB = 270
+temp_vihodB = 270
+tempB = 20
+p_vhodB = 7000000
+p_vihodB = 7000000
+
+temp_vhodC = 20
+temp_vihodC = 20
+tempC =20
+p_vhodC = 7000000
+p_vihodC = 7000000
+
+temp_vhodD = 20
+temp_vihodD = 20
+tempD =20
+p_vhodD = 7000000
+p_vihodD = 7000000
+
+temp_vhodE = 20
+temp_vihodE = 20
+tempE =20
+p_vhodE = 7000000
+p_vihodE = 7000000
+
+
+!> g7
+esel, r, mat, , kol_g7
+nsel, r, ext
+MP,REFT,kol_g7, -temp_g7
+sfe, all, , pres,, p_g7
+esel, all
+nsel, all
+!<
+
+!> g8
+esel, r, mat, , kol_g8
+nsel, r, ext
+MP,REFT,kol_g8, -temp_g8
+sfe, all, , pres,, p_g8
+esel, all
+nsel, all
+!<
+
+!> g10
+esel, r, mat, , kol_g10
+nsel, r, ext
+MP,REFT,kol_g10, -temp_g10
+sfe, all, , pres,, p_g10
+esel, all
+nsel, all
+!<
+
+!> g11
+esel, r, mat, , kol_g11
+nsel, r, ext
+MP,REFT,kol_g11, -temp_g11
+sfe, all, , pres,, p_g11
+esel, all
+nsel, all
+!<
+
+!> C200A_vhod
+esel, r, mat, , C200A_vhod
+nsel, r, ext
+MP,REFT,C200A_vhod, -temp_vhodA
+sfe, all, , pres,, p_vhodA
+esel, all
+nsel, all
+!<
+
+!> C200A_vihod
+esel, r, mat, , C200A_vihod
+nsel, r, ext
+MP,REFT,C200A_vihod, -temp_vihodA
+sfe, all, , pres,, p_vihodA
+esel, all
+nsel, all
+!<
+
+!> C200A_
+esel, r, mat, , C200A_
+nsel, r, ext
+MP,REFT,C200A_, -tempA
+sfe, all, , pres,, p_vihodA
+esel, all
+nsel, all
+!<
+

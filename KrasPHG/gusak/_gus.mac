@@ -1,0 +1,294 @@
+finish
+/clear
+
+/prep7  
+*afun,deg
+
+!>	Параметры
+
+!>	Материал
+
+emod1	=	2.05e+11  			!	модуль упругости
+dens1	=	7850				!	плотность
+alpx1	=	13.1e-6				!	коэффициент температурного расширения
+!mu1		=	0.2				!	модуль сдвига
+EX1		=	2.06e11				!	Модуль Юнга
+NUXY	=	0.3					!	Коэффициент Пуассона
+
+!<
+
+!>	 Свойства материала 
+
+	mp,	ex,	1,	emod1
+	mp,	dens,	1,	dens1
+	mp,	alpx,	1,	alpx1
+!	mp,	mu,	1,	mu1
+	mp,	EX,	1,	EX1
+	mp,	NUXY,	1,	0.3
+	
+	mp,	ex,	2,	emod1
+	mp,	dens,	2,	dens1
+	mp,	alpx,	2,	alpx1
+!	mp,	mu,	2,	mu1
+	mp,	EX,	2,	EX1
+	mp,	NUXY,	2,	0.3
+
+!<
+
+!>	Геометрия
+
+Pin = 7000000
+R1 = 0.53
+
+h1 = 0.022						! толщина 530
+h2 = 0.03						! толщина хомута
+h3 = 0.02						! толщина пружинной трубы
+h4 = 0.03						! толщина опоры
+
+P1 = 7000000
+
+
+k, 1, , , ,						! начальная точка
+k, 2, , , 1.36					! начало опоры
+k, 3, , , 1.5					! конец опоры
+k, 4, , , 3.51					! отвод
+k, 5, , 9.4, 3.51				! вертикальная направляющая
+k, 7, , 15.26, 3.51				! верх усака
+k, 8, , 15.26, 6.175			! верх трубы над адсорбером
+k, 9, , 13.86, 6.175			! верх трубы над адсорбером
+k, 10, , 13.23, 6.175			! начало адсорбера - труба
+k, 11, , 11.5, 6.175			! начало адсорбера - сфера
+k, 12, , 0.5, 6.175				! конец адсорбера
+
+l, 1, 2
+l, 2, 3, 
+l, 3, 4, 
+l, 4, 5
+LFILLT, 3, 4, 1.5*R1
+l, 5, 7
+l, 7, 8
+LFILLT, 6, 7, 1.5*R1
+l, 8, 9
+LFILLT, 7, 9, 1.5*R1
+
+circle, 1, r1/2
+
+lesize, 11, , , 8
+lesize, 12, , , 8
+lesize, 13, , , 8
+lesize, 14, , , 8
+
+adrag, 11, 12, 13, 14, , , 1
+adrag, 15, 18, 20, 22, , , 2
+adrag, 23, 26, 28, 30, , , 3
+adrag, 23, 26, 28, 30, , , 3
+adrag, 31, 34, 36, 38, , , 5
+adrag, 47, 50, 52, 54, , , 4
+adrag, 55, 58, 60, 62, , , 6
+adrag, 63, 66, 68, 70, , , 8
+adrag, 71, 74, 76, 78, , , 7
+adrag, 79, 82, 84, 86, , , 10
+adrag, 87, 90, 92, 94, , , 9
+
+k, 1001, kx(22), ky(25), kz(22)
+k, 1002, kx(26), ky(25), kz(26)
+
+k, 1003, kx(24), ky(25), kz(24)
+k, 1004, kx(28), ky(25), kz(28)
+
+k, 1005, kx(1001)+0.05, ky(1001)-0.001, kz(1001)-0.05
+k, 1006, kx(1004)-0.05, ky(1004)-0.001, kz(1004)+0.05
+k, 1007, kx(1005), ky(1005), kz(1006)
+k, 1008, kx(1006), ky(1005), kz(1005)
+
+a, 25, 1001, 22
+a, 26, 22, 1001, 1002
+a, 26, 1002, 29
+a, 25, 1001, 1002, 29
+
+a, 24, 25, 1003
+a, 28, 24, 1003, 1004
+a, 28, 29, 1004
+a, 25, 1003, 1004, 29
+
+circle, 13, 0.325/2, 5, 
+
+lesize, 113, , , 8
+lesize, 114, , , 8
+lesize, 115, , , 8
+lesize, 116, , , 8
+
+k, 2001, kx(13), -0.4, kz(13)
+l, 13, 2001
+adrag, 113, 114, 115, 116, , , 117
+
+a, 1005, 1007, 1006, 1008
+
+aovlap, all
+
+adele, 60, 63, 1, 1
+
+et, 1, shell281
+
+r, 1, h1, h1, h1, h1
+r, 2, h2, h2, h2, h2
+r, 3, h3, h3, h3, h3
+r, 4, h4, h4, h4, h4
+
+type, 1
+real, 1
+mat, 1
+
+amesh, 1, 4, 1
+
+type, 1
+real, 2
+
+esize, 0.045
+amesh, 5, 8, 1
+mat, 2
+
+
+amesh, 46, 52, 2
+amesh, 57
+
+areverse, 52
+areverse, 57
+
+mshape, 1
+amesh, 45, 51, 2
+
+mshape, 0
+
+type, 1
+real, 1
+mat, 1
+
+esize, 0
+amesh, 9, 12, 1
+
+lesize, 131, , , 24
+lesize, 132, , , 24
+lesize, 133, , , 24
+lesize, 134, , , 24
+
+amesh, 17, 18, 1
+amesh, 68, 69, 1
+amesh, 58, 59, 1
+
+esize, 0.06
+amesh, 21, 44, 1
+
+type, 1
+real, 3
+mat, 2
+
+amesh, 64, 67, 1
+
+/COM, CONTACT PAIR CREATION - START 
+CM,_NODECM,NODE 
+CM,_ELEMCM,ELEM 
+CM,_KPCM,KP 
+CM,_LINECM,LINE 
+CM,_AREACM,AREA 
+CM,_VOLUCM,VOLU 
+/GSAV,cwz,gsav,,temp
+MP,MU,1,0.3 
+MAT,1   
+R,5 
+REAL,5  
+ET,2,170
+ET,3,174
+KEYOPT,3,9,0
+KEYOPT,3,10,2   
+R,5,
+RMORE,  
+RMORE,,0
+RMORE,0 
+! Generate the target surface   
+ASEL,S,,,48 
+ASEL,A,,,52 
+CM,_TARGET,AREA 
+TYPE,2  
+NSLA,S,1
+ESLN,S,0
+ESLL,U  
+ESEL,U,ENAME,,188,189   
+NSLE,A,CT2  
+ESURF   
+CMSEL,S,_ELEMCM 
+! Generate the contact surface  
+ASEL,S,,,57 
+CM,_CONTACT,AREA
+TYPE,3  
+NSLA,S,1
+ESLN,S,0
+NSLE,A,CT2 ! CZMESH patch (fsk qt-40109 8/2008) 
+ESURF   
+ALLSEL  
+ESEL,ALL
+ESEL,S,TYPE,,2  
+ESEL,A,TYPE,,3  
+ESEL,R,REAL,,5  
+/PSYMB,ESYS,1   
+/PNUM,TYPE,1
+/NUM,1  
+EPLOT   
+/FOC,   1,   6.24584305434    ,  -4.60290016703    , -0.601532954505
+/FOC,   1,   6.77585451599    ,  -1.54877872607    ,  -2.26139753119
+/VIEW,  1, -0.874949271791    ,  0.154124388928    ,  0.459030984282
+/ANG,   1,  -8.23991958582  
+ESEL,ALL
+ESEL,S,TYPE,,2  
+ESEL,A,TYPE,,3  
+ESEL,R,REAL,,5  
+CMSEL,A,_NODECM 
+CMDEL,_NODECM   
+CMSEL,A,_ELEMCM 
+CMDEL,_ELEMCM   
+CMSEL,S,_KPCM   
+CMDEL,_KPCM 
+CMSEL,S,_LINECM 
+CMDEL,_LINECM   
+CMSEL,S,_AREACM 
+CMDEL,_AREACM   
+CMSEL,S,_VOLUCM 
+CMDEL,_VOLUCM   
+/GRES,cwz,gsav  
+CMDEL,_TARGET   
+CMDEL,_CONTACT  
+/COM, CONTACT PAIR CREATION - END   
+
+asel, s, mat, ,1
+sfa, all, , pres, P1
+
+mp, reft, 1, -280
+
+asel, all
+
+dl, 11, , all
+dl, 12, , all
+dl, 13, , all
+dl, 14, , all
+
+da, 57, all
+
+dl, 118, , ux
+dl, 118, , uz
+
+dl, 121, , ux
+dl, 121, , uz
+
+dl, 123, , ux
+dl, 123, , uz
+
+dl, 125, , ux
+dl, 125, , uz
+
+dl, 95, , all
+dl, 98, , all
+dl, 100, , all
+dl, 102, , all
+
+/solu
+solve

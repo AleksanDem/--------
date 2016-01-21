@@ -1,0 +1,122 @@
+*dim,otv10,,14, 2
+*dim, otv10res, , 14, 2, 8
+*dim,otv11,,15, 2
+*dim, otv11res, , 15, 2, 8
+
+
+otv10(1, 1) = 1513
+otv10(1, 2) = 1539
+
+otv10(2, 1) = 2490
+otv10(2, 2) = 2516
+
+otv10(3, 1) = 3467
+otv10(3, 2) = 3493
+
+otv10(4, 1) = 4443
+otv10(4, 2) = 4469
+
+otv10(5, 1) = 536
+otv10(5, 2) = 562
+
+otv10(6, 1) = 5470
+otv10(6, 2) = 5440
+
+otv10(7, 1) = 5440
+otv10(7, 2) = 5369
+
+otv10(8, 1) = 358
+otv10(8, 2) = 403
+
+otv10(9, 1) = 1366
+otv10(9, 2) = 1380
+
+otv10(10, 1) = 2343
+otv10(10, 2) = 2357
+
+otv10(11, 1) = 3320
+otv10(11, 2) = 3334
+
+otv10(12, 1) = 4296
+otv10(12, 2) = 4310
+
+otv10(13, 1) = 574
+otv10(13, 2) = 661
+
+otv10(14, 1) = 7315
+otv10(14, 2) = 7374
+
+otv11(1, 1) = 7200
+otv11(1, 2) = 7313
+
+otv11(2, 1) = 1210
+otv11(2, 2) = 1222
+
+otv11(3, 1) = 4891
+otv11(3, 2) = 5132
+
+otv11(4, 1) = 3915
+otv11(4, 2) = 4156
+
+otv11(5, 1) = 2938
+otv11(5, 2) = 3179
+
+otv11(6, 1) = 1961
+otv11(6, 2) = 2202
+
+otv11(7, 1) = 1350
+otv11(7, 2) = 6836
+
+otv11(8, 1) = 5257
+otv11(8, 2) = 6880
+
+otv11(9, 1) = 4281
+otv11(9, 2) = 6886
+
+otv11(10, 1) = 3304
+otv11(10, 2) = 6941
+
+otv11(11, 1) = 2327
+otv11(11, 2) = 6947
+
+otv11(12, 1) = 7313
+otv11(12, 2) = 7340
+
+otv11(13, 1) = 7623
+otv11(13, 2) = 7649
+
+otv11(14, 1) = 8242
+otv11(14, 2) = 8268
+
+otv11(15, 1) = 8989
+otv11(15, 2) = 9015
+
+
+
+
+*do,ot10,1,14,1
+*do, t_ot,1,2,1
+otv10res(ot10,t_ot,1) = ot10
+otv10res(ot10,t_ot,2) = t_ot
+otv10res(ot10,t_ot,3) = ux(otv10(ot10, t_ot))
+otv10res(ot10,t_ot,4) = uy(otv10(ot10, t_ot))
+otv10res(ot10,t_ot,5) = uz(otv10(ot10, t_ot))
+otv10res(ot10,t_ot,6) = rotx(otv10(ot10, t_ot))
+otv10res(ot10,t_ot,7) = roty(otv10(ot10, t_ot))
+otv10res(ot10,t_ot,8) = rotz(otv10(ot10, t_ot))
+*enddo
+*enddo
+
+*do,ot11,1,15,1
+*do, t_ot,1,2,1
+otv11res(ot11,t_ot,1) = ot11
+otv11res(ot11,t_ot,2) = t_ot
+otv11res(ot11,t_ot,3) = ux(otv11(ot11, t_ot))
+otv11res(ot11,t_ot,4) = uy(otv11(ot11, t_ot))
+otv11res(ot11,t_ot,5) = uz(otv11(ot11, t_ot))
+otv11res(ot11,t_ot,6) = rotx(otv11(ot11, t_ot))
+otv11res(ot11,t_ot,7) = roty(otv11(ot11, t_ot))
+otv11res(ot11,t_ot,8) = rotz(otv11(ot11, t_ot))
+*enddo
+*enddo
+

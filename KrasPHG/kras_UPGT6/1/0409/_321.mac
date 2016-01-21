@@ -1,0 +1,48 @@
+!!!!!!!!!!!!!!!!!
+!
+!		тройники 300х300 входные (1-холодный, 2-Е, 3-D, 4-C, 5-B)
+!
+!!!!!!!!!!!!!!!!!
+
+finish
+/FILNAME, Vihod_na_kol, 1
+/clear
+
+/prep7  
+
+RESUME,'_32','db','D:\work\ansys_work\ansys_work\KrasPHG\troinik\',0,0  
+
+P=9800000
+sfe,all,,pres,,P
+
+PARRES,new,'a270par',' ',' '										! подгрузка параметров со стержневой модели
+
+tr=5
+temp = 0
+
+dk, 1, ux, -tr10res(tr,1,5)
+dk, 1, uy, tr10res(tr,1,4)
+dk, 1, uz, tr10res(tr,1,3)
+dk, 1, rotx, -tr10res(tr,1,8)
+dk, 1, roty, tr10res(tr,1,7)
+dk, 1, rotz, tr10res(tr,1,6)
+
+dk, 2, ux, -tr10res(tr,2,5)
+dk, 2, uy, tr10res(tr,2,4)
+dk, 2, uz, tr10res(tr,2,3)-4*temp*0.0000131
+dk, 2, rotx, -tr10res(tr,2,8)
+dk, 2, roty, tr10res(tr,2,7)
+dk, 2, rotz, tr10res(tr,2,6)
+
+dk, 4, ux, -tr10res(tr,3,5)
+dk, 4, uy, tr10res(tr,3,4)+2*temp*0.0000131
+dk, 4, uz, tr10res(tr,3,3)-2*temp*0.0000131
+dk, 4, rotx, -tr10res(tr,3,8)
+dk, 4, roty, tr10res(tr,3,7)
+dk, 4, rotz, tr10res(tr,3,6)
+
+!MP,reft,1,-270
+!MP,reft,2,-270
+/solu
+nlgeom,1
+solve

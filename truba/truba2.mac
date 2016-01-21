@@ -1,0 +1,7 @@
+*do, j, 1, 14, 1
+
+pin = 50000*j
+truba1
+finish
+/clear
+*enddo

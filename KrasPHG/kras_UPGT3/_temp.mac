@@ -1,0 +1,220 @@
+
+
+
+temp_g7 = 0
+p_g7 = 7500000
+
+temp_g8 = 0
+p_g8 = 7500000
+
+temp_g10 = 270
+p_g10 = 7500000
+
+temp_g11 = 270
+p_g11 = 7500000
+
+temp_vhodA = 270
+temp_vihodA = 270
+tempA = 0
+p_vhodA = 7500000
+p_vihodA = 7500000
+
+temp_vhodB = 0
+temp_vihodB = 0
+tempB = 0
+p_vhodB = 7500000
+p_vihodB = 7500000
+
+temp_vhodC = 0
+temp_vihodC = 0
+tempC =0
+p_vhodC = 7500000
+p_vihodC = 7500000
+
+temp_vhodD = 0
+temp_vihodD = 0
+tempD =0
+p_vhodD = 7500000
+p_vihodD = 7500000
+
+temp_vhodE = 0
+temp_vihodE = 0
+tempE =0
+p_vhodE = 7500000
+p_vihodE = 7500000
+
+
+!> g7
+esel, r, mat, , kol_g7
+nsel, r, ext
+MP,REFT,kol_g7, -temp_g7
+sfe, all, , pres,, p_g7
+esel, all
+nsel, all
+!<
+
+!> g8
+esel, r, mat, , kol_g8
+nsel, r, ext
+MP,REFT,kol_g8, -temp_g8
+sfe, all, , pres,, p_g8
+esel, all
+nsel, all
+!<
+
+!> g10
+esel, r, mat, , kol_g10
+nsel, r, ext
+MP,REFT,kol_g10, -temp_g10
+sfe, all, , pres,, p_g10
+esel, all
+nsel, all
+!<
+
+!> g11
+esel, r, mat, , kol_g11
+nsel, r, ext
+MP,REFT,kol_g11, -temp_g11
+sfe, all, , pres,, p_g11
+esel, all
+nsel, all
+!<
+
+!> C200A_vhod
+esel, r, mat, , C200A_vhod
+nsel, r, ext
+MP,REFT,C200A_vhod, -temp_vhodA
+sfe, all, , pres,, p_vhodA
+esel, all
+nsel, all
+!<
+
+!> C200A_vihod
+esel, r, mat, , C200A_vihod
+nsel, r, ext
+MP,REFT,C200A_vihod, -temp_vihodA
+sfe, all, , pres,, p_vihodA
+esel, all
+nsel, all
+!<
+
+!> C200A_
+esel, r, mat, , C200A_
+nsel, r, ext
+MP,REFT,C200A_, -tempA
+sfe, all, , pres,, p_vihodA
+esel, all
+nsel, all
+!<
+
+!> C200B_vhod
+esel, r, mat, , C200B_vhod
+nsel, r, ext
+MP,REFT,C200B_vhod, -temp_vhodB
+sfe, all, , pres,, p_vhodB
+esel, all
+nsel, all
+!<
+
+!> C200B_vihod
+esel, r, mat, , C200B_vihod
+nsel, r, ext
+MP,REFT,C200B_vihod, -temp_vihodB
+sfe, all, , pres,, p_vihodB
+esel, all
+nsel, all
+!<
+
+!> C200B_
+esel, r, mat, , C200B_
+nsel, r, ext
+MP,REFT,C200B_, -tempB
+sfe, all, , pres,, p_vihodB
+esel, all
+nsel, all
+!<
+
+!> C200C_vhod
+esel, r, mat, , C200C_vhod
+nsel, r, ext
+MP,REFT,C200C_vhod, -temp_vhodC
+sfe, all, , pres,, p_vhodC
+esel, all
+nsel, all
+!<
+
+!> C200C_vihod
+esel, r, mat, , C200C_vihod
+nsel, r, ext
+MP,REFT,C200C_vihod, -temp_vihodC
+sfe, all, , pres,, p_vihodC
+esel, all
+nsel, all
+!<
+
+!> C200C_
+esel, r, mat, , C200C_
+nsel, r, ext
+MP,REFT,C200C_, -tempC
+sfe, all, , pres,, p_vihodC
+esel, all
+nsel, all
+!<
+
+!> C200D_vhod
+esel, r, mat, , C200D_vhod
+nsel, r, ext
+MP,REFT,C200D_vhod, -temp_vhodD
+sfe, all, , pres,, p_vhodD
+esel, all
+nsel, all
+!<
+
+!> C200D_vihod
+esel, r, mat, , C200D_vihod
+nsel, r, ext
+MP,REFT,C200D_vihod, -temp_vihodD
+sfe, all, , pres,, p_vihodD
+esel, all
+nsel, all
+!<
+
+!> C200D_
+esel, r, mat, , C200D_
+nsel, r, ext
+MP,REFT,C200D_, -tempD
+sfe, all, , pres,, p_vihodD
+esel, all
+nsel, all
+!<
+
+!> C200E_vhod
+esel, r, mat, , C200E_vhod
+nsel, r, ext
+MP,REFT,C200E_vhod, -temp_vhodE
+sfe, all, , pres,, p_vhodE
+esel, all
+nsel, all
+!<
+
+!> C200E_vihod
+esel, r, mat, , C200E_vihod
+nsel, r, ext
+MP,REFT,C200E_vihod, -temp_vihodE
+sfe, all, , pres,, p_vihodE
+esel, all
+nsel, all
+!<
+
+!> C200E_
+esel, r, mat, , C200E_
+nsel, r, ext
+MP,REFT,C200E_, -tempE
+sfe, all, , pres,, p_vihodE
+esel, all
+nsel, all
+!<
+
+
+
+

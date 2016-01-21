@@ -1,0 +1,51 @@
+finish
+/clear
+/filnam, georg, 1
+
+*ulib,_mymac1,mlib
+
+*use,nachalo
+
+*use, svoistva
+
+_raspar
+
+visota_opori_pod_zemlei=0.50
+
+POPT, nc
+
+
+x = 0
+y = 0
+z = 0
+
+branch, , , -1.12
+
+_pu
+
+d, 91, ux
+d, 92, ux
+d, 91, uy
+d, 92, uy
+d, 91, uz
+d, 92, uz
+
+
+!uvh = -0.02
+!uvih = -0.02
+
+d, 1, all
+d, 158, all
+
+d, 1, uy, uvh
+d, 158, uy, uvih
+
+*do,k,1,i,1
+d,opora2(k),uy
+*enddo
+
+sfe, all, , pres,, 5500000
+acel,0,9.81,0
+
+/solu
+solve

@@ -1,0 +1,281 @@
+
+!> 10_24 - C200B_2
+
+*use, pipespec, 3
+
+z = 0.3
+*use, end
+*get,C200B_g10_1,node,0,num,maxd
+*use, oporatr
+
+z = 0.19
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.426-(0.426-0.325)*step/100, 0.028-(0.028-0.02)*step/100
+run, , , 0.22/100
+*enddo
+
+
+*use, pipespec, 6
+
+z = 0.21
+*use, opora
+
+z = 0.96
+*use, kran, 4
+
+z = 1.1
+*use, opora
+
+z = 1.5
+*use, kran, 4
+
+mater = c200B_vhod
+
+z = 1.06
+*use, opora
+
+z = 0.99
+*use, otvod
+
+x = -1.19
+*use, end
+
+*get,c200B_2,node,0,num,maxd
+!<
+
+!> C200B_2 - c200B_3
+
+*use, pipespec, 2
+
+z = 1.82
+*use, end
+*get,c200B_g7_5,node,0,num,maxd
+*use, oporatr
+
+z = 2.076
+*use, otvod
+
+y = 0.8
+*use, end
+*get,c200B_g7_6,node,0,num,maxd
+
+y = 9.2
+*use, end
+*get,c200B_g7_7,node,0,num,maxd
+
+y = 5.85
+*use, otvod
+
+z = 2.665
+*use, otvod
+
+y = -0.75
+*use, end
+
+pspec, mater, , , 0.53, 0.03
+run, , -0.61
+
+*get,c200B_3,node,0,num,maxd
+
+pspec, C200B_, , , 1.5, 0.03
+run, , -15.49
+*get,C200B_31,node,0,num,maxd
+!<
+
+!> C200B_2 - C200B_1
+
+branch, c200B_2
+
+*use, pipespec, 2
+
+z = -0.4
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.53-(0.53-0.426)*step/100, 0.022+(0.028-0.022)*step/100
+run, , , -0.3/100
+*enddo
+
+*use, pipespec, 3
+
+z = -0.3
+*use, end
+*get,c200B_g7_4,node,0,num,maxd
+*use, oporatr
+
+z = -1.2
+*use, kran, 2
+mater = kol_g7
+
+z = -1.05
+*use, end
+*get,c200B_g7_3,node,0,num,maxd
+*use, oporatr
+
+z = -1.09
+*use, kran, 2
+
+z = -0.84
+*use, end
+*get,c200B_g7_2,node,0,num,maxd
+*use, oporatr
+
+z = -0.88
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.426+(0.53-0.426)*step/100, 0.028-(0.028-0.022)*step/100
+run, , , -0.3/100
+*enddo
+
+*use, pipespec, 2
+
+z = -0.4
+*use, end
+*get,c200B_g7_1,node,0,num,maxd
+*use, oporatr
+
+z = -2.78
+*use, end
+*get,g7_110,node,0,num,maxd
+
+z = -0.35
+*use, end
+!<
+
+!> C200B_3 - c200B_4
+
+branch, , nx(c200B_3)+2.555, ny(c200B_3)-14.33, nz(c200B_3)
+*get,C200B_32,node,0,num,maxd
+*use, pipespec, 2
+mater = c200B_vihod
+
+x = 0.75
+*use, otvod
+
+z = 2.05
+*use, opora
+
+z = 1.15
+*use, otvod
+
+x = -3.305
+*use, end
+*get,C200B_g8_1,node,0,num,maxd
+*use, oporatr
+
+x = -2.5
+*use, otvod
+
+z = -3.2
+*use, end
+*get,C200B_g8_2,node,0,num,maxd
+*use, oporatr
+
+z = -4.65
+*use, end
+*get,C200B_g8_3,node,0,num,maxd
+*use, oporatr
+
+z = -1.17
+*use, end
+
+*get,c200B_4,node,0,num,maxd
+!<
+!> c200B_4 - c200B_5
+
+z = -1.2
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.53-(0.53-0.426)*step/100, 0.022+(0.026-0.022)*step/100
+run, , , -0.3/100
+*enddo
+
+*use, pipespec, 8
+
+z = -0.3
+*use, end
+*get,C200B_g8_4,node,0,num,maxd
+*use, oporatr
+
+z = -1.05
+*use, kran, 3
+mater = kol_g8
+
+z = -1.45
+*use, end
+*get,C200B_g8_5,node,0,num,maxd
+*use, oporatr
+
+z = -0.99
+*use, kran, 3
+
+z = -0.99
+*use, end
+*get,C200B_g8_6,node,0,num,maxd
+*use, oporatr
+
+z = -0.3
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.426+(0.530-0.426)*step/100, 0.028-(0.028-0.03)*step/100
+run, , , -0.3/100
+*enddo
+
+*get,c200B_5,node,0,num,maxd
+
+!<
+!> c200B_4 - c200B_6
+
+branch, c200B_4
+*use, pipespec, 4
+mater = C200B_vihod
+
+x = -1.15
+*use, otvod
+
+z = -1.8
+*use, opora
+
+z = -1.01
+*use, kran, 4
+mater = kol_g11
+
+z = -1.58
+*use, opora
+
+z = -1.6
+*use, kran, 4
+
+z = -0.91
+*use, opora
+
+z = -0.5
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.325+(0.426-0.325)*step/100, 0.022+(0.028-0.022)*step/100
+run, , , -0.22/100
+*enddo
+
+*use, pipespec, 3
+
+z = -0.15
+*use, end
+*get,C200B_g11_1,node,0,num,maxd
+*use, oporatr
+
+
+z = -2.02
+*use, end
+
+*get,c200B_6,node,0,num,maxd
+
+!<
+
+
+

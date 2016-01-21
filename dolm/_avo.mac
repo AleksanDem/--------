@@ -1,0 +1,43 @@
+
+
+*use, pipespec, 6
+x = -2*(-1)**%i2%
+*use, otvod
+y = 1.5
+*use, kran, 2
+y = 1.5
+*use, otvod
+x = 3.3*(-1)**%i2%
+*use, end
+*get,temp_avo,node,0,num,maxd
+z = 0.75
+*use, end
+*get,temp_avo1,node,0,num,maxd
+z = 1.5
+*use, end
+*get,temp_avo2,node,0,num,maxd
+z = 0.5
+*use, end
+
+branch, temp_avo
+z = -0.75
+*use, end
+*get,temp_avo3,node,0,num,maxd
+z = -1.5
+*use, end
+*get,temp_avo4,node,0,num,maxd
+z = -0.5
+*use, end
+
+*use, pipespec, 4
+
+*do, avo, 1, 4, 1
+branch, temp_avo%avo%
+y = 0.5
+*use, end
+*get,avo_fl,node,0,num,maxd
+d, avo_fl, uy
+d, avo_fl, ux
+
+*enddo
+

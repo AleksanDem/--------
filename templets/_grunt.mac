@@ -1,0 +1,57 @@
+! model grunta
+!> 
+/prep7
+nsel, s, loc, y, -1.52, -1.5
+nsel, a, loc, y, -1.92, -1.9
+
+*do,k,1,i,1
+nsel, u, node, , opora(k)
+nsel, u, node, , opora2(k)
+*enddo
+
+et, 60, link8
+r, 60, 0.01
+dirka = 4
+grgr = 1 + dirka
+prosgr = -0.04
+
+!>
+
+
+emod2=2.05e+11  		!модуль упругости
+dens2=7850				!плотность
+mp,ex,2,emod2
+mp,dens,2,dens2
+mp,alpx,2,13.1e-8
+
+!<
+
+*GET, kolvo, NODE, 0, count
+gr0=0
+*do, gr, 1, kolvo, 1
+*GET, gr0, NODE, gr0, nxth
+*if, gr, eq, grgr, then
+	grgr = grgr + dirka
+	n, , nx(gr0), ny(gr0)-0.04, nz(gr0)
+	*get, gr1 ,node,0,num,maxd
+	type, 5 
+	real, 5
+	e, gr0, gr1
+
+	n, , nx(gr0), ny(gr0)-1.04, nz(gr0)
+	*get, gr2 ,node,0,num,maxd
+	type, 60
+	real, 60
+	mat, 2
+	e, gr1, gr2
+	d, gr2, uy, prosgr
+
+	nsel, u, node, , gr1 
+	nsel, u, node, , gr2
+
+*else
+*endif
+*enddo
+	
+nsel, all
+!<

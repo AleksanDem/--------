@@ -1,0 +1,94 @@
+finish
+/clear
+/filnam, dol, 1
+
+*ulib,_mymac1,mlib
+
+*use,nachalo
+
+*use, svoistva
+
+_raspar
+
+visota_opori_pod_zemlei=0.50
+
+
+x = 0
+y = 0
+z = 0
+
+branch, , -6, -1, -3
+
+*use, pipespec, 3
+
+*get,temp_vh1,node,0,num,maxd
+
+z = 3
+*use, end
+*get,temp_vh,node,0,num,maxd
+
+z = 3
+*use, end
+*get,temp_vh2,node,0,num,maxd
+
+branch, temp_vh
+
+*use, pipespec, 6
+
+x = -2
+*use, otvod
+y = 1.5
+*use, kran, 2
+y = 1.5
+*use, otvod
+x = 3.3
+*use, end
+*get,temp_avo,node,0,num,maxd
+z = 0.75
+*use, end
+*get,temp_avo1,node,0,num,maxd
+z = 1.5
+*use, end
+*get,temp_avo2,node,0,num,maxd
+z = 0.5
+*use, end
+
+branch, temp_avo
+z = -0.75
+*use, end
+*get,temp_avo3,node,0,num,maxd
+z = -1.5
+*use, end
+*get,temp_avo4,node,0,num,maxd
+z = -0.5
+*use, end
+
+*use, pipespec, 4
+
+*do, avo, 1, 4, 1
+branch, temp_avo%avo%
+y = 0.5
+*use, end
+*get,avo_fl,node,0,num,maxd
+d, avo_fl, uy
+d, avo_fl, ux
+
+*enddo
+
+d, temp_vh1, ux
+d, temp_vh1, uy
+d, temp_vh2, ux
+d, temp_vh2, uy
+
+
+sfe, all, , pres,, 7500000
+acel,0,9.81,0
+MP,REFT,1, -30
+
+nummrg, all
+
+/solu
+
+solve
+
+/EXPAND,2,RECT,HALF,0.00001 

@@ -1,0 +1,139 @@
+finish
+/clear
+
+/prep7  
+*afun,deg
+
+!>	Параметры
+
+!>	Материал
+
+emod1	=	2.05e+11  			!	модуль упругости
+dens1	=	7850				!	плотность
+alpx1	=	13.1e-6				!	коэффициент температурного расширения
+!mu1		=	0.2					!	модуль сдвига
+EX1		=	2.06e11				!	Модуль Юнга
+NUXY	=	0.3					!	Коэффициент Пуассона
+
+!<
+
+!<
+!>	 Свойства материала 
+
+	mp,	ex,	1,	emod1
+	mp,	dens,	1,	dens1
+	mp,	alpx,	1,	alpx1
+!	mp,	mu,	1,	mu1
+	mp,	EX,	1,	EX1
+	mp,	NUXY,	1,	0.3
+
+!<
+
+D = 1.420
+h = 0.0187
+P0 = 7.4
+Fy0 = -8
+Fz0 = 3
+
+
+Fy = Fy0*1000000*(3.1415*D*h)
+Fz = Fz0*1000000*(3.1415*D*h)
+P = P0*1000000
+
+k, 1,
+k, 2, 10, 
+k, 3, 0, 1
+
+circle, 1, D/2, 2, 3
+
+l, 1, 2
+
+adrag, 1, 2, 3, 4, , , 5
+
+et, 1, shell143
+r, 1, h, h, h, h
+
+type, 1
+real, 1
+
+esize, 0.1
+
+amesh, all
+
+dl, 1, , all
+dl, 2, , all
+dl, 3, , all
+dl, 4, , all
+
+nsel, s, loc, x, 10
+
+nnum = 0
+*get, abrabummax, node, 0, count
+
+
+*do, abrabum, 1, abrabummax, 1
+nnum = ndnext(nnum)
+f, nnum, fx, fz*NZ(nnum)/(abrabummax*(D/2)) + fy*NY(nnum)/(abrabummax*(D/2)) + ((P*D*3.1415*D)/(4)/abrabummax)
+*enddo
+
+nsel, all
+
+
+sfa, all, , pres, P
+
+/solu
+ 
+!nlgeom, on
+
+solve
+
+!FLST,5,36,2,ORDE,8  
+!FITEM,5,892 
+!FITEM,5,-900
+!FITEM,5,1792
+!FITEM,5,-1800   
+!FITEM,5,2692
+!FITEM,5,-2700   
+!FITEM,5,3592
+!FITEM,5,-3600   
+!ESEL,S, , ,P51X 
+!/VIEW,1,1   
+!/ANG,1  
+!/REP,FAST   
+!/AUTO,1 
+!/REP,FAST   
+
+
+FLST,5,48,2,ORDE,8  
+FITEM,5,1189
+FITEM,5,-1200   
+FITEM,5,2389
+FITEM,5,-2400   
+FITEM,5,3589
+FITEM,5,-3600   
+FITEM,5,4789
+FITEM,5,-4800   
+ESEL,S, , ,P51X 
+/AUTO,1 
+/REP,FAST   
+/VIEW,1,,,1 
+/ANG,1  
+/REP,FAST   
+/VIEW,1,1   
+/ANG,1  
+/REP,FAST   
+
+/ANG,1,-180,YS,1 
+/REP,FAST   
+
+/EDGE,1,0,45
+/GLINE,1,0  
+
+_gropt  
+
+FINISH  
+/POST1  
+!*  
+/DSCALE,ALL,1.0 
+/EFACET,1   
+PLNSOL, S,X, 0,1.0  

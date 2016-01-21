@@ -1,0 +1,306 @@
+/prep7
+kdele, all
+
+!> Г11
+!> адсорбер A
+
+knode, 117, node(nx(C200A_32)+0.005, ny(C200A_32),nz(C200A_32))
+knode, 117+1, node(kx(117)+0.795, ky(117),kz(117)+0.795)
+knode, 117+2, node(kx(117+1), ky(117+1),kz(117+1)+1.691)
+knode, 117+3, node(kx(117+2)-0.795, ky(117+2),kz(117+2)+0.795)
+knode, 117+4, node(kx(117+3)-4.265, ky(117+3),kz(117+3))
+knode, 117+5, node(kx(117+4)-0.795, ky(117+4),kz(117+4)-0.795)
+knode, 117+6, node(kx(117+5), ky(117+5),kz(117+5)-7.550+0.795)
+knode, 117+7, node(kx(117+6), ky(117+6),kz(117+6)-1.47)
+knode, 117+8, node(kx(117+7), ky(117+7),kz(117+7)-1.5)
+knode, 117+9, node(kx(117+8), ky(117+8),kz(117+8)-5.08)
+knode, 117+10, node(kx(117+9), ky(117+9),kz(117+9)-5.325)
+knode, 117+11, node(kx(117+10), ky(117+10)+0.795,kz(117+10)-0.795)
+knode, 117+12, node(kx(117+11), ky(117+11)+2.365,kz(117+11))
+knode, 117+13, node(kx(117+7)-0.6625, ky(117+7),kz(117+7))
+knode, 117+14, node(kx(117+13)-0.4875, ky(117+13),kz(117+13)-0.4875)
+knode, 117+15, node(kx(117+14), ky(117+14),kz(117+14)-6.9125)
+knode, 117+16, node(kx(117+15), ky(117+15),kz(117+15)-0.67)
+knode, 117+17, node(kx(117+16), ky(117+16),kz(117+16)-2.071)
+knode, 117+18, node(kx(117+17), ky(117+17)+0.639,kz(117+17)-0.639)
+
+knode, 22, node(kx(117+18), ky(117+18)+3.242,kz(117+18))
+
+!<
+!> адсорбер В
+
+knode, 217, node(nx(C200B_32)+0.005, ny(C200b_32),nz(C200b_32))
+knode, 217+1, node(kx(217)+0.795, ky(217),kz(217)+0.795)
+knode, 217+2, node(kx(217+1), ky(217+1),kz(217+1)+1.691)
+knode, 217+3, node(kx(217+2)-0.795, ky(217+2),kz(217+2)+0.795)
+knode, 217+4, node(kx(217+3)-4.265, ky(217+3),kz(217+3))
+knode, 217+5, node(kx(217+4)-0.795, ky(217+4),kz(217+4)-0.795)
+knode, 217+6, node(kx(217+5), ky(217+5),kz(217+5)-7.550+0.795)
+knode, 217+7, node(kx(217+6), ky(217+6),kz(217+6)-1.47)
+knode, 217+8, node(kx(217+7), ky(217+7),kz(217+7)-1.5)
+knode, 217+9, node(kx(217+8), ky(217+8),kz(217+8)-5.08)
+knode, 217+10, node(kx(217+9), ky(217+9),kz(217+9)-5.325)
+knode, 217+11, node(kx(217+10), ky(217+10)+0.795,kz(217+10)-0.795)
+knode, 217+12, node(kx(217+11), ky(217+11)+2.365,kz(217+11))
+knode, 217+13, node(kx(217+7)-0.6625, ky(217+7),kz(217+7))
+knode, 217+14, node(kx(217+13)-0.4875, ky(217+13),kz(217+13)-0.4875)
+knode, 217+15, node(kx(217+14), ky(217+14),kz(217+14)-6.9125)
+knode, 217+16, node(kx(217+15), ky(217+15),kz(217+15)-0.67)
+knode, 217+17, node(kx(217+16), ky(217+16),kz(217+16)-2.071)
+knode, 217+18, node(kx(217+17), ky(217+17)+0.639,kz(217+17)-0.639)
+
+knode, 217+19, node(kx(217+18), ky(217+18)+0.792,kz(217+18))
+knode, 217+20, node(kx(217+19)-0.639, ky(217+19)+0.639,kz(217+19))
+knode, 217+21, node(kx(217+20)-3.922, ky(217+20),kz(217+20))
+knode, 217+22, node(kx(217+21)-0.639, ky(217+21)+0.639,kz(217+21))
+knode, 217+23, node(kx(217+22), ky(217+22)+1.811,kz(217+22))
+
+!<
+!> адсорбер С
+knode, 317, node(nx(C200C_32)+0.005, ny(C200C_32),nz(C200C_32))
+knode, 317+1, node(kx(317)+0.795, ky(317),kz(317)+0.795)
+knode, 317+2, node(kx(317+1), ky(317+1),kz(317+1)+1.691)
+knode, 317+3, node(kx(317+2)-0.795, ky(317+2),kz(317+2)+0.795)
+knode, 317+4, node(kx(317+3)-4.265, ky(317+3),kz(317+3))
+knode, 317+5, node(kx(317+4)-0.795, ky(317+4),kz(317+4)-0.795)
+knode, 317+6, node(kx(317+5), ky(317+5),kz(317+5)-7.550+0.795)
+knode, 317+7, node(kx(317+6), ky(317+6),kz(317+6)-1.47)
+knode, 317+8, node(kx(317+7), ky(317+7),kz(317+7)-1.5)
+knode, 317+9, node(kx(317+8), ky(317+8),kz(317+8)-5.08)
+knode, 317+10, node(kx(317+9), ky(317+9),kz(317+9)-5.325)
+knode, 317+11, node(kx(317+10), ky(317+10)+0.795,kz(317+10)-0.795)
+knode, 317+12, node(kx(317+11), ky(317+11)+2.365,kz(317+11))
+knode, 317+13, node(kx(317+7)-0.6625, ky(317+7),kz(317+7))
+knode, 317+14, node(kx(317+13)-0.4875, ky(317+13),kz(317+13)-0.4875)
+knode, 317+15, node(kx(317+14), ky(317+14),kz(317+14)-6.9125)
+knode, 317+16, node(kx(317+15), ky(317+15),kz(317+15)-0.67)
+knode, 317+17, node(kx(317+16), ky(317+16),kz(317+16)-2.071)
+knode, 317+18, node(kx(317+17), ky(317+17)+0.639,kz(317+17)-0.639)
+
+knode, 317+19, node(kx(317+18), ky(317+18)+0.792,kz(317+18))
+knode, 317+20, node(kx(317+19)+0.639, ky(317+19)+0.639,kz(317+19))
+knode, 317+21, node(kx(317+20)+1.922, ky(317+20),kz(317+20))
+knode, 317+22, node(kx(317+21)+0.639, ky(317+21)+0.639,kz(317+21))
+knode, 317+23, node(kx(317+22), ky(317+22)+1.811,kz(317+22))
+!<
+!> адсорбер D
+knode, 417, node(nx(C200D_32)+0.005, ny(C200D_32),nz(C200D_32))
+knode, 417+1, node(kx(417)+0.795, ky(417),kz(417)+0.795)
+knode, 417+2, node(kx(417+1), ky(417+1),kz(417+1)+1.691)
+knode, 417+3, node(kx(417+2)-0.795, ky(417+2),kz(417+2)+0.795)
+knode, 417+4, node(kx(417+3)-4.265, ky(417+3),kz(417+3))
+knode, 417+5, node(kx(417+4)-0.795, ky(417+4),kz(417+4)-0.795)
+knode, 417+6, node(kx(417+5), ky(417+5),kz(417+5)-7.550+0.795)
+knode, 417+7, node(kx(417+6), ky(417+6),kz(417+6)-1.47)
+knode, 417+8, node(kx(417+7), ky(417+7),kz(417+7)-1.5)
+knode, 417+9, node(kx(417+8), ky(417+8),kz(417+8)-5.08)
+knode, 417+10, node(kx(417+9), ky(417+9),kz(417+9)-5.325)
+knode, 417+11, node(kx(417+10), ky(417+10)+0.795,kz(417+10)-0.795)
+knode, 417+12, node(kx(417+11), ky(417+11)+2.365,kz(417+11))
+knode, 417+13, node(kx(417+7)-0.6625, ky(417+7),kz(417+7))
+knode, 417+14, node(kx(417+13)-0.4875, ky(417+13),kz(417+13)-0.4875)
+knode, 417+15, node(kx(417+14), ky(417+14),kz(417+14)-6.9125)
+knode, 417+16, node(kx(417+15), ky(417+15),kz(417+15)-0.67)
+knode, 417+17, node(kx(417+16), ky(417+16),kz(417+16)-2.071)
+knode, 417+18, node(kx(417+17), ky(417+17)+0.639,kz(417+17)-0.639)
+
+knode, 417+19, node(kx(417+18), ky(417+18)+0.792,kz(417+18))
+knode, 417+20, node(kx(417+19)-0.639, ky(417+19)+0.639,kz(417+19))
+knode, 417+21, node(kx(417+20)-1.922, ky(417+20),kz(417+20))
+knode, 417+22, node(kx(417+21)-0.639, ky(417+21)+0.639,kz(417+21))
+knode, 417+23, node(kx(417+22), ky(417+22)+1.811,kz(417+22))
+!<
+!> адсорбер E
+knode, 517, node(nx(C200E_32)+0.005, ny(C200E_32),nz(C200E_32))
+knode, 517+1, node(kx(517)+0.795, ky(517),kz(517)+0.795)
+knode, 517+2, node(kx(517+1), ky(517+1),kz(517+1)+1.691)
+knode, 517+3, node(kx(517+2)-0.795, ky(517+2),kz(517+2)+0.795)
+knode, 517+4, node(kx(517+3)-4.265, ky(517+3),kz(517+3))
+knode, 517+5, node(kx(517+4)-0.795, ky(517+4),kz(517+4)-0.795)
+knode, 517+6, node(kx(517+5), ky(517+5),kz(517+5)-7.550+0.795)
+knode, 517+7, node(kx(517+6), ky(517+6),kz(517+6)-1.47)
+knode, 517+8, node(kx(517+7), ky(517+7),kz(517+7)-1.5)
+knode, 517+9, node(kx(517+8), ky(517+8),kz(517+8)-5.08)
+knode, 517+10, node(kx(517+9), ky(517+9),kz(517+9)-5.325)
+knode, 517+11, node(kx(517+10), ky(517+10)+0.795,kz(517+10)-0.795)
+knode, 517+12, node(kx(517+11), ky(517+11)+1.57,kz(517+11))
+knode, 517+13, node(kx(517+7)-0.6625, ky(517+7),kz(517+7))
+knode, 517+14, node(kx(517+13)-0.4875, ky(517+13),kz(517+13)-0.4875)
+knode, 517+15, node(kx(517+14), ky(517+14),kz(517+14)-6.9125)
+knode, 517+16, node(kx(517+15), ky(517+15),kz(517+15)-0.67)
+knode, 517+17, node(kx(517+16), ky(517+16),kz(517+16)-2.071)
+knode, 517+18, node(kx(517+17), ky(517+17)+0.639,kz(517+17)-0.639)
+
+knode, 517+19, node(kx(517+18), ky(517+18)+0.792,kz(517+18))
+knode, 517+20, node(kx(517+19)+0.639, ky(517+19)+0.639,kz(517+19))
+knode, 517+21, node(kx(517+20)+3.922, ky(517+20),kz(517+20))
+knode, 517+22, node(kx(517+21)+0.639, ky(517+21)+0.639,kz(517+21))
+knode, 517+23, node(kx(517+22), ky(517+22)+1.811,kz(517+22))
+!<
+
+!> коллектор Г11 - АВО
+knode, 23, node(kx(22)-0.639, ky(22)+0.639,kz(22))
+knode, 24, node(kx(23)-54.342, ky(23),kz(23))
+knode, 25, node(kx(24)-0.639, ky(24)-0.639,kz(24))
+knode, 26, node(kx(25), ky(25)-3.872,kz(25))
+knode, 27, node(kx(26), ky(26)-0.639,kz(26)-0.639)
+knode, 28, node(kx(27), ky(27),kz(27)-2.922)
+knode, 29, node(kx(28)-0.639, ky(28),kz(28)-0.639)
+knode, 30, node(kx(29)-4.282, ky(29),kz(29))
+knode, 31, node(kx(30)-0.639, ky(30),kz(30)+0.639)
+knode, 32, node(kx(31), ky(31),kz(31)+9.222)
+knode, 33, node(kx(32)+0.639, ky(32),kz(32)+0.639)
+knode, 34, node(kx(33)+3.612, ky(33),kz(33))
+knode, 35, node(kx(34)+0.639, ky(34),kz(34)+0.639)
+knode, 36, node(kx(35), ky(35),kz(35)+9.711)
+
+!аво 1
+
+knode, 37, node(kx(36)+1.49, ky(36),kz(36))
+knode, 38, node(kx(37)+3.8775, ky(37),kz(37))
+knode, 39, node(kx(38)+0.4875, ky(38),kz(38)+0.4875)
+knode, 40, node(kx(39), ky(39),kz(39)+4.195)
+knode, 41, node(kx(40)+0.4875, ky(40),kz(40)+0.4875)
+knode, 42, node(kx(41)+3.45, ky(41),kz(41))
+knode, 43, node(kx(42)+0.4875, ky(42)+0.4875,kz(42))
+
+!аво 3
+
+knode, 44, node(kx(36)-2.535, ky(36),kz(36))
+knode, 45, node(kx(44)-4.9225, ky(44),kz(44))
+knode, 46, node(kx(45)-0.4875, ky(45),kz(45)+0.4875)
+knode, 47, node(kx(46), ky(46),kz(46)+4.195)
+knode, 48, node(kx(47)+0.4875, ky(47),kz(47)+0.4875)
+knode, 49, node(kx(48)+3.45, ky(48),kz(48))
+knode, 50, node(kx(49)+0.4875, ky(49)+0.4875,kz(49))
+
+!аво 2
+
+knode, 51, node(kx(36)-1.045, ky(36),kz(36))
+knode, 52, node(kx(51), ky(51),kz(51)+4.6825)
+knode, 53, node(kx(52)+0.4875, ky(52),kz(52)+0.4875)
+knode, 54, node(kx(53)+3.45, ky(53),kz(53))
+knode, 55, node(kx(54)+0.4875, ky(54)+0.4875,kz(54))
+!<
+
+!> опоры
+
+!> адсорберы
+!> опоры 6_3
+knode, 1063, opora(21)
+knode, 1066, opora(105)
+knode, 1069, opora(84)
+knode, 10612, opora(63)
+knode, 10615, opora(42)
+!<
+!> опоры 6_1
+knode, 1061, opora(22)
+knode, 1064, opora(106)
+knode, 1067, opora(85)
+knode, 10610, opora(64)
+knode, 10613, opora(43)
+!<
+!> опоры 6_2
+knode, 1062, opora(23)
+knode, 1065, opora(107)
+knode, 1068, opora(86)
+knode, 10611, opora(65)
+knode, 10614, opora(44)
+!<
+
+!> опоры 101004
+kopo = 101004
+nopo = 24
+knode, kopo, opora(nopo)
+knode, kopo+1, opora(nopo+1)
+knode, kopo+2, opora(nopo+2)
+knode, kopo+3, opora(nopo+3)
+knode, kopo+4, opora(133)
+knode, kopo+5, opora(nopo+4)
+knode, kopo+6, opora(nopo+5)
+knode, kopo+7, opora(nopo+6)
+knode, kopo+8, opora(nopo+7)
+!<
+!> опоры 102004
+kopo = 102004
+nopo = 108
+knode, kopo, opora(nopo)
+knode, kopo+1, opora(nopo+1)
+knode, kopo+2, opora(nopo+2)
+knode, kopo+3, opora(nopo+3)
+knode, kopo+4, opora(132)
+knode, kopo+5, opora(nopo+4)
+knode, kopo+6, opora(nopo+5)
+knode, kopo+7, opora(nopo+6)
+knode, kopo+8, opora(nopo+7)
+!<
+!> опоры 103004
+kopo = 103004
+nopo = 87
+knode, kopo, opora(nopo)
+knode, kopo+1, opora(nopo+1)
+knode, kopo+2, opora(nopo+2)
+knode, kopo+3, opora(nopo+3)
+knode, kopo+4, opora(131)
+knode, kopo+5, opora(nopo+4)
+knode, kopo+6, opora(nopo+5)
+knode, kopo+7, opora(nopo+6)
+knode, kopo+8, opora(nopo+7)
+!<
+!> опоры 104004
+kopo = 104004
+nopo = 66
+knode, kopo, opora(nopo)
+knode, kopo+1, opora(nopo+1)
+knode, kopo+2, opora(nopo+2)
+knode, kopo+3, opora(nopo+3)
+knode, kopo+4, opora(130)
+knode, kopo+5, opora(nopo+4)
+knode, kopo+6, opora(nopo+5)
+knode, kopo+7, opora(nopo+6)
+knode, kopo+8, opora(nopo+7)
+!<
+!> опоры 105004
+kopo = 105004
+nopo = 45
+knode, kopo, opora(nopo)
+knode, kopo+1, opora(nopo+1)
+knode, kopo+2, opora(nopo+2)
+knode, kopo+3, opora(nopo+3)
+knode, kopo+4, opora(124)
+knode, kopo+5, opora(nopo+4)
+knode, kopo+6, opora(nopo+5)
+knode, kopo+7, opora(nopo+6)
+knode, kopo+8, opora(nopo+7)
+!<
+!<
+
+!> коллектор - аво
+knode, 10101, pod_10_1
+knode, 10102, pod_10_2
+knode, 10103, pod_10_3
+knode, 10104, pod_10_4
+knode, 10105, pod_10_5
+knode, 10106, pod_10_6
+knode, 10107, opora(139)
+knode, 10108, opora(140)
+knode, 1029, g11_k1
+knode, 10291, opora(141)
+knode, 10292, opora(142)
+knode, 10293, opora(143)
+knode, 10295, opora(144)
+knode, 10296, opora(145)
+knode, 10298, g11_k2
+
+knode, 102911, opora(146)
+knode, 102912, opora(147)
+knode, 102914, g11_k3
+
+knode, 10294, opora(148)
+knode, 102917, opora(149)
+knode, 102918, opora(150)
+knode, 102920, g11_k4
+!<
+
+!<
+!<

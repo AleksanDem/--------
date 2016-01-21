@@ -1,0 +1,96 @@
+
+_hol
+
+*cfopen,tr10_res_4_4,dat, , append
+*vwrite,'hol_98'
+(A8)
+*cfclose
+
+*cfopen,tr10_res_5_3,dat, , append
+*vwrite,'hol_98'
+(A8)
+*cfclose
+
+_tr10res_4_4
+
+_tr10res_5_3
+
+_E270
+
+*cfopen,tr10_res_4_4,dat, , append
+*vwrite,'_E270'
+(A8)
+*cfclose
+
+*cfopen,tr10_res_5_3,dat, , append
+*vwrite,'_E270'
+(A8)
+*cfclose
+
+_tr10res_4_4
+
+_tr10res_5_3
+
+_D270
+
+*cfopen,tr10_res_4_4,dat, , append
+*vwrite,'_D270'
+(A8)
+*cfclose
+
+*cfopen,tr10_res_5_3,dat, , append
+*vwrite,'_D270'
+(A8)
+*cfclose
+
+_tr10res_4_4
+
+_tr10res_5_3
+
+_C270
+
+*cfopen,tr10_res_4_4,dat, , append
+*vwrite,'_C270'
+(A8)
+*cfclose
+
+*cfopen,tr10_res_5_3,dat, , append
+*vwrite,'_C270'
+(A8)
+*cfclose
+
+_tr10res_4_4
+
+_tr10res_5_3
+
+_B270
+
+*cfopen,tr10_res_4_4,dat, , append
+*vwrite,'_B270'
+(A8)
+*cfclose
+
+*cfopen,tr10_res_5_3,dat, , append
+*vwrite,'_B270'
+(A8)
+*cfclose
+
+_tr10res_4_4
+
+_tr10res_5_3
+
+_A270
+
+*cfopen,tr10_res_4_4,dat, , append
+*vwrite,'_A270'
+(A8)
+*cfclose
+
+*cfopen,tr10_res_5_3,dat, , append
+*vwrite,'_A270'
+(A8)
+*cfclose
+
+_tr10res_4_4
+
+_tr10res_5_3

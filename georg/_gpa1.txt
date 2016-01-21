@@ -1,0 +1,26 @@
+finish
+/clear
+/filnam, georg, 1
+
+*ulib,_mymac1,mlib
+
+*use,nachalo
+
+*use, svoistva
+
+_raspar
+
+visota_opori_pod_zemlei=0.50
+
+POPT, nc
+
+
+x = 0
+y = 0
+z = 0
+
+branch, , , -0.192
+
+_gpa
+
+/eof

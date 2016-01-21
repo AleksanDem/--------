@@ -1,0 +1,258 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                КС "Егорлыкская" ГПА
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+finish
+/clear
+/filnam, egor, 1
+
+*ulib,_mymac1,mlib
+
+*use,nachalo
+
+*use, svoistva
+
+_raspar
+
+visota_opori_pod_zemlei=0.50
+
+!> геометрия
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!
+!!!!!							Г Е О М Е Т Р И Я
+!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+POPT, nc
+
+!> вход
+
+BRANCH, , , -2,
+
+*get,bb1,node,0,num,maxd
+
+x = 0
+y = 0
+z = 0
+
+*use, pipespec, 1
+
+x = -2
+*use, end
+*get,bb11,node,0,num,maxd
+branch, bb1
+x = 2
+*use, end
+*get,bb12,node,0,num,maxd
+branch, bb1
+y = 3
+*use, otvod
+x = 4.6
+*use, otvod
+z = -5.8
+*use, opora
+z = -1.4
+*use, kran, 1
+z = -3.9
+*use, opora
+z = -2.75
+*use, otvod
+x = -3
+*use, opora
+x = -3.1
+*use, end
+
+*get,b1,node,0,num,maxd
+!< 
+
+!> нагнетатель
+
+*use, pipespec, 3
+z = 0.5
+use, end
+*get,nag1,node,0,num,maxd
+z = 0.5
+*use, end
+branch, b1
+z = -0.5
+*use, end
+*get,nag2,node,0,num,maxd
+z = -0.5
+*use, end
+
+!<
+
+!> выход
+
+branch, b1
+*use, pipespec, 1
+x = -3.1
+*use, opora
+x = -2.8
+*use, otvod
+z = 2.75
+*use, opora
+z = 0.85
+*use, end
+*get,rec1,node,0,num,maxd
+z = 1.1
+*use, kran, 1
+z = 1.1
+*use, opora
+z = 0.75
+*use, kran, 1
+z = 1.6
+*use, opora
+z = 4.1
+*use, otvod
+x = 6.25
+*use, otvod
+y = -3
+*use, end
+*get,bb2,node,0,num,maxd
+x = 2
+*use, end
+*get,bb21,node,0,num,maxd
+branch, bb2
+x = -2
+*use, end
+*get,bb22,node,0,num,maxd
+
+!<
+
+!> рециркуляция
+
+*use, pipespec, 2
+branch, rec1
+x = 1.5
+*use, otvod
+z = 1.1
+*use, kran, 2
+z = 0.95
+*use, opora
+z = 1.15
+*use, kran, 2
+z = 1.15
+*use, opora
+z = 0.975
+*use, kran, 2
+z = 1.6
+*use, otvod
+x = 2.15
+*use, otvod
+y = -3
+*use, end
+*get,bb3,node,0,num,maxd
+x = -2
+*use, end
+*get,bb31,node,0,num,maxd
+branch, bb3
+x = 2
+*use, end
+*get,bb32,node,0,num,maxd
+
+NUMMRG, node, 
+
+!>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!
+!!!!                                      Г Р А Н И Ч Н Ы Е   У С Л О В И Я
+!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*do,k,1,i,1
+d,opora2(k),uy
+*enddo
+
+!<
+!> obrezki kollektorov
+
+d, bb11, all
+d, bb12, all
+d, bb21, all
+d, bb22, all
+d, bb31, all
+d, bb32, all
+d, nag1, all
+d, nag2, all
+
+!<
+
+!> nagruzki
+
+!> vhod
+
+	!> весь вход
+!FLST,5,114,2,ORDE,2 
+!FITEM,5,1   
+!FITEM,5,-114
+!ESEL,S, , ,P51X 
+	!<
+	!> до крана
+FLST,5,65,2,ORDE,2  
+FITEM,5,1   
+FITEM,5,-65 
+ESEL,S, , ,P51X 
+	!<
+
+sfe, all, , pres,, 3800000
+esel, all
+!<
+
+!> vihod
+
+	!>весь
+!FLST,5,199,2,ORDE,2 
+!FITEM,5,115 
+!FITEM,5,-313
+!ESEL,S, , ,P51X 
+	!<
+	!> до крана
+FLST,5,109,2,ORDE,4 
+FITEM,5,173 
+FITEM,5,-237
+FITEM,5,270 
+FITEM,5,-313
+ESEL,S, , ,P51X 
+	!<
+	
+sfe, all, , pres,, 5000000
+esel, all
+
+!<
+
+!sfe, all, , pres,, 5400000
+
+acel,0,9.81,0
+
+uvh = !-0.1
+uvih = !-0.11!
+urec = !-0.03!
+
+!> подвижки коллекторов
+
+d, bb11, uy, uvh
+d, bb12, uy, uvh
+d, bb21, uy, uvih
+d, bb22, uy, uvih
+d, bb31, uy, urec
+d, bb32, uy, urec
+
+!<
+
+
+/solu
+
+solve
+
+/DSCALE, , 1
+
+
+!<
+!<

@@ -1,0 +1,142 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                КС "Георгиевская" АВО
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!>	вход
+
+*use, pipespec, 6
+
+y = 1.99
+*use, otvod
+z = -2
+*use, kran, 6
+z = -0.6
+*use, opora
+z = -1.4
+*use, otvod
+y = 4.3
+*use, end
+*get,temp,node,0,num,maxd
+
+
+x = 0.7
+*use, end
+*get,temp1,node,0,num,maxd
+x = 0.7
+*use, end
+*get,temp2,node,0,num,maxd
+x = 0.7
+*use, end
+*get,temp3,node,0,num,maxd
+x = 0.7
+*use, end
+
+branch, temp1
+*use, pipespec, 7
+y = 0.4
+*use, end
+branch, temp2
+y = 0.4
+*use, end
+branch, temp3
+y = 0.4
+*use, end
+
+branch, temp
+*use, pipespec, 6
+x = -0.7
+*use, end
+*get,temp1,node,0,num,maxd
+x = -0.7
+*use, end
+*get,temp2,node,0,num,maxd
+x = -0.7
+*use, end
+*get,temp3,node,0,num,maxd
+x = -0.7
+*use, end
+
+branch, temp1
+*use, pipespec, 7
+y = 0.4
+*use, end
+branch, temp2
+y = 0.4
+*use, end
+branch, temp3
+y = 0.4
+*use, end
+
+branch, ,nx(temp),ny(temp),nz(temp)-12
+*get,temp,node,0,num,maxd
+
+*use, pipespec, 6
+x = -0.7
+*use, end
+*get,temp1,node,0,num,maxd
+x = -0.7
+*use, end
+*get,temp2,node,0,num,maxd
+x = -0.7
+*use, end
+*get,temp3,node,0,num,maxd
+x = -0.7
+*use, end
+
+branch, temp1
+*use, pipespec, 7
+y = 0.4
+*use, end
+branch, temp2
+y = 0.4
+*use, end
+branch, temp3
+y = 0.4
+*use, end
+
+branch, temp
+
+*use, pipespec, 6
+x = 0.7
+*use, end
+*get,temp1,node,0,num,maxd
+x = 0.7
+*use, end
+*get,temp2,node,0,num,maxd
+x = 0.7
+*use, end
+*get,temp3,node,0,num,maxd
+x = 0.7
+*use, end
+
+branch, temp1
+*use, pipespec, 7
+y = 0.4
+*use, end
+branch, temp2
+y = 0.4
+*use, end
+branch, temp3
+y = 0.4
+*use, end
+
+branch, temp
+*use, pipespec, 6
+
+y = -4.3
+*use, otvod
+z = -1.4
+*use, opora
+z = -0.6
+*use, kran, 6
+z = -2
+*use, otvod
+y = -1.69
+*use, end
+
+/eof
+
+!<

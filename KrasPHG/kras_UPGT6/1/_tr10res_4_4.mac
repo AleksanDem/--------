@@ -1,0 +1,24 @@
+*dim,tr10res,,14, 10, 10
+
+*do,tro10,1,14,1
+*do, t_tro,1,3,1
+tr10res(tro10,t_tro,1) = tro10
+tr10res(tro10,t_tro,2) = t_tro
+tr10res(tro10,t_tro,3) = ux(tr10(tro10,t_tro+1))
+tr10res(tro10,t_tro,4) = uy(tr10(tro10,t_tro+1))
+tr10res(tro10,t_tro,5) = uz(tr10(tro10,t_tro+1))
+tr10res(tro10,t_tro,6) = rotx(tr10(tro10,t_tro+1))
+tr10res(tro10,t_tro,7) = roty(tr10(tro10,t_tro+1))
+tr10res(tro10,t_tro,8) = rotz(tr10(tro10,t_tro+1))
+
+*enddo
+*enddo
+
+
+
+
+
+
+
+
+

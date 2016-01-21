@@ -1,0 +1,138 @@
+finish
+/clear
+
+/prep7  
+*afun,deg
+
+!>	Параметры
+
+!>	Материал
+
+emod1	=	2.05e+11  			!	модуль упругости
+dens1	=	7850				!	плотность
+alpx1	=	13.1e-6				!	коэффициент температурного расширения
+!mu1		=	0.2				!	модуль сдвига
+EX1		=	2.06e11				!	Модуль Юнга
+NUXY	=	0.3					!	Коэффициент Пуассона
+
+!<
+
+!>	 Свойства материала 
+
+	mp,	ex,	1,	emod1
+	mp,	dens,	1,	dens1
+	mp,	alpx,	1,	alpx1
+!	mp,	mu,	1,	mu1
+	mp,	EX,	1,	EX1
+	mp,	NUXY,	1,	0.3
+
+!<
+
+!>	Геометрия
+
+! цбн
+
+Pin = 9800000
+
+a = 0.57
+b = 0.57
+c = 0.57
+
+r_ob = 0.009						! радиус скругления между кубом и обечайкой
+r_pat = 0.005
+
+block, -a/2, a/2, 0, b/2, -c/2, c/2
+
+
+cylind, 0.55/2, , -0.39, 0.39, 0, 180
+cylind, 0.47/2, , -0.39, 0.39, 0, 180
+
+wprota, , , 90
+cylind, 0.325/2, , , 0.405, 0, 180
+cylind, 0.275/2, , , 0.405, 0, 180
+
+vovlap, all
+vdele, 6
+vdele, 19
+vdele, 7
+vdele, 8
+vdele, 9
+vdele, 10
+vdele, 11
+vdele, 14
+
+AFILLT,60,94, r_ob
+
+al, 5, 26, 28
+al, 4, 27, 29
+
+va, 6, 2, 9, 10, 7
+
+vadd, 13, 1, 18, 20
+
+AFILLT,70,93, r_ob
+al, 13, 40, 44
+al, 10, 41, 45
+
+va, 13, 17, 10, 16, 14
+
+vadd, 2, 15, 1, 16, 17
+
+AFILLT,55,92, r_ob
+al, 92, 14, 115
+al, 93, 120, 17
+
+va, 16, 11, 19, 20, 17
+
+vadd, 3, 1, 12
+
+et, 1, solid95
+mshape, 1
+smrtsize, 1
+esize, 0.01
+vmesh, 2
+
+SFA, 34, , pres, Pin
+SFA, 84, , pres, Pin
+SFA, 29, , pres, Pin
+SFA, 66, , pres, Pin
+SFA, 53, , pres, Pin
+SFA, 50, , pres, Pin
+SFA, 44, , pres, Pin
+
+da, 63, symm
+da, 7, symm
+da, 81, symm
+da, 89, symm
+da, 17, symm
+da, 58, symm
+da, 62, symm
+da, 83, symm
+da, 6, symm
+da, 91, symm
+da, 79, symm
+da, 76, symm
+da, 14, symm
+da, 73, symm
+da, 72, symm
+da, 75, symm
+da, 78, symm
+da, 13, symm
+da, 90, symm
+da, 82, symm
+da, 16, symm
+da, 57, symm
+
+da, 59, uz
+da, 59, rotz
+da, 59, roty
+da, 59, rotx
+
+/solu
+ANTYPE,STATIC   
+nlgeom, on
+OUTPR,BASIC,ALL
+
+solve
+
+/eof

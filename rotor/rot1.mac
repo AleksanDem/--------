@@ -1,0 +1,105 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                расчет собственных частот ротора
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+finish
+/clear
+/filnam, bal, 1
+
+*ulib,_mymac1,mlib
+
+/prep7  
+*afun,deg
+/PLOPTS, minm, 0
+/PLOPTS, FRAME, 0
+/PLOPTS, leg1, 0
+/triad,lbot 
+
+  emod1=2.05e+11  			!модуль упругости
+  dens1=7850				!плотность
+  mp,ex,1,emod1
+  mp,dens,1,dens1
+  mp,alpx,1,13.1e-6
+  mp,mu,101,0.2
+  
+  emod2=1e+9  			!модуль упругости
+  dens2=7850				!плотность
+  mp,ex,2,emod2
+  mp,dens,2,dens2
+  
+  emod3=1e+9  			!модуль упругости
+  dens3=7850				!плотность
+  mp,ex,3,emod3
+  mp,dens,3,dens3
+
+
+!> геометрия
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!
+!!!!!							Г Е О М Е Т Р И Я
+!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+lesize = 0.01
+
+POPT, nc
+
+d1 = 0.01
+d2 = 0.01
+
+branch
+
+pspec, 1, , , d1, d1/2
+run, 0.3, 0, 0,3
+*get, b1,node,0,num,maxd
+run, 1, 0, 0,6
+
+pspec, 1, , , d2, d2/2
+run, 0.1, 0, 0,6
+*get, b2 , node, 0, num, maxd
+run, 0.3, , , 3
+
+branch, ,nx(b1), -1
+pspec, 2, , , 0.01, 0.005
+run, , 0.8, , 20
+*get, a1, node, 0, num, maxd
+
+branch, ,nx(b1), ,-1
+pspec, 2, , , 0.01, 0.005
+run, , ,0.8,20
+*get, a2, node, 0, num, maxd
+
+branch, ,nx(b2), -1
+pspec, 3, , , 0.01, 0.005
+run, , 0.8, , 20
+*get, c1, node, 0, num, maxd
+
+branch, ,nx(b2), ,-1
+pspec, 3, , , 0.01, 0.005
+run, , ,0.8,20
+*get, c2, node, 0, num, maxd
+
+cp, 1, uy, b1, a1
+cp, 2, uz, b1, a2
+cp, 3, uy, b2, c1
+cp, 4, uz, b2, c2
+
+nsel, s, loc, y, -1, -1
+nsel, a, loc, z, -1, -1
+
+d, all, all
+nsel, all
+d, b1, ux
+d, b1, rotx
+
+acel, ,9.81
+
+antype, 2
+modopt, lanb, 100
+
+/solu
+solve
+
+/eof

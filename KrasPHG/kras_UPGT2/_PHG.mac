@@ -1,0 +1,246 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                УПХГ"Краснодарская"
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+finish
+/clear
+/filnam, PHG, 1
+
+*ulib,_mymac1,mlib
+
+*use,nachalo
+
+*use, svoistva
+
+_raspar
+
+visota_opori_pod_zemlei=0.50
+
+!> геометрия
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!
+!!!!!							Г Е О М Е Т Р И Я
+!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+POPT, nc
+
+!> рециркуляция
+
+BRANCH, , , 4.453,
+
+x = 0
+y = 0
+z = 0
+
+*use, pipespec, 1
+
+!>	входной коллектор 720
+
+x = -2
+*use, end
+*get,a11,node,0,num,maxd
+
+x = -4.7
+*use, opora
+
+x = -5.3
+*use, end
+*get,a12,node,0,num,maxd
+
+x = -4.7
+*use, opora
+
+x = -5.3
+*use, end
+*get,a13,node,0,num,maxd
+
+x = -4.5
+*use, opora
+
+x = -5.5
+*use, end
+*get,a14,node,0,num,maxd
+
+x = -1.43
+*use, end
+*get,per1,node,0,num,maxd
+
+
+*use, pipespec, 2
+x = -3.37
+*use, opora
+
+x = -5.3
+*use, otvod
+y = -1.66
+*use, end
+y = -1.66
+*use, otvod
+z = 1.35
+*use, opora
+z = 2.48
+*use, end
+*get,a25,node,0,num,maxd
+!<
+
+!> входы в сепараторы 530
+
+!> 14-24
+branch, a14
+*use, pipespec, 2
+y = -3.35
+*use, otvod
+z = 1.35
+*use, opora
+z = 2.48
+*use, end
+*get,a24,node,0,num,maxd
+!<
+
+!> 13-23
+branch, a13
+*use, pipespec, 2
+y = -3.38
+*use, otvod
+z = 1.35
+*use, opora
+z = 2.48
+*use, end
+*get,a23,node,0,num,maxd
+!<
+
+!> 12-22
+branch, a12
+*use, pipespec, 2
+y = -3.41
+*use, otvod
+z = 1.35
+*use, opora
+z = 2.48
+*use, end
+*get,a22,node,0,num,maxd
+!<
+
+!> 11-21
+branch, a11
+*use, pipespec, 2
+y = -3.44
+*use, otvod
+z = 1.35
+*use, opora
+z = 2.48
+*use, end
+*get,a22,node,0,num,maxd
+!<
+
+/eof
+
+
+
+NUMMRG, node, 
+
+!>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!
+!!!!                                      Г Р А Н И Ч Н Ы Е   У С Л О В И Я
+!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*do,k,1,i,1
+d,opora2(k),uy
+*enddo
+
+!<
+!> obrezki kollektorov
+
+d, a1, all
+d, a2, all
+d, b1, all
+d, b2, all
+d, c1, all
+d, c2, all
+
+!<
+
+!> flanci GPA
+
+d, agrvh, all
+d, agrvih, all
+
+
+!<
+!> nagruzki
+
+FLST,5,141,2,ORDE,4 
+FITEM,5,68  
+FITEM,5,-172
+FITEM,5,233 
+FITEM,5,-268
+ESEL,U, , ,P51X 
+
+
+esel, all
+
+FLST,5,215,2,ORDE,2 
+FITEM,5,120 
+FITEM,5,-334
+ESEL,S, , ,P51X 
+
+
+sfe, all, , pres,, 5200000
+
+
+esel, all
+
+FLST,5,119,2,ORDE,2 
+FITEM,5,1   
+FITEM,5,-119
+ESEL,S, , ,P51X 
+
+sfe, all, , pres,, 4480000
+
+esel, all
+
+
+!sfe, all, , pres,, 5500000
+
+
+acel,0,9.81,0
+
+uvh = 0
+uvih = 0
+urec = 0
+
+d, a1, uy, urec
+d, a2, uy, urec
+d, b1, uy, uvh
+d, b2, uy, uvh
+d, c1, uy, uvih
+d, c2, uy, uvih
+
+!> bez davleniya
+
+/solu
+
+solve
+
+/DSCALE, , 1
+
+FLST,5,42,2,ORDE,6  
+FITEM,5,1   
+FITEM,5,-14 
+FITEM,5,219 
+FITEM,5,-232
+FITEM,5,321 
+FITEM,5,-334
+ESEL,U, , ,P51X 
+
+!<
+!<

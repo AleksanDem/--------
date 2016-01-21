@@ -1,0 +1,72 @@
+finish
+/clear
+
+/prep7  
+
+! свойства материала
+
+nl_mat
+
+! Геометрия
+
+h_p = 0.0005
+h = 0.004
+
+k, 1, 
+k, 2, -0.044
+k, 3, -0.044, 0.042
+k, 4, 0.036, 0.042
+k, 5, 0.036, h_p
+k, 6, (h_p), (h_p)
+k, 7, (h_p)
+
+l, 1, 2
+l, 2, 3
+l, 3, 4
+l, 4, 5
+l, 5, 6
+circle, 7, h_p, , 6, 90
+
+NUMMRG, all
+
+al, 1, 2, 3, 4, 5, 6
+
+! сетка
+
+et, 1, plane183, , , 3
+r, 1, h
+
+lesize, 1, , , 200, 1000
+lesize, 2, , , 20
+lesize, 3, , , 40
+lesize, 4, , , 20
+lesize, 5, , , 40, 0.1
+lesize, 6, , , 40, 0.01
+
+type, 1
+real, 1
+
+amesh, all
+
+! нагрузки
+
+dk, 2, all
+dl, 1, 1, symm
+dl, 3, , uy, 0.2e-4
+
+! решение
+
+/solu
+ ANTYPE,STATIC
+ kbc, 0
+ NLGEOM,ON                     ! INCLUDE LARGE DEFORMATION EFFECTS 
+ NSUBST,300                      ! SPECIFY NUMBER OF SUBSTEPS IN LOAD STEP
+ OUTRES,,1                     ! WRITE SOLUTION FOR EVERY SUBSTEP
+ SOLVE
+
+
+
+
+
+
+

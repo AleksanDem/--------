@@ -1,0 +1,219 @@
+
+BRANCH, , nx(g10_25)-43.69, ny(g10_25)+0.16, nz(g10_25)+0.391
+
+*get,g8_1,node,0,num,maxd
+
+x = 0
+y = 0
+z = 0
+
+*use, pipespec, 5
+mater = kol_g8
+
+!>	g8_51 - G8_11
+
+z = -0.35
+*use, end
+*get,c200E_g8_7,node,0,num,maxd
+*use, oporatr
+
+z = -4.13
+*use, opora
+
+z = -1.35
+*use, otvod
+
+y = 3.16
+*use, otvod
+
+x = 7.8
+*use, opora
+
+x = 0.52
+*use, end
+
+*do, step, 1, 100, 1
+pspec, mater, , , 0.53+(0.72-0.53)*step/100, 0.03-(0.03-0.025)*step/100
+run, 0.7/100
+*enddo
+
+*use, pipespec, 1
+
+x = 0.98
+*use, end
+
+*get,g8_41,node,0,num,maxd
+
+x = 8
+*use, opora
+
+x = 2
+*use, end
+
+*get,g8_31,node,0,num,maxd
+
+x = 7.8
+*use, opora
+
+x = 2.2
+*use, end
+
+*get,g8_21,node,0,num,maxd
+
+x = 7.8
+*use, opora
+
+x = 2.2
+*use, end
+
+*get,g8_11,node,0,num,maxd
+!<
+
+!> G8_41 - G8_42
+
+Branch, g8_41
+*use, pipespec, 2
+
+y = -3.16
+*use, otvod
+
+z = 5.48
+*use, end
+*get,c200D_g8_7,node,0,num,maxd
+*use, oporatr
+
+z = 0.35
+*use, end
+
+*get,g8_42,node,0,num,maxd
+!<
+
+!> G8_31 - G8_32
+
+Branch, g8_31
+*use, pipespec, 2
+
+y = -3.16
+*use, otvod
+
+z = 5.48
+*use, end
+*get,c200C_g8_7,node,0,num,maxd
+*use, oporatr
+
+z = 0.35
+*use, end
+
+*get,g8_32,node,0,num,maxd
+!<
+
+!> G8_21 - G8_22
+
+Branch, g8_21
+*use, pipespec, 2
+
+y = -3.16
+*use, otvod
+
+z = 5.48
+*use, end
+*get,c200B_g8_7,node,0,num,maxd
+*use, oporatr
+
+z = 0.35
+*use, end
+
+*get,g8_22,node,0,num,maxd
+!<
+
+!> G8_11 - G8_12
+
+Branch, g8_11
+*use, pipespec, 2
+
+y = -3.16
+*use, otvod
+
+z = 5.48
+*use, end
+*get,c200A_g8_7,node,0,num,maxd
+*use, oporatr
+
+z = 0.35
+*use, end
+
+*get,g8_12,node,0,num,maxd
+!<
+
+!> g8_11 - g8_tr1
+
+branch, g8_11
+
+*use, pipespec, 1
+
+x = 12
+*use, opora
+
+x = 14.5
+*use, opora
+
+x = 1.78
+*use, otvod
+
+y = 2.2
+*use, otvod
+
+z = -8.3
+*use, otvod
+
+x = 2
+*use, opora
+
+x = 10.1
+*use, end
+*get,pod_7_9,node,0,num,maxd
+*use, oporatr
+
+x = 5.2
+*use, otvod
+
+y = -5.5
+*use, otvod
+
+z = 1.4
+*use, end
+*get,pod_7_10,node,0,num,maxd
+*use, oporatr
+
+z = 3.2
+*use, end
+
+*get,g8_tr1,node,0,num,maxd
+
+!<
+
+!> g8_tr1 - g8_k1
+
+x = -3.65
+*use, otvod
+
+z = 3
+*use, end
+
+*get,g8_k1,node,0,num,maxd
+
+!<
+
+!> g8_tr1 - g8_k2
+
+branch, g8_tr1
+
+x = 3.65
+*use, otvod
+
+z = 3
+*use, end
+
+*get,g8_k2,node,0,num,maxd
+
+!<

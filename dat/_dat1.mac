@@ -1,0 +1,179 @@
+!*****************************************************
+!*
+!*				подложка micron optics
+!*
+!*****************************************************
+
+
+
+finish
+/clear
+/prep7  
+*afun,deg
+
+!>	Параметры
+
+!>	Материал
+
+emod1	=	2.05e+11  			!	модуль упругости
+dens1	=	7850				!	плотность
+alpx1	=	13.1e-6				!	коэффициент температурного расширения
+EX1		=	2.06e11				!	Модуль Юнга
+NUXY	=	0.3					!	Коэффициент Пуассона
+
+!>	 Свойства материала 
+
+	mp,	ex,	1,	emod1
+	mp,	dens,	1,	dens1
+	mp,	alpx,	1,	alpx1
+	mp,	EX,	1,	EX1
+	mp,	NUXY,	1,	0.3
+
+!<
+
+
+!	геометрия
+
+a_met = 0.10							! длина куска металла
+b_met = 0.05							! ширина металла
+c_met = 0.004							! толщина металла
+
+!>	геометрия подложки
+
+	
+
+
+!<
+
+Fx = 20000								! сила по х
+Fy = fx/2								! сила по у
+Fz = 20000								! сила по z
+
+x_tpp = 1								! количество точек приварки по х (+2)
+y_tpp = 20								! количество точек приварки по у
+n_tp = y_tpp - 1
+m_tp = x_tpp
+x_priv = 0.002
+y_priv = 0.002
+d_izm = 0.005
+
+! металл
+
+block, b_met/2, -b_met/2, a_met/2, -a_met/2, c_met/2, -c_met/2
+block, b_pod/2, -b_pod/2, a_pod/2, -a_pod/2, c_met/2, c_met/2 + c_pod
+esize, esi
+
+et, 1, solid45
+et, 2, conta173
+et, 3, targe170
+
+type, 1
+lesize, 11, , , 3
+vmesh, 1
+lesize, 22, , , 3
+
+vmesh, 2
+
+
+
+asel, s,,, 2
+
+type, 2
+amesh, all
+
+asel, all
+
+asel, s, , , 7
+type, 3
+amesh, all
+
+asel, all
+
+*do, j, 1, m_tp, 1
+nsel, s, loc, y, -a_pod/2+y_priv, -a_pod/2+y_priv
+nsel, r, loc, x, -b_pod/2 + x_priv+j*(b_pod-2*x_priv)/(m_tp+1)-esi/2, -b_pod/2 + x_priv+j*(b_pod-2*x_priv)/(m_tp+1)+esi/2
+nsel, r, loc, z, c_met/2, c_met/2 + c_pod
+cp, , all, all
+
+nsel, s, loc, y, a_pod/2-y_priv, a_pod/2-y_priv
+nsel, r, loc, x, -b_pod/2 + x_priv+j*(b_pod-2*x_priv)/(*m_tp+1)-esi/2, -b_pod/2 + x_priv+j*(b_pod-2*x_priv)/(m_tp+1)+esi/2
+nsel, r, loc, z, c_met/2, c_met/2 + c_pod
+cp, , all, all
+
+*enddo
+
+*do, i, 0, n_tp, 1
+nsel, s, loc, x, -b_pod/2 + x_priv, -b_pod/2 + x_priv
+nsel, r, loc, y, -a_pod/2+y_priv+i*(a_pod-2*y_priv)/n_tp-0.0005, -a_pod/2+y_priv+i*(a_pod-2*y_priv)/n_tp+0.0005
+nsel, r, loc, z, c_met/2, c_met/2 + c_pod
+cp, , all, all
+
+nsel, s, loc, x, b_pod/2 - x_priv, b_pod/2 - x_priv
+nsel, r, loc, y, -a_pod/2+y_priv+i*(a_pod-2*y_priv)/n_tp - 0.0005, -a_pod/2+y_priv+i*(a_pod-2*y_priv)/n_tp+0.0005
+nsel, r, loc, z, c_met/2, c_met/2 + c_pod
+cp, , all, all
+
+*enddo
+
+allsel
+
+! нагрузки
+
+nsel, s, loc, y, a_met/2-0.0005, a_met/2
+nsel, r, loc, x, -0.0005, 0.0005
+d, all, all
+nsel, all
+da, 4, uy
+
+!nsel, s, loc, y, -a_met/2, -a_met/2
+!*get, FNZ, node, 0, count
+!f, all, FZ, Fz/FNZ 
+
+sfa, 3, , pres, -fy/(b_met*c_met)
+sfa, 5, , pres, -fx/(a_met*c_met)
+sfa, 6, , pres, -fx/(a_met*c_met)
+
+nlgeom, on
+
+
+/solu
+solve
+
+/eof
+/post26
+
+! реальная деформация с датчиком 6
+
+n1 = node(0, a_pod/2-d_izm,c_met/2)
+n2 = node(0, -a_pod/2+d_izm,c_met/2)
+B1 = ny(n1) - ny(n2)
+nsol, 4, n1, u, y, Y_N1
+nsol, 5, n2, u, y, Y_N2
+
+add, 6, 4, 5, , real_def, , , -1/B1, B1
+
+! измеряемая деформация 16
+
+n11 = node(0, a_pod/2-d_izm,c_met/2+c_pod)
+n12 = node(0, -a_pod/2+d_izm,c_met/2+c_pod)
+B11 = ny(n11) - ny(n12)
+nsol, 7, n11, u, y, Y_N11
+nsol, 8, n12, u, y, Y_N12
+
+add, 9, 7, 8, , real_def, , , -1/B11, B11
+
+*dim, T_T, array, 3
+filldata, 7, n_tpp
+vget, T_T(1), 6
+vget, T_T(2), 9
+T_T(3) = k 
+
+*cfopen, disp, dat, ,append
+*vwrite, T_T(1), T_T(2), T_T(3) 
+(3f12.8)
+*cfclose
+
+
+
+
+

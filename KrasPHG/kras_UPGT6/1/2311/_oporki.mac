@@ -1,0 +1,93 @@
+/prep7
+
+
+
+nop = 7315
+
+pspec,mater,,,do,ho
+branch,, nx(nop), ny(nop)-0.213, nz(nop)
+yo1o=ny(nop)-gap+0.213
+run,0,-yo1o,0,1
+*get,zemlya,elem,0,num,maxd
+/color,elem,dgra,zemlya
+
+nop = 7272
+
+pspec,mater,,,do,ho
+branch,, nx(nop), ny(nop)-0.213, nz(nop)
+yo1o=ny(nop)-gap+0.213
+run,0,-yo1o,0,1
+*get,zemlya,elem,0,num,maxd
+/color,elem,dgra,zemlya
+
+nop = 9514
+
+pspec,mater,,,do,ho
+branch,, nx(nop), ny(nop)-0.213, nz(nop)
+yo1o=ny(nop)-gap+0.213
+run,0,-yo1o,0,1
+*get,zemlya,elem,0,num,maxd
+/color,elem,dgra,zemlya
+
+nop = 4310
+
+pspec,mater,,,do,ho
+branch,, nx(nop), ny(nop)-0.213, nz(nop)
+yo1o=ny(nop)-gap+0.213
+run,0,-yo1o,0,1
+*get,zemlya,elem,0,num,maxd
+/color,elem,dgra,zemlya
+
+nop = 3334
+
+pspec,mater,,,do,ho
+branch,, nx(nop), ny(nop)-0.213, nz(nop)
+yo1o=ny(nop)-gap+0.213
+run,0,-yo1o,0,1
+*get,zemlya,elem,0,num,maxd
+/color,elem,dgra,zemlya
+
+nop = 2357
+
+pspec,mater,,,do,ho
+branch,, nx(nop), ny(nop)-0.213, nz(nop)
+yo1o=ny(nop)-gap+0.213
+run,0,-yo1o,0,1
+*get,zemlya,elem,0,num,maxd
+/color,elem,dgra,zemlya
+
+nop = 1380
+
+pspec,mater,,,do,ho
+branch,, nx(nop), ny(nop)-0.213, nz(nop)
+yo1o=ny(nop)-gap+0.213
+run,0,-yo1o,0,1
+*get,zemlya,elem,0,num,maxd
+/color,elem,dgra,zemlya
+
+nop = 5369
+
+pspec,mater,,,do,ho
+branch,nop-0.213
+yo1o=ny(nop)-gap+0.213
+run,0,-yo1o,0,1
+*get,zemlya,elem,0,num,maxd
+/color,elem,dgra,zemlya
+
+nop = 5411
+
+pspec,mater,,,do,ho
+branch,nop
+yo1o=ny(nop)-gap+0.213
+run,0,-yo1o,0,1
+*get,zemlya,elem,0,num,maxd
+/color,elem,dgra,zemlya
+
+nop = 5440
+
+pspec,mater,,,do,ho
+branch,nop
+yo1o=ny(nop)-gap-0.213
+run,0,-yo1o,0,1
+*get,zemlya,elem,0,num,maxd
+/color,elem,dgra,zemlya

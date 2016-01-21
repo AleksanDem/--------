@@ -1,0 +1,97 @@
+
+finish
+/clear
+
+/prep7  
+*afun,deg
+
+!>	Параметры
+
+!>	Материал
+
+emod1	=	2.05e+11  			!	модуль упругости
+dens1	=	7850				!	плотность
+alpx1	=	13.1e-6				!	коэффициент температурного расширения
+!mu1		=	0.2				!	модуль сдвига
+EX1		=	2.06e11				!	Модуль Юнга
+NUXY	=	0.3					!	Коэффициент Пуассона
+
+!<
+
+!>	 Свойства материала 
+
+	mp,	ex,	1,	emod1
+	mp,	dens,	1,	dens1
+	mp,	alpx,	1,	alpx1
+!	mp,	mu,	1,	mu1
+	mp,	EX,	1,	EX1
+	mp,	NUXY,	1,	0.3
+
+!<
+
+!>	Геометрия
+
+! цбн
+
+D = 0.325
+h = 0.02
+Pin = 500000*2
+
+k, 2
+k, 1, , , -1
+
+l, 1, 2
+
+circle, 1, (D-h/2)/2
+
+adrag,2, 3, 4, 5, , , 1 
+
+et, 1, shell143
+r, 1, h, h, h, h
+
+real, 1
+type, 1
+
+mshape, 0
+amesh, all
+
+! GU
+
+Dl, 6, ,symm
+Dl, 9, ,symm
+Dl, 11, ,symm
+Dl, 13, ,symm
+dk, 10, all
+
+SFA, all, , pres, Pin
+
+Fk, 3, Fz, -Pin*3.1415*D*D/16
+Fk, 4, Fz, -Pin*3.1415*D*D/16
+Fk, 5, Fz, -Pin*3.1415*D*D/16
+Fk, 6, Fz, -Pin*3.1415*D*D/16
+
+
+/solu
+ANTYPE,STATIC   
+nlgeom, on
+
+solve
+
+FLST,5,96,2,ORDE,8  
+FITEM,5,67  
+FITEM,5,-90 
+FITEM,5,157 
+FITEM,5,-180
+FITEM,5,247 
+FITEM,5,-270
+FITEM,5,337 
+FITEM,5,-360
+ESEL,S, , ,P51X 
+
+FINISH  
+/POST1  
+!*  
+/EFACET,1   
+PLNSOL, EPTO,Z, 0,1.0   
+
+/eof

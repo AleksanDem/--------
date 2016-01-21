@@ -1,0 +1,314 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                КС "Егорлыкская" АВО
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+finish
+/clear
+/filnam, egor, 1
+
+*ulib,_mymac1,mlib
+
+*use,nachalo
+
+*use, svoistva
+
+_raspar
+
+visota_opori_pod_zemlei=0.50
+
+!> геометрия
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!
+!!!!!							Г Е О М Е Т Р И Я
+!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+POPT, nc
+
+!> вход
+
+BRANCH, , , -2,
+
+*get,bb1,node,0,num,maxd
+
+x = 0
+y = 0
+z = 0
+
+*use, pipespec, 6
+
+x = -3
+*use, end
+*get,bb11,node,0,num,maxd
+branch, bb1
+x = 3
+*use, end
+*get,bb12,node,0,num,maxd
+branch, bb1
+
+*use, pipespec, 4
+
+y = 3
+*use, otvod
+z = -1.575
+*use, kran, 3
+z = -0.875
+*use, end
+*get,opa1,node,0,num,maxd
+z = -0.9
+*use, otvod
+y = 2.65
+*use, end
+*get,tr1,node,0,num,maxd
+x = 0.6
+*use, end
+*get,tr11,node,0,num,maxd
+x = 0.8
+*use, end
+*get,tr21,node,0,num,maxd
+x = 0.4
+*use, end
+konn = 100
+
+*do, i, 1, konn, 1
+pspec, 1, , , 0.426 - i*(0.426-0.219)/konn, 0.012
+xkon = 0.5/konn
+run, xkon
+*enddo
+
+*use, pipespec, 5
+x = 0.4
+*use, otvod
+z = -0.7
+*use, end
+
+!> levii
+*get,tr32,node,0,num,maxd
+z = -0.42
+*use, end
+pspec, 1, , , 0.3, 0.045
+run, , ,  -0.02
+*get,fl11,node,0,num,maxd
+
+branch, tr32
+y = 0.55
+x = -0.3
+*use, otvod
+z = -0.42
+*use, end
+pspec, 1, , , 0.3, 0.045
+run, , ,  -0.02
+*get,fl12,node,0,num,maxd
+
+!<
+
+branch, tr1
+*use, pipespec, 4
+
+x = -0.6
+*use, end
+*get,tr41,node,0,num,maxd
+x = -0.8
+*use, end
+*get,tr51,node,0,num,maxd
+x = -0.4
+*use, end
+konn = 100
+
+*do, i, 1, konn, 1
+pspec, 1, , , 0.426 - i*(0.426-0.219)/konn, 0.012
+xkon = -0.5/konn
+run, xkon
+*enddo
+
+*use, pipespec, 5
+x = -0.4
+*use, otvod
+z = -0.7
+*use, end
+
+!> pravii
+*get,tr62,node,0,num,maxd
+z = -0.42
+*use, end
+pspec, 1, , , 0.3, 0.045
+run, , ,  -0.02
+*get,fl61,node,0,num,maxd
+
+branch, tr62
+y = 0.55
+x = 0.3
+*use, otvod
+z = -0.42
+*use, end
+pspec, 1, , , 0.3, 0.045
+run, , ,  -0.02
+*get,fl62,node,0,num,maxd
+
+!<
+!>
+branch, tr21
+z = -0.7
+*use, end
+*get,tr22,node,0,num,maxd
+z = -0.42
+*use, end
+pspec, 1, , , 0.3, 0.045
+run, , ,  -0.02
+*get,fl21,node,0,num,maxd
+
+branch, tr22
+y = 0.55
+x = 0.3
+*use, otvod
+z = -0.42
+*use, end
+pspec, 1, , , 0.3, 0.045
+run, , ,  -0.02
+*get,fl22,node,0,num,maxd
+
+!<
+
+!>
+!>
+branch, tr11
+z = -0.7
+*use, end
+*get,tr12,node,0,num,maxd
+z = -0.42
+*use, end
+pspec, 1, , , 0.3, 0.045
+run, , ,  -0.02
+*get,fl31,node,0,num,maxd
+
+branch, tr12
+y = 0.55
+x = -0.3
+*use, otvod
+z = -0.42
+*use, end
+pspec, 1, , , 0.3, 0.045
+run, , ,  -0.02
+*get,fl32,node,0,num,maxd
+
+!<
+!>
+branch, tr41
+z = -0.7
+*use, end
+*get,tr42,node,0,num,maxd
+z = -0.42
+*use, end
+pspec, 1, , , 0.3, 0.045
+run, , ,  -0.02
+*get,fl41,node,0,num,maxd
+
+branch, tr42
+y = 0.55
+x = 0.3
+*use, otvod
+z = -0.42
+*use, end
+pspec, 1, , , 0.3, 0.045
+run, , ,  -0.02
+*get,fl42,node,0,num,maxd
+
+!<
+
+!>
+branch, tr51
+z = -0.7
+*use, end
+*get,tr52,node,0,num,maxd
+z = -0.42
+*use, end
+pspec, 1, , , 0.3, 0.045
+run, , ,  -0.02
+*get,fl51,node,0,num,maxd
+
+branch, tr52
+y = 0.55
+x = -0.3
+*use, otvod
+z = -0.42
+*use, end
+pspec, 1, , , 0.3, 0.045
+run, , ,  -0.02
+*get,fl52,node,0,num,maxd
+
+!<
+
+
+!<
+
+
+
+
+NUMMRG, node, 
+
+!>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!
+!!!!                                      Г Р А Н И Ч Н Ы Е   У С Л О В И Я
+!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!d,opa1,uy
+
+!<
+!> obrezki kollektorov
+
+!d, bb11, all
+!d, bb12, all
+
+d, fl11, all
+d, fl12, all
+d, fl21, all
+d, fl22, all
+d, fl31, all
+d, fl32, all
+d, fl41, all
+d, fl42, all
+d, fl51, all
+d, fl52, all
+d, fl61, all
+d, fl62, all
+
+
+
+!<
+
+!> nagruzki
+
+
+sfe, all, , pres,, 3800000
+
+acel,0,9.81,0
+
+uvh = !-0.1
+uvih = !-0.11!
+urec = !-0.03!
+
+!> подвижки коллекторов
+
+!d, bb11, uy, uvh
+!d, bb12, uy, uvh
+
+!<
+
+
+/solu
+
+solve
+
+/DSCALE, , 1
+
+
+!<
+!<

@@ -1,0 +1,720 @@
+!> g10_1 (от печки до тройника коллектора)
+
+FLST,5,363,2,ORDE,20
+FITEM,5,5151
+FITEM,5,-5249   
+FITEM,5,5251
+FITEM,5,-5289   
+FITEM,5,5291
+FITEM,5,-5346   
+FITEM,5,5348
+FITEM,5,-5353   
+FITEM,5,5355
+FITEM,5,-5360   
+FITEM,5,5362
+FITEM,5,-5372   
+FITEM,5,5374
+FITEM,5,-5384   
+FITEM,5,5386
+FITEM,5,-5393   
+FITEM,5,5395
+FITEM,5,-5516   
+FITEM,5,9234
+FITEM,5,-9238   
+ESEL,R, , ,P51X 
+CM,g10_1,ELEM   
+
+esel, all
+!<
+
+!> g10_2 верхний коллектор g_10
+
+FLST,5,208,2,ORDE,3 
+FITEM,5,167 
+FITEM,5,-373
+FITEM,5,5150
+ESEL,R, , ,P51X 
+CM,g10_2,ELEM 
+
+esel, all
+!<
+
+!> g10_3 тройник - технология
+
+FLST,5,156,2,ORDE,22
+FITEM,5,1   
+FITEM,5,-5  
+FITEM,5,7   
+FITEM,5,-14 
+FITEM,5,16  
+FITEM,5,-20 
+FITEM,5,22  
+FITEM,5,-39 
+FITEM,5,41  
+FITEM,5,-46 
+FITEM,5,48  
+FITEM,5,-69 
+FITEM,5,71  
+FITEM,5,-108
+FITEM,5,110 
+FITEM,5,-114
+FITEM,5,116 
+FITEM,5,-123
+FITEM,5,125 
+FITEM,5,-145
+FITEM,5,147 
+FITEM,5,-166
+ESEL,R, , ,P51X 
+CM,g10_3,ELEM   
+
+esel, all
+!<
+
+!> g10_a 10-ая линия адсорбера а от коллектора до тройника
+FLST,5,172,2,ORDE,12
+FITEM,5,364 
+FITEM,5,-388
+FITEM,5,391 
+FITEM,5,-409
+FITEM,5,412 
+FITEM,5,-513
+FITEM,5,516 
+FITEM,5,-521
+FITEM,5,524 
+FITEM,5,-531
+FITEM,5,534 
+FITEM,5,-545
+ESEL,R, , ,P51X 
+CM,g10_a,ELEM   
+
+esel, all  
+!<
+
+!> g10_b 10-ая линия адсорбера b от коллектора до тройника
+FLST,5,166,2,ORDE,12
+FITEM,5,4194
+FITEM,5,-4212   
+FITEM,5,4215
+FITEM,5,-4233   
+FITEM,5,4236
+FITEM,5,-4337   
+FITEM,5,4340
+FITEM,5,-4345   
+FITEM,5,4348
+FITEM,5,-4355   
+FITEM,5,4358
+FITEM,5,-4369   
+ESEL,R, , ,P51X 
+CM,g10_b,ELEM   
+
+esel, all   
+!<
+
+!> g10_c 10-ая линия адсорбера c от коллектора до тройника
+FLST,5,166,2,ORDE,12
+FITEM,5,3238
+FITEM,5,-3256   
+FITEM,5,3259
+FITEM,5,-3277   
+FITEM,5,3280
+FITEM,5,-3381   
+FITEM,5,3384
+FITEM,5,-3389   
+FITEM,5,3392
+FITEM,5,-3399   
+FITEM,5,3402
+FITEM,5,-3413   
+ESEL,R, , ,P51X 
+CM,g10_c,ELEM   
+
+esel, all   
+!<
+
+!> g10_D 10-ая линия адсорбера D от коллектора до тройника
+FLST,5,166,2,ORDE,12
+FITEM,5,2282
+FITEM,5,-2300   
+FITEM,5,2303
+FITEM,5,-2321   
+FITEM,5,2324
+FITEM,5,-2425   
+FITEM,5,2428
+FITEM,5,-2433   
+FITEM,5,2436
+FITEM,5,-2443   
+FITEM,5,2446
+FITEM,5,-2457   
+ESEL,R, , ,P51X 
+CM,g10_d,ELEM   
+
+esel, all   
+!<
+
+!> g10_E 10-ая линия адсорбера E от коллектора до тройника
+FLST,5,166,2,ORDE,12
+FITEM,5,1326
+FITEM,5,-1344   
+FITEM,5,1347
+FITEM,5,-1365   
+FITEM,5,1368
+FITEM,5,-1469   
+FITEM,5,1472
+FITEM,5,-1477   
+FITEM,5,1480
+FITEM,5,-1487   
+FITEM,5,1490
+FITEM,5,-1501   
+ESEL,R, , ,P51X 
+CM,g10_E,ELEM   
+
+esel, all 
+!<
+
+!> G11_1 коллектор линии G11
+FLST,5,197,2,ORDE,4 
+FITEM,5,6646
+FITEM,5,-6767   
+FITEM,5,6942
+FITEM,5,-7016   
+ESEL,R, , ,P51X 
+CM,G11_1,ELEM   
+
+esel, all 
+!<
+
+!> G11_AVO линия G11 от коллектора до АВО
+FLST,5,2194,2,ORDE,26   
+FITEM,5,7010
+FITEM,5,-7038   
+FITEM,5,7041
+FITEM,5,-7062   
+FITEM,5,7065
+FITEM,5,-7126   
+FITEM,5,7129
+FITEM,5,-7158   
+FITEM,5,7161
+FITEM,5,-7290   
+FITEM,5,7293
+FITEM,5,-7311   
+FITEM,5,7314
+FITEM,5,-7323   
+FITEM,5,7326
+FITEM,5,-7911   
+FITEM,5,7914
+FITEM,5,-7921   
+FITEM,5,7924
+FITEM,5,-8613   
+FITEM,5,8616
+FITEM,5,-8634   
+FITEM,5,8637
+FITEM,5,-8644   
+FITEM,5,8647
+FITEM,5,-9227   
+ESEL,R, , ,P51X 
+CM,G11_AVO,ELEM 
+
+esel, all 
+!<
+
+!> G11_a 11-ая линия адсорбера A от коллектора до тройника
+
+FLST,5,169,2,ORDE,12
+FITEM,5,1178
+FITEM,5,-1191   
+FITEM,5,1194
+FITEM,5,-1201   
+FITEM,5,1204
+FITEM,5,-1211   
+FITEM,5,1214
+FITEM,5,-1316   
+FITEM,5,1319
+FITEM,5,-1325   
+FITEM,5,6626
+FITEM,5,-6654   
+ESEL,R, , ,P51X 
+CM,G11_a,ELEM   
+
+esel, all   
+!<
+
+!> G11_b 11-ая линия адсорбера B от коллектора до тройника
+FLST,5,187,2,ORDE,12
+FITEM,5,5002
+FITEM,5,-5015   
+FITEM,5,5018
+FITEM,5,-5025   
+FITEM,5,5028
+FITEM,5,-5035   
+FITEM,5,5038
+FITEM,5,-5140   
+FITEM,5,5143
+FITEM,5,-5149   
+FITEM,5,6768
+FITEM,5,-6814   
+ESEL,R, , ,P51X 
+CM,G11_B,ELEM   
+
+esel, all    
+
+!<
+
+!> G11_c 11-ая линия адсорбера C от коллектора до тройника
+FLST,5,180,2,ORDE,12
+FITEM,5,4046
+FITEM,5,-4059   
+FITEM,5,4062
+FITEM,5,-4069   
+FITEM,5,4072
+FITEM,5,-4079   
+FITEM,5,4082
+FITEM,5,-4184   
+FITEM,5,4187
+FITEM,5,-4193   
+FITEM,5,6815
+FITEM,5,-6854   
+ESEL,R, , ,P51X 
+CM,G11_C,ELEM   
+
+esel, all     
+!<
+
+!> G11_D 11-ая линия адсорбера D от коллектора до тройника
+FLST,5,180,2,ORDE,12
+FITEM,5,3090
+FITEM,5,-3103   
+FITEM,5,3106
+FITEM,5,-3113   
+FITEM,5,3116
+FITEM,5,-3123   
+FITEM,5,3126
+FITEM,5,-3228   
+FITEM,5,3231
+FITEM,5,-3237   
+FITEM,5,6855
+FITEM,5,-6894   
+ESEL,R, , ,P51X 
+CM,G11_D,ELEM   
+
+esel, all     
+!<
+
+!>G11_E 11-ая линия адсорбера E от коллектора до тройника
+FLST,5,186,2,ORDE,12
+FITEM,5,2135
+FITEM,5,-2147   
+FITEM,5,2150
+FITEM,5,-2157   
+FITEM,5,2160
+FITEM,5,-2167   
+FITEM,5,2170
+FITEM,5,-2272   
+FITEM,5,2275
+FITEM,5,-2281   
+FITEM,5,6895
+FITEM,5,-6941   
+ESEL,R, , ,P51X 
+CM,G11_E,ELEM   
+
+esel, all     
+!<
+
+!> G7_kol коллектор Г7
+FLST,5,318,2,ORDE,12
+FITEM,5,5518
+FITEM,5,-5573   
+FITEM,5,5576
+FITEM,5,-5739   
+FITEM,5,5742
+FITEM,5,-5764   
+FITEM,5,5848
+FITEM,5,-5878   
+FITEM,5,5881
+FITEM,5,-5918   
+FITEM,5,5921
+FITEM,5,-5926   
+ESEL,R, , ,P51X 
+CM,G7_kol,ELEM  
+
+esel, all   
+!<
+
+!> G7_A 7-ая линия адсорбера от коллектора до тройника
+FLST,5,245,2,ORDE,12
+FITEM,5,638 
+FITEM,5,-739
+FITEM,5,742 
+FITEM,5,-747
+FITEM,5,750 
+FITEM,5,-755
+FITEM,5,758 
+FITEM,5,-861
+FITEM,5,864 
+FITEM,5,-873
+FITEM,5,5831
+FITEM,5,-5847   
+ESEL,R, , ,P51X 
+CM,G7_A,ELEM
+
+esel, all 
+!<
+
+!> G7_B 7-ая линия адсорбера от коллектора до тройника
+FLST,5,245,2,ORDE,12
+FITEM,5,4462
+FITEM,5,-4563   
+FITEM,5,4566
+FITEM,5,-4571   
+FITEM,5,4574
+FITEM,5,-4579   
+FITEM,5,4582
+FITEM,5,-4685   
+FITEM,5,4688
+FITEM,5,-4697   
+FITEM,5,5814
+FITEM,5,-5830   
+ESEL,R, , ,P51X 
+CM,G7_B,ELEM
+
+esel, all 
+!<
+
+!> G7_C 7-ая линия адсорбера от коллектора до тройника
+FLST,5,245,2,ORDE,12
+FITEM,5,3506
+FITEM,5,-3607   
+FITEM,5,3610
+FITEM,5,-3615   
+FITEM,5,3618
+FITEM,5,-3623   
+FITEM,5,3626
+FITEM,5,-3729   
+FITEM,5,3732
+FITEM,5,-3741   
+FITEM,5,5797
+FITEM,5,-5813   
+ESEL,R, , ,P51X 
+CM,G7_C,ELEM
+
+esel, all 
+!<
+
+!> G7_D 7-ая линия адсорбера от коллектора до тройника
+FLST,5,245,2,ORDE,12
+FITEM,5,2550
+FITEM,5,-2651   
+FITEM,5,2654
+FITEM,5,-2659   
+FITEM,5,2662
+FITEM,5,-2667   
+FITEM,5,2670
+FITEM,5,-2773   
+FITEM,5,2776
+FITEM,5,-2785   
+FITEM,5,5780
+FITEM,5,-5796   
+ESEL,R, , ,P51X 
+CM,G7_D,ELEM
+
+esel, all 
+!<
+
+!> G7_E 7-ая линия адсорбера от коллектора до тройника
+FLST,5,250,2,ORDE,12
+FITEM,5,1594
+FITEM,5,-1695   
+FITEM,5,1698
+FITEM,5,-1703   
+FITEM,5,1706
+FITEM,5,-1711   
+FITEM,5,1714
+FITEM,5,-1817   
+FITEM,5,1820
+FITEM,5,-1829   
+FITEM,5,5758
+FITEM,5,-5779   
+ESEL,R, , ,P51X 
+CM,G7_E,ELEM
+
+esel, all 
+!<
+
+!> G8_kol коллектор Г8
+FLST,5,508,2,ORDE,22
+FITEM,5,5960
+FITEM,5,-5991   
+FITEM,5,5994
+FITEM,5,-6125   
+FITEM,5,6128
+FITEM,5,-6160   
+FITEM,5,6163
+FITEM,5,-6195   
+FITEM,5,6198
+FITEM,5,-6204   
+FITEM,5,6345
+FITEM,5,-6384   
+FITEM,5,6387
+FITEM,5,-6434   
+FITEM,5,6437
+FITEM,5,-6486   
+FITEM,5,6489
+FITEM,5,-6522   
+FITEM,5,6525
+FITEM,5,-6566   
+FITEM,5,6569
+FITEM,5,-6625   
+ESEL,R, , ,P51X 
+CM,G8_kol,ELEM  
+
+esel, all 
+!<
+
+!> 8_A 8-ая линия адсорбера от коллектора до тройника
+FLST,5,252,2,ORDE,11
+FITEM,5,953 
+FITEM,5,-1057   
+FITEM,5,1060
+FITEM,5,-1066   
+FITEM,5,1069
+FITEM,5,-1074   
+FITEM,5,1077
+FITEM,5,-1177   
+FITEM,5,6310
+FITEM,5,-6341   
+FITEM,5,6344
+ESEL,R, , ,P51X 
+CM,g8_A,ELEM
+
+esel, all 
+!<
+
+!> 8_B 8-ая линия адсорбера от коллектора до тройника
+FLST,5,252,2,ORDE,11
+FITEM,5,4777
+FITEM,5,-4881   
+FITEM,5,4884
+FITEM,5,-4890   
+FITEM,5,4893
+FITEM,5,-4898   
+FITEM,5,4901
+FITEM,5,-5001   
+FITEM,5,6275
+FITEM,5,-6306   
+FITEM,5,6309
+ESEL,R, , ,P51X 
+CM,G8_B,ELEM
+
+esel, all 
+!<
+
+!> 8_C 8-ая линия адсорбера от коллектора до тройника
+FLST,5,252,2,ORDE,11
+FITEM,5,3821
+FITEM,5,-3925   
+FITEM,5,3928
+FITEM,5,-3934   
+FITEM,5,3937
+FITEM,5,-3942   
+FITEM,5,3945
+FITEM,5,-4045   
+FITEM,5,6240
+FITEM,5,-6271   
+FITEM,5,6274
+ESEL,R, , ,P51X 
+CM,G8_C,ELEM
+
+esel, all 
+!<
+
+!> 8_D 8-ая линия адсорбера от коллектора до тройника
+FLST,5,252,2,ORDE,11
+FITEM,5,2865
+FITEM,5,-2969   
+FITEM,5,2972
+FITEM,5,-2978   
+FITEM,5,2981
+FITEM,5,-2986   
+FITEM,5,2989
+FITEM,5,-3089   
+FITEM,5,6205
+FITEM,5,-6236   
+FITEM,5,6239
+ESEL,R, , ,P51X 
+CM,G8_D,ELEM
+
+esel, all 
+!<
+
+!> 8_E 8-ая линия адсорбера от коллектора до тройника
+FLST,5,257,2,ORDE,13
+FITEM,5,1909
+FITEM,5,-2013   
+FITEM,5,2016
+FITEM,5,-2022   
+FITEM,5,2025
+FITEM,5,-2030   
+FITEM,5,2033
+FITEM,5,-2133   
+FITEM,5,5927
+FITEM,5,5930
+FITEM,5,-5943   
+FITEM,5,5946
+FITEM,5,-5968   
+ESEL,R, , ,P51X 
+CM,G8_E,ELEM
+
+esel, all 
+!<
+
+!> вход в адсоребер А от тройника до фланца
+FLST,5,89,2,ORDE,4  
+FITEM,5,546 
+FITEM,5,-551
+FITEM,5,554 
+FITEM,5,-636
+ESEL,R, , ,P51X 
+CM,A_in,ELEM
+
+esel, all 
+!<
+
+!> вход в адсоребер B от тройника до фланца
+FLST,5,90,2,ORDE,5  
+FITEM,5,4370
+FITEM,5,-4375   
+FITEM,5,4378
+FITEM,5,-4460   
+FITEM,5,9240
+ESEL,R, , ,P51X 
+CM,B_in,ELEM
+
+esel, all 
+!<
+
+!> вход в адсоребер C от тройника до фланца
+FLST,5,90,2,ORDE,5  
+FITEM,5,3414
+FITEM,5,-3419   
+FITEM,5,3422
+FITEM,5,-3504   
+FITEM,5,9241
+ESEL,R, , ,P51X 
+CM,C_in,ELEM
+
+esel, all 
+!<
+
+!> вход в адсоребер D от тройника до фланца
+FLST,5,90,2,ORDE,5  
+FITEM,5,2458
+FITEM,5,-2463   
+FITEM,5,2466
+FITEM,5,-2548   
+FITEM,5,9242
+ESEL,R, , ,P51X 
+CM,D_in,ELEM
+
+esel, all 
+!<
+
+!>  вход в адсоребер E от тройника до фланца
+FLST,5,90,2,ORDE,5  
+FITEM,5,1502
+FITEM,5,-1507   
+FITEM,5,1510
+FITEM,5,-1592   
+FITEM,5,9243
+ESEL,R, , ,P51X 
+CM,E_in,ELEM
+
+esel, all 
+!<
+
+!> выход адсоребера A от фланца до тройника
+FLST,5,69,2,ORDE,10 
+FITEM,5,876 
+FITEM,5,-886
+FITEM,5,889 
+FITEM,5,-905
+FITEM,5,908 
+FITEM,5,-929
+FITEM,5,932 
+FITEM,5,-946
+FITEM,5,949 
+FITEM,5,-952
+ESEL,R, , ,P51X 
+CM,A_out,ELEM   
+
+esel, all 
+!<
+
+!> выход адсоребера B от фланца до тройника
+FLST,5,71,2,ORDE,10 
+FITEM,5,4698
+FITEM,5,-4710   
+FITEM,5,4713
+FITEM,5,-4729   
+FITEM,5,4732
+FITEM,5,-4753   
+FITEM,5,4756
+FITEM,5,-4770   
+FITEM,5,4773
+FITEM,5,-4776   
+ESEL,R, , ,P51X 
+CM,B_out,ELEM   
+
+esel, all 
+!<
+
+!> выход адсоребера C от фланца до тройника
+FLST,5,71,2,ORDE,10 
+FITEM,5,3742
+FITEM,5,-3754   
+FITEM,5,3757
+FITEM,5,-3773   
+FITEM,5,3776
+FITEM,5,-3797   
+FITEM,5,3800
+FITEM,5,-3814   
+FITEM,5,3817
+FITEM,5,-3820   
+ESEL,R, , ,P51X 
+CM,C_out,ELEM   
+
+esel, all   
+!<
+
+!> выход адсоребера D от фланца до тройника
+FLST,5,71,2,ORDE,10 
+FITEM,5,2786
+FITEM,5,-2798   
+FITEM,5,2801
+FITEM,5,-2817   
+FITEM,5,2820
+FITEM,5,-2841   
+FITEM,5,2844
+FITEM,5,-2858   
+FITEM,5,2861
+FITEM,5,-2864   
+ESEL,R, , ,P51X 
+CM,D_out,ELEM   
+
+esel, all 
+!<
+
+!> выход адсоребера E от фланца до тройника
+FLST,5,71,2,ORDE,10 
+FITEM,5,1830
+FITEM,5,-1842   
+FITEM,5,1845
+FITEM,5,-1861   
+FITEM,5,1864
+FITEM,5,-1885   
+FITEM,5,1888
+FITEM,5,-1902   
+FITEM,5,1905
+FITEM,5,-1908   
+ESEL,R, , ,P51X 
+CM,E_out,ELEM   
+
+esel, all  
+!<

@@ -1,0 +1,1266 @@
+!> перечень "узлов"
+
+!> Г10
+
+!> ноды
+!> от печки до адсорбера А
+n10_1 = g10_6
+n10_2 = node(nx(n10_1)-4.961 ,ny(n10_1),nz(n10_1))
+n10_3 = node(nx(n10_2)-0.639,ny(n10_2)-0.639,nz(n10_2))
+n10_4 = node(nx(n10_3),ny(n10_3)-5.102,nz(n10_3))
+n10_5 = node(nx(n10_4),ny(n10_4)-0.639,nz(n10_4)-0.639)
+n10_6 = node(nx(n10_5),ny(n10_5),nz(n10_5)-3.372)
+n10_7 = node(nx(n10_6),ny(n10_6)-0.639,nz(n10_6)-0.639)
+n10_8 = node(nx(n10_7),ny(n10_7)-5.497,nz(n10_7))
+n10_9 = node(nx(n10_8),ny(n10_8)-0.639,nz(n10_8)-0.639)
+n10_10 = node(nx(n10_9),ny(n10_9),nz(n10_9)-1.372)
+n10_11 = node(nx(n10_10)+0.639,ny(n10_10),nz(n10_10)-0.639)
+n10_12 = node(nx(n10_11)+18.592,ny(n10_11),nz(n10_11))
+n10_13 = node(nx(n10_12)+0.639,ny(n10_12),nz(n10_12)-0.639)
+n10_14 = node(nx(n10_13),ny(n10_13),nz(n10_13)-12.082)
+n10_15 = node(nx(n10_14)+0.639,ny(n10_14),nz(n10_14)-0.639)
+n10_16 = node(nx(n10_15)+14.052,ny(n10_15),nz(n10_15))
+n10_17 = node(nx(n10_16)+0.639,ny(n10_16)+0.60922,nz(n10_16)-0.19277)
+n10_18 = node(nx(n10_17),ny(n10_17)+2.131541,nz(n10_17)-0.674457)
+n10_19 = node(nx(n10_18)+0.63899,ny(n10_18)+0.609229,nz(n10_18)-0.192771)
+n10_20 = node(nx(n10_19)+76.012,ny(n10_19),nz(n10_19))
+n10_21 = node(nx(n10_20)+0.639,ny(n10_20)-0.639,nz(n10_20))
+!<
+
+!> адсорберы
+!> адсорбер А
+nA_2 = node(nx(n10_21),ny(n10_21)-1.922,nz(n10_21))
+nA_3 = node(nx(nA_2),ny(nA_2)-0.639,nz(nA_2)+0.639)
+nA_4 = node(nx(nA_3),ny(nA_3),nz(nA_3)+11.9735)
+nA_5 = node(nx(nA_4)-0.4875,ny(nA_4),nz(nA_4)+0.4875)
+nA_6 = node(nx(nA_5)-0.7025,ny(nA_5),nz(nA_5))
+nA_7 = node(nx(nA_6),ny(nA_6),nz(nA_6)+3.101)
+nA_8 = node(nx(nA_7),ny(nA_7)+0.795,nz(nA_7)+0.795)
+nA_9 = node(nx(nA_8),ny(nA_8)+14.26,nz(nA_8))
+nA_10 = node(nx(nA_9),ny(nA_9)+0.795,nz(nA_9)+0.795)
+nA_11 = node(nx(nA_10),ny(nA_10),nz(nA_10)+1.075)
+nA_12 = node(nx(nA_11),ny(nA_11)-0.795,nz(nA_11)+0.795)
+nA_13 = node(nx(nA_12),ny(nA_12)-0.565,nz(nA_12))
+nA_14 = node(nx(nA_6),ny(nA_6),nz(nA_6)-10.095)
+nA_15 = node(nx(nA_14),ny(nA_14)+0.795,nz(nA_14)-0.795)
+nA_16 = node(nx(nA_15),ny(nA_15)+2.525,nz(nA_15))
+!<
+!> адсорбер B
+nB_1 = node(nx(n10_21)-10,ny(n10_20),nz(n10_20))
+nB_2 = node(nx(nB_1),ny(nB_1)-2.561,nz(nB_1))
+nB_3 = node(nx(nB_2),ny(nB_2)-0.639,nz(nB_2)+0.639)
+nB_4 = node(nx(nB_3),ny(nB_3),nz(nB_3)+11.9735)
+nB_5 = node(nx(nB_4)-0.4875,ny(nB_4),nz(nB_4)+0.4875)
+nB_6 = node(nx(nB_5)-0.7025,ny(nB_5),nz(nB_5))
+nB_7 = node(nx(nB_6),ny(nB_6),nz(nB_6)+3.101)
+nB_8 = node(nx(nB_7),ny(nB_7)+0.795,nz(nB_7)+0.795)
+nB_9 = node(nx(nB_8),ny(nB_8)+14.26,nz(nB_8))
+nB_10 = node(nx(nB_9),ny(nB_9)+0.795,nz(nB_9)+0.795)
+nB_11 = node(nx(nB_10),ny(nB_10),nz(nB_10)+1.075)
+nB_12 = node(nx(nB_11),ny(nB_11)-0.795,nz(nB_11)+0.795)
+nB_13 = node(nx(nB_12),ny(nB_12)-0.565,nz(nB_12))
+nB_14 = node(nx(nB_6),ny(nB_6),nz(nB_6)-10.095)
+nB_15 = node(nx(nB_14),ny(nB_14)+0.795,nz(nB_14)-0.795)
+nB_16 = node(nx(nB_15),ny(nB_15)+2.525,nz(nB_15))
+!<
+!> адсорбер C
+nC_1 = node(nx(n10_21)-20,ny(n10_20),nz(n10_20))
+nC_2 = node(nx(nC_1),ny(nC_1)-2.561,nz(nC_1))
+nC_3 = node(nx(nC_2),ny(nC_2)-0.639,nz(nC_2)+0.639)
+nC_4 = node(nx(nC_3),ny(nC_3),nz(nC_3)+11.9735)
+nC_5 = node(nx(nC_4)-0.4875,ny(nC_4),nz(nC_4)+0.4875)
+nC_6 = node(nx(nC_5)-0.7025,ny(nC_5),nz(nC_5))
+nC_7 = node(nx(nC_6),ny(nC_6),nz(nC_6)+3.101)
+nC_8 = node(nx(nC_7),ny(nC_7)+0.795,nz(nC_7)+0.795)
+nC_9 = node(nx(nC_8),ny(nC_8)+14.26,nz(nC_8))
+nC_10 = node(nx(nC_9),ny(nC_9)+0.795,nz(nC_9)+0.795)
+nC_11 = node(nx(nC_10),ny(nC_10),nz(nC_10)+1.075)
+nC_12 = node(nx(nC_11),ny(nC_11)-0.795,nz(nC_11)+0.795)
+nC_13 = node(nx(nC_12),ny(nC_12)-0.565,nz(nC_12))
+nC_14 = node(nx(nC_6),ny(nC_6),nz(nC_6)-10.095)
+nC_15 = node(nx(nC_14),ny(nC_14)+0.795,nz(nC_14)-0.795)
+nC_16 = node(nx(nC_15),ny(nC_15)+2.525,nz(nC_15))
+!<
+!> адсорбер D
+nD_1 = node(nx(n10_21)-30,ny(n10_20),nz(n10_20))
+nD_2 = node(nx(nD_1),ny(nD_1)-2.561,nz(nD_1))
+nD_3 = node(nx(nD_2),ny(nD_2)-0.639,nz(nD_2)+0.639)
+nD_4 = node(nx(nD_3),ny(nD_3),nz(nD_3)+11.9735)
+nD_5 = node(nx(nD_4)-0.4875,ny(nD_4),nz(nD_4)+0.4875)
+nD_6 = node(nx(nD_5)-0.7025,ny(nD_5),nz(nD_5))
+nD_7 = node(nx(nD_6),ny(nD_6),nz(nD_6)+3.101)
+nD_8 = node(nx(nD_7),ny(nD_7)+0.795,nz(nD_7)+0.795)
+nD_9 = node(nx(nD_8),ny(nD_8)+14.26,nz(nD_8))
+nD_10 = node(nx(nD_9),ny(nD_9)+0.795,nz(nD_9)+0.795)
+nD_11 = node(nx(nD_10),ny(nD_10),nz(nD_10)+1.075)
+nD_12 = node(nx(nD_11),ny(nD_11)-0.795,nz(nD_11)+0.795)
+nD_13 = node(nx(nD_12),ny(nD_12)-0.565,nz(nD_12))
+nD_14 = node(nx(nD_6),ny(nD_6),nz(nD_6)-10.095)
+nD_15 = node(nx(nD_14),ny(nD_14)+0.795,nz(nD_14)-0.795)
+nD_16 = node(nx(nD_15),ny(nD_15)+2.525,nz(nD_15))
+!<
+!> адсорбер E
+nE_1 = node(nx(n10_21)-40,ny(n10_20),nz(n10_20))
+nE_2 = node(nx(nE_1),ny(nE_1)-2.561,nz(nE_1))
+nE_3 = node(nx(nE_2),ny(nE_2)-0.639,nz(nE_2)+0.639)
+nE_4 = node(nx(nE_3),ny(nE_3),nz(nE_3)+11.9735)
+nE_5 = node(nx(nE_4)-0.4875,ny(nE_4),nz(nE_4)+0.4875)
+nE_6 = node(nx(nE_5)-0.7025,ny(nE_5),nz(nE_5))
+nE_7 = node(nx(nE_6),ny(nE_6),nz(nE_6)+3.101)
+nE_8 = node(nx(nE_7),ny(nE_7)+0.795,nz(nE_7)+0.795)
+nE_9 = node(nx(nE_8),ny(nE_8)+14.26,nz(nE_8))
+nE_10 = node(nx(nE_9),ny(nE_9)+0.795,nz(nE_9)+0.795)
+nE_11 = node(nx(nE_10),ny(nE_10),nz(nE_10)+1.075)
+nE_12 = node(nx(nE_11),ny(nE_11)-0.795,nz(nE_11)+0.795)
+nE_13 = node(nx(nE_12),ny(nE_12)-0.565,nz(nE_12))
+nE_14 = node(nx(nE_6),ny(nE_6),nz(nE_6)-10.095)
+nE_15 = node(nx(nE_14),ny(nE_14)+0.795,nz(nE_14)-0.795)
+nE_16 = node(nx(nE_15),ny(nE_15)+1.73,nz(nE_15))
+!<
+!<
+
+
+
+!<
+
+!> кейпоинты
+/prep7
+kdele, all
+
+knode, 1, n10_1
+knode, 2, n10_2
+knode, 3, n10_3
+knode, 4, n10_4
+knode, 5, n10_5
+knode, 6, n10_6
+knode, 7, n10_7
+knode, 8, n10_8
+knode, 9, n10_9
+knode, 10, n10_10
+knode, 11, n10_11
+knode, 12, n10_12
+knode, 13, n10_13
+knode, 14, n10_14
+knode, 15, n10_15
+knode, 16, n10_16
+knode, 17, n10_17
+knode, 18, n10_18
+knode, 19, n10_19
+knode, 20, n10_20
+knode, 21, n10_21
+
+!> адсорбер А
+knode, 102, nA_2
+knode, 103, nA_3
+knode, 104, nA_4
+knode, 105, nA_5
+knode, 106, nA_6
+knode, 107, nA_7
+knode, 108, nA_8
+knode, 109, nA_9
+knode, 110, nA_10
+knode, 111, nA_11
+knode, 112, nA_12
+knode, 113, nA_13
+knode, 114, nA_14
+knode, 115, nA_15
+knode, 116, nA_16
+
+knode, 1031, g10_25
+knode, 1032, node(nx(g10_25), ny(g10_25),nz(g10_25)+0.71)
+knode, 1061, node(nx(nA_6), ny(nA_6),nz(nA_6)+1.581)
+knode, 1062, node(nx(nA_6), ny(nA_6),nz(nA_6)-0.7)
+knode, 1063, node(nx(nA_6), ny(nA_6),nz(nA_6)-6.06)
+knode, 1064, node(nx(nA_6), ny(nA_6),nz(nA_6)-7.06)
+
+!<
+!> адсорбер B
+knode, 201, nB_1
+knode, 202, nB_2
+knode, 203, nB_3
+knode, 204, nB_4
+knode, 205, nB_5
+knode, 206, nB_6
+knode, 207, nB_7
+knode, 208, nB_8
+knode, 209, nB_9
+knode, 210, nB_10
+knode, 211, nB_11
+knode, 212, nB_12
+knode, 213, nB_13
+knode, 214, nB_14
+knode, 215, nB_15
+knode, 216, nB_16
+
+knode, 2031, g10_24
+knode, 2032, node(nx(g10_24), ny(g10_24),nz(g10_24)+0.71)
+knode, 2061, node(nx(nB_6), ny(nB_6),nz(nB_6)+1.581)
+knode, 2062, node(nx(nB_6), ny(nB_6),nz(nB_6)-0.7)
+knode, 2063, node(nx(nB_6), ny(nB_6),nz(nB_6)-6.06)
+knode, 2064, node(nx(nB_6), ny(nB_6),nz(nB_6)-7.06)
+!<
+!> Адсорбер C
+knode, 301, nC_1
+knode, 302, nC_2
+knode, 303, nC_3
+knode, 304, nC_4
+knode, 305, nC_5
+knode, 306, nC_6
+knode, 307, nC_7
+knode, 308, nC_8
+knode, 309, nC_9
+knode, 310, nC_10
+knode, 311, nC_11
+knode, 312, nC_12
+knode, 313, nC_13
+knode, 314, nC_14
+knode, 315, nC_15
+knode, 316, nC_16
+
+knode, 3031, g10_23
+knode, 3032, node(nx(g10_23), ny(g10_23),nz(g10_23)+0.71)
+knode, 3061, node(nx(nC_6), ny(nC_6),nz(nC_6)+1.581)
+knode, 3062, node(nx(nC_6), ny(nC_6),nz(nC_6)-0.7)
+knode, 3063, node(nx(nC_6), ny(nC_6),nz(nC_6)-6.06)
+knode, 3064, node(nx(nC_6), ny(nC_6),nz(nC_6)-7.06)
+!<
+!> адсорбер D
+knode, 401, nD_1
+knode, 402, nD_2
+knode, 403, nD_3
+knode, 404, nD_4
+knode, 405, nD_5
+knode, 406, nD_6
+knode, 407, nD_7
+knode, 408, nD_8
+knode, 409, nD_9
+knode, 410, nD_10
+knode, 411, nD_11
+knode, 412, nD_12
+knode, 413, nD_13
+knode, 414, nD_14
+knode, 415, nD_15
+knode, 416, nD_16
+
+knode, 4031, g10_22
+knode, 4032, node(nx(g10_22), ny(g10_22),nz(g10_22)+0.71)
+knode, 4061, node(nx(nD_6), ny(nD_6),nz(nD_6)+1.581)
+knode, 4062, node(nx(nD_6), ny(nD_6),nz(nD_6)-0.7)
+knode, 4063, node(nx(nD_6), ny(nD_6),nz(nD_6)-6.06)
+knode, 4064, node(nx(nD_6), ny(nD_6),nz(nD_6)-7.06)
+!<
+!> адсорбер E
+knode, 501, nE_1
+knode, 502, nE_2
+knode, 503, nE_3
+knode, 504, nE_4
+knode, 505, nE_5
+knode, 506, nE_6
+knode, 507, nE_7
+knode, 508, nE_8
+knode, 509, nE_9
+knode, 510, nE_10
+knode, 511, nE_11
+knode, 512, nE_12
+knode, 513, nE_13
+knode, 514, nE_14
+knode, 515, nE_15
+knode, 516, nE_16
+
+knode, 5031, g10_21
+knode, 5032, node(nx(g10_21), ny(g10_21),nz(g10_21)+0.71)
+knode, 5061, node(nx(nE_6), ny(nE_6),nz(nE_6)+1.581)
+knode, 5062, node(nx(nE_6), ny(nE_6),nz(nE_6)-0.7)
+knode, 5063, node(nx(nE_6), ny(nE_6),nz(nE_6)-6.06)
+knode, 5064, node(nx(nE_6), ny(nE_6),nz(nE_6)-7.06)
+
+!<
+
+
+!> опоры 
+
+!> Г10
+knode, 10141, pod_14_1
+knode, 10142, pod_14_2
+knode, 10143, pod_14_3
+knode, 10144, pod_14_4
+knode, 101451, pod_14_51
+knode, 101452, pod_14_52
+knode, 101453, opora(119)
+knode, 101454, opora(118)
+knode, 10102, g10_102
+knode, 10146, opora(117)
+knode, 10147, opora(116)
+knode, 10148, pod_14_8
+knode, 10149, pod_14_9
+knode, 101412, pod_14_12
+knode, 101413, pod_14_13
+knode, 101415, pod_14_15
+knode, 101417, pod_14_17
+knode, 101419, pod_14_19
+knode, 101421, pod_14_21
+!<
+!> адс А
+knode, 101422, opora(11)
+knode, 101001, opora(14)
+knode, 101002, opora(18)
+knode, 101003, c200A_g7_6
+knode, 1091, c200A_g7_7
+!<
+!> адс B
+knode, 101420, opora(95)
+knode, 102001, opora(98)
+knode, 102002, opora(102)
+knode, 102003, c200B_g7_6
+knode, 1092, c200B_g7_7
+!<
+!> адс C
+knode, 101418, opora(74)
+knode, 103001, opora(77)
+knode, 103002, opora(81)
+knode, 103003, c200C_g7_6
+knode, 1093, c200C_g7_7
+!<
+!> адс D
+knode, 101416, opora(53)
+knode, 104001, opora(56)
+knode, 104002, opora(60)
+knode, 104003, c200D_g7_6
+knode, 1094, c200D_g7_7
+!<
+!> адс E
+knode, 101414, opora(32)
+knode, 105001, opora(35)
+knode, 105002, opora(39)
+knode, 105003, c200E_g7_6
+knode, 1095, c200E_g7_7
+!<
+!<
+!<
+
+!> CM
+!> e1_2
+nsel, s, loc, x, nx(n10_1),nx(n10_2)
+nsel, r, loc, y, ny(n10_1),ny(n10_2)
+nsel, r, loc, z, nz(n10_1),nz(n10_2)
+esln, s, 1
+
+cm, e1_2, elem
+nsel, all
+esel, all
+!<
+!> e2_3
+nsel, s, loc, x, nx(n10_2),nx(n10_3)
+nsel, r, loc, y, ny(n10_2),ny(n10_3)
+nsel, r, loc, z, nz(n10_2),nz(n10_3)
+esln, s, 1
+
+cm, e2_3, elem
+nsel, all
+esel, all
+!<
+!> e3_4
+nsel, s, loc, x, nx(n10_3),nx(n10_4)
+nsel, r, loc, y, ny(n10_3),ny(n10_4)
+nsel, r, loc, z, nz(n10_3),nz(n10_4)
+esln, s, 1
+
+cm, e3_4, elem
+nsel, all
+esel, all
+!<
+!> e4_5
+nsel, s, loc, x, nx(n10_4),nx(n10_5)
+nsel, r, loc, y, ny(n10_4),ny(n10_5)
+nsel, r, loc, z, nz(n10_4),nz(n10_5)
+esln, s, 1
+
+cm, e4_5, elem
+nsel, all
+esel, all
+!<
+!> e5_6
+nsel, s, loc, x, nx(n10_5),nx(n10_6)
+nsel, r, loc, y, ny(n10_5),ny(n10_6)
+nsel, r, loc, z, nz(n10_5),nz(n10_6)
+esln, s, 1
+
+cm, e5_6, elem
+nsel, all
+esel, all
+!<
+!> e6_7
+nsel, s, loc, x, nx(n10_6),nx(n10_7)
+nsel, r, loc, y, ny(n10_6),ny(n10_7)
+nsel, r, loc, z, nz(n10_6),nz(n10_7)
+esln, s, 1
+
+cm, e6_7, elem
+nsel, all
+esel, all
+!<
+!> e7_8
+nsel, s, loc, x, nx(n10_7),nx(n10_8)
+nsel, r, loc, y, ny(n10_7),ny(n10_8)
+nsel, r, loc, z, nz(n10_7),nz(n10_8)
+esln, s, 1
+
+cm, e7_8, elem
+nsel, all
+esel, all
+!<
+!> e8_9
+nsel, s, loc, x, nx(n10_8),nx(n10_9)
+nsel, r, loc, y, ny(n10_8),ny(n10_9)
+nsel, r, loc, z, nz(n10_8),nz(n10_9)
+esln, s, 1
+
+cm, e8_9, elem
+nsel, all
+esel, all
+!<
+!> e9_10
+nsel, s, loc, x, nx(n10_9),nx(n10_10)
+nsel, r, loc, y, ny(n10_9),ny(n10_10)
+nsel, r, loc, z, nz(n10_9),nz(n10_10)
+esln, s, 1
+
+cm, e9_10, elem
+nsel, all
+esel, all
+!<
+!> e10_11
+nsel, s, loc, x, nx(n10_10),nx(n10_11)
+nsel, r, loc, y, ny(n10_10),ny(n10_11)
+nsel, r, loc, z, nz(n10_10),nz(n10_11)
+esln, s, 1
+
+cm, e10_11, elem
+nsel, all
+esel, all
+!<
+!> e11_12
+nsel, s, loc, x, nx(n10_11),nx(n10_12)
+nsel, r, loc, y, ny(n10_11),ny(n10_12)
+nsel, r, loc, z, nz(n10_11),nz(n10_12)
+esln, s, 1
+
+cm, e11_12, elem
+nsel, all
+esel, all
+!<
+!> e12_13
+nsel, s, loc, x, nx(n10_12),nx(n10_13)
+nsel, r, loc, y, ny(n10_12),ny(n10_13)
+nsel, r, loc, z, nz(n10_12),nz(n10_13)
+esln, s, 1
+
+cm, e12_13, elem
+nsel, all
+esel, all
+!<
+!> e13_14
+nsel, s, loc, x, nx(n10_13),nx(n10_14)
+nsel, r, loc, y, ny(n10_13),ny(n10_14)
+nsel, r, loc, z, nz(n10_13),nz(n10_14)
+esln, s, 1
+
+cm, e13_14, elem
+nsel, all
+esel, all
+!<
+!> e14_15
+nsel, s, loc, x, nx(n10_14),nx(n10_15)
+nsel, r, loc, y, ny(n10_14),ny(n10_15)
+nsel, r, loc, z, nz(n10_14),nz(n10_15)
+esln, s, 1
+
+cm, e14_15, elem
+nsel, all
+esel, all
+!<
+!> e15_16
+nsel, s, loc, x, nx(n10_15),nx(n10_16)
+nsel, r, loc, y, ny(n10_15),ny(n10_16)
+nsel, r, loc, z, nz(n10_15),nz(n10_16)
+esln, s, 1
+
+cm, e15_16, elem
+nsel, all
+esel, all
+!<
+!> e16_17
+nsel, s, loc, x, nx(n10_16),nx(n10_17)
+nsel, r, loc, y, ny(n10_16),ny(n10_17)
+nsel, r, loc, z, nz(n10_16),nz(n10_17)
+esln, s, 1
+
+cm, e16_17, elem
+nsel, all
+esel, all
+!<
+!> e17_18
+nsel, s, loc, x, nx(n10_17),nx(n10_18)
+nsel, r, loc, y, ny(n10_17),ny(n10_18)
+nsel, r, loc, z, nz(n10_17),nz(n10_18)
+esln, s, 1
+
+cm, e17_18, elem
+nsel, all
+esel, all
+!<
+!> e18_19
+nsel, s, loc, x, nx(n10_18),nx(n10_19)
+nsel, r, loc, y, ny(n10_18),ny(n10_19)
+nsel, r, loc, z, nz(n10_18),nz(n10_19)
+esln, s, 1
+
+cm, e18_19, elem
+nsel, all
+esel, all
+!<
+!> e19_20
+nsel, s, loc, x, nx(n10_19),nx(n10_20)
+nsel, r, loc, y, ny(n10_19),ny(n10_20)
+nsel, r, loc, z, nz(n10_19),nz(n10_20)
+esln, s, 1
+
+cm, e19_20, elem
+nsel, all
+esel, all
+!<
+!> e20_21
+nsel, s, loc, x, nx(n10_20),nx(n10_21)
+nsel, r, loc, y, ny(n10_20),ny(n10_21)
+nsel, r, loc, z, nz(n10_20),nz(n10_21)
+esln, s, 1
+
+cm, e20_21, elem
+nsel, all
+esel, all
+!<
+
+!> адсорбер А
+
+!> e21_102
+nsel, s, loc, x, nx(n10_21),nx(na_2)
+nsel, r, loc, y, ny(n10_21),ny(na_2)
+nsel, r, loc, z, nz(n10_21),nz(na_2)
+esln, s, 1
+
+cm, e21_102, elem
+nsel, all
+esel, all
+!<
+!> e102_103
+nsel, s, loc, x, nx(na_2),nx(na_3)
+nsel, r, loc, y, ny(na_2),ny(na_3)
+nsel, r, loc, z, nz(na_2),nz(na_3)
+esln, s, 1
+
+cm, e102_103, elem
+nsel, all
+esel, all
+!<
+!> арм блок A
+!> e103_1031
+nsel, s, loc, x, nx(na_3),kx(1031)
+nsel, r, loc, y, ny(na_3),ky(1031)
+nsel, r, loc, z, nz(na_3),kz(1031)
+esln, s, 1
+
+cm, e103_1031, elem
+nsel, all
+esel, all
+!<
+!> e1031_1032
+nsel, s, loc, x, kx(1031),kx(1032)
+nsel, r, loc, y, ky(1031),ky(1032)
+nsel, r, loc, z, kz(1031),kz(1032)
+esln, s, 1
+
+cm, e1031_1032, elem
+nsel, all
+esel, all
+!<
+!> e1032_104
+nsel, s, loc, x, kx(1032),kx(104)
+nsel, r, loc, y, ky(1032),ky(104)
+nsel, r, loc, z, kz(1032),kz(104)
+esln, s, 1
+
+cm, e1032_104, elem
+nsel, all
+esel, all
+!<
+!> e104_105
+nsel, s, loc, x, kx(104),kx(105)
+nsel, r, loc, y, ky(104),ky(105)
+nsel, r, loc, z, kz(104),kz(105)
+esln, s, 1
+
+cm, e104_105, elem
+nsel, all
+esel, all
+!<
+!> e105_106
+nsel, s, loc, x, kx(105),kx(106)
+nsel, r, loc, y, ky(105),ky(106)
+nsel, r, loc, z, kz(105),kz(106)
+esln, s, 1
+
+cm, e105_106, elem
+nsel, all
+esel, all
+!<
+!> e106_1061
+nsel, s, loc, x, kx(106),kx(1061)
+nsel, r, loc, y, ky(106),ky(1061)
+nsel, r, loc, z, kz(106),kz(1061)
+esln, s, 1
+
+cm, e106_1061, elem
+nsel, all
+esel, all
+!<
+!> e1061_107
+nsel, s, loc, x, kx(1061),kx(107)
+nsel, r, loc, y, ky(1061),ky(107)
+nsel, r, loc, z, kz(1061),kz(107)
+esln, s, 1
+
+cm, e1061_107, elem
+nsel, all
+esel, all
+!<
+!> e106_1062
+nsel, s, loc, x, kx(106),kx(1062)
+nsel, r, loc, y, ky(106),ky(1062)
+nsel, r, loc, z, kz(106),kz(1062)
+esln, s, 1
+
+cm, e106_1062, elem
+nsel, all
+esel, all
+!<
+!> e1062_1063
+nsel, s, loc, x, kx(1062),kx(1063)
+nsel, r, loc, y, ky(1062),ky(1063)
+nsel, r, loc, z, kz(1062),kz(1063)
+esln, s, 1
+
+cm, e1062_1063, elem
+nsel, all
+esel, all
+!<
+!> e1063_1064
+nsel, s, loc, x, kx(1063),kx(1064)
+nsel, r, loc, y, ky(1063),ky(1064)
+nsel, r, loc, z, kz(1063),kz(1064)
+esln, s, 1
+
+cm, e1063_1064, elem
+nsel, all
+esel, all
+!<
+!> e1064_114
+nsel, s, loc, x, kx(1064),kx(114)
+nsel, r, loc, y, ky(1064),ky(114)
+nsel, r, loc, z, kz(1064),kz(114)
+esln, s, 1
+
+cm, e1064_114, elem
+nsel, all
+esel, all
+!<
+
+!<
+!> e107_108
+nsel, s, loc, x, nx(na_7),nx(na_8)
+nsel, r, loc, y, ny(na_7),ny(na_8)
+nsel, r, loc, z, nz(na_7),nz(na_8)
+esln, s, 1
+
+cm, e107_108, elem
+nsel, all
+esel, all
+!<
+!> e108_109
+nsel, s, loc, x, nx(na_8),nx(na_9)
+nsel, r, loc, y, ny(na_8),ny(na_9)
+nsel, r, loc, z, nz(na_8),nz(na_9)
+esln, s, 1
+
+cm, e108_109, elem
+nsel, all
+esel, all
+!<
+!> e109_110
+nsel, s, loc, x, nx(na_9),nx(na_10)
+nsel, r, loc, y, ny(na_9),ny(na_10)
+nsel, r, loc, z, nz(na_9),nz(na_10)
+esln, s, 1
+
+cm, e109_110, elem
+nsel, all
+esel, all
+!<
+!> e110_111
+nsel, s, loc, x, nx(nA_10),nx(nA_11)
+nsel, r, loc, y, ny(nA_10),ny(nA_11)
+nsel, r, loc, z, nz(nA_10),nz(nA_11)
+esln, s, 1
+
+cm, e110_111, elem
+nsel, all
+esel, all
+!<
+!> e111_112
+nsel, s, loc, x, nx(na_11),nx(na_12)
+nsel, r, loc, y, ny(na_11),ny(na_12)
+nsel, r, loc, z, nz(na_11),nz(na_12)
+esln, s, 1
+
+cm, e111_112, elem
+nsel, all
+esel, all
+!<
+!> e112_113
+nsel, s, loc, x, nx(na_12),nx(na_13)
+nsel, r, loc, y, ny(na_12),ny(na_13)
+nsel, r, loc, z, nz(na_12),nz(na_13)
+esln, s, 1
+
+cm, e112_113, elem
+nsel, all
+esel, all
+!<
+!> e114_115
+nsel, s, loc, x, nx(na_14),nx(na_15)
+nsel, r, loc, y, ny(na_14),ny(na_15)
+nsel, r, loc, z, nz(na_14),nz(na_15)
+esln, s, 1
+
+cm, e114_115, elem
+nsel, all
+esel, all
+!<
+!> e115_116
+nsel, s, loc, x, nx(na_15),nx(na_16)
+nsel, r, loc, y, ny(na_15),ny(na_16)
+nsel, r, loc, z, nz(na_15),nz(na_16)
+esln, s, 1
+
+cm, e115_116, elem
+nsel, all
+esel, all
+!<
+
+!<
+
+!> адсорбер B
+
+!> e201_202
+nsel, s, loc, x, nx(nb_1),nx(nb_2)
+nsel, r, loc, y, ny(nb_1),ny(nb_2)
+nsel, r, loc, z, nz(nb_1),nz(nb_2)
+esln, s, 1
+
+cm, e201_202, elem
+nsel, all
+esel, all
+!<
+!> e202_203
+nsel, s, loc, x, nx(nB_2),nx(nB_3)
+nsel, r, loc, y, ny(nB_2),ny(nB_3)
+nsel, r, loc, z, nz(nB_2),nz(nB_3)
+esln, s, 1
+
+cm, e202_203, elem
+nsel, all
+esel, all
+!<
+!> арм блок B
+!> e203_2031
+nsel, s, loc, x, nx(nB_3),kx(2031)
+nsel, r, loc, y, ny(nB_3),ky(2031)
+nsel, r, loc, z, nz(nB_3),kz(2031)
+esln, s, 1
+
+cm, e203_2031, elem
+nsel, all
+esel, all
+!<
+!> e2031_2032
+nsel, s, loc, x, kx(2031),kx(2032)
+nsel, r, loc, y, ky(2031),ky(2032)
+nsel, r, loc, z, kz(2031),kz(2032)
+esln, s, 1
+
+cm, e2031_2032, elem
+nsel, all
+esel, all
+!<
+!> e2032_204
+nsel, s, loc, x, kx(2032),kx(204)
+nsel, r, loc, y, ky(2032),ky(204)
+nsel, r, loc, z, kz(2032),kz(204)
+esln, s, 1
+
+cm, e2032_204, elem
+nsel, all
+esel, all
+!<
+!> e204_205
+nsel, s, loc, x, kx(204),kx(205)
+nsel, r, loc, y, ky(204),ky(205)
+nsel, r, loc, z, kz(204),kz(205)
+esln, s, 1
+
+cm, e204_205, elem
+nsel, all
+esel, all
+!<
+!> e205_206
+nsel, s, loc, x, kx(205),kx(206)
+nsel, r, loc, y, ky(205),ky(206)
+nsel, r, loc, z, kz(205),kz(206)
+esln, s, 1
+
+cm, e205_206, elem
+nsel, all
+esel, all
+!<
+!> e206_2061
+nsel, s, loc, x, kx(206),kx(2061)
+nsel, r, loc, y, ky(206),ky(2061)
+nsel, r, loc, z, kz(206),kz(2061)
+esln, s, 1
+
+cm, e206_2061, elem
+nsel, all
+esel, all
+!<
+!> e2061_207
+nsel, s, loc, x, kx(2061),kx(207)
+nsel, r, loc, y, ky(2061),ky(207)
+nsel, r, loc, z, kz(2061),kz(207)
+esln, s, 1
+
+cm, e2061_207, elem
+nsel, all
+esel, all
+!<
+!> e206_2062
+nsel, s, loc, x, kx(206),kx(2062)
+nsel, r, loc, y, ky(206),ky(2062)
+nsel, r, loc, z, kz(206),kz(2062)
+esln, s, 1
+
+cm, e206_2062, elem
+nsel, all
+esel, all
+!<
+!> e2062_2063
+nsel, s, loc, x, kx(2062),kx(2063)
+nsel, r, loc, y, ky(2062),ky(2063)
+nsel, r, loc, z, kz(2062),kz(2063)
+esln, s, 1
+
+cm, e2062_2063, elem
+nsel, all
+esel, all
+!<
+!> e2063_2064
+nsel, s, loc, x, kx(2063),kx(2064)
+nsel, r, loc, y, ky(2063),ky(2064)
+nsel, r, loc, z, kz(2063),kz(2064)
+esln, s, 1
+
+cm, e2063_2064, elem
+nsel, all
+esel, all
+!<
+!> e2064_214
+nsel, s, loc, x, kx(2064),kx(214)
+nsel, r, loc, y, ky(2064),ky(214)
+nsel, r, loc, z, kz(2064),kz(214)
+esln, s, 1
+
+cm, e2064_214, elem
+nsel, all
+esel, all
+!<
+!<
+!> e207_208
+nsel, s, loc, x, nx(nB_7),nx(nB_8)
+nsel, r, loc, y, ny(nB_7),ny(nB_8)
+nsel, r, loc, z, nz(nB_7),nz(nB_8)
+esln, s, 1
+
+cm, e207_208, elem
+nsel, all
+esel, all
+!<
+!> e208_209
+nsel, s, loc, x, nx(nB_8),nx(nB_9)
+nsel, r, loc, y, ny(nB_8),ny(nB_9)
+nsel, r, loc, z, nz(nB_8),nz(nB_9)
+esln, s, 1
+
+cm, e208_209, elem
+nsel, all
+esel, all
+!<
+!> e209_210
+nsel, s, loc, x, nx(nB_9),nx(nB_10)
+nsel, r, loc, y, ny(nB_9),ny(nB_10)
+nsel, r, loc, z, nz(nB_9),nz(nB_10)
+esln, s, 1
+
+cm, e209_210, elem
+nsel, all
+esel, all
+!<
+!> e210_211
+nsel, s, loc, x, nx(nB_10),nx(nB_11)
+nsel, r, loc, y, ny(nB_10),ny(nB_11)
+nsel, r, loc, z, nz(nB_10),nz(nB_11)
+esln, s, 1
+
+cm, e210_211, elem
+nsel, all
+esel, all
+!<
+!> e211_212
+nsel, s, loc, x, nx(nB_11),nx(nB_12)
+nsel, r, loc, y, ny(nB_11),ny(nB_12)
+nsel, r, loc, z, nz(nB_11),nz(nB_12)
+esln, s, 1
+
+cm, e211_212, elem
+nsel, all
+esel, all
+!<
+!> e112_113
+nsel, s, loc, x, nx(nB_12),nx(nB_13)
+nsel, r, loc, y, ny(nB_12),ny(nB_13)
+nsel, r, loc, z, nz(nB_12),nz(nB_13)
+esln, s, 1
+
+cm, e212_213, elem
+nsel, all
+esel, all
+!<
+!> e214_215
+nsel, s, loc, x, nx(nB_14),nx(nB_15)
+nsel, r, loc, y, ny(nB_14),ny(nB_15)
+nsel, r, loc, z, nz(nB_14),nz(nB_15)
+esln, s, 1
+
+cm, e214_215, elem
+nsel, all
+esel, all
+!<
+!> e215_216
+nsel, s, loc, x, nx(nB_15),nx(nB_16)
+nsel, r, loc, y, ny(nB_15),ny(nB_16)
+nsel, r, loc, z, nz(nB_15),nz(nB_16)
+esln, s, 1
+
+cm, e215_216, elem
+nsel, all
+esel, all
+!<
+
+!<
+
+!<
+
+!<
+!> Г11
+!> адсорбер A
+
+knode, 117, node(nx(C200A_32)+0.005, ny(C200A_32),nz(C200A_32))
+knode, 117+1, node(kx(117)+0.795, ky(117),kz(117)+0.795)
+knode, 117+2, node(kx(117+1), ky(117+1),kz(117+1)+1.691)
+knode, 117+3, node(kx(117+2)-0.795, ky(117+2),kz(117+2)+0.795)
+knode, 117+4, node(kx(117+3)-4.265, ky(117+3),kz(117+3))
+knode, 117+5, node(kx(117+4)-0.795, ky(117+4),kz(117+4)-0.795)
+knode, 117+6, node(kx(117+5), ky(117+5),kz(117+5)-7.550+0.795)
+knode, 117+7, node(kx(117+6), ky(117+6),kz(117+6)-1.47)
+knode, 117+8, node(kx(117+7), ky(117+7),kz(117+7)-1.5)
+knode, 117+9, node(kx(117+8), ky(117+8),kz(117+8)-5.08)
+knode, 117+10, node(kx(117+9), ky(117+9),kz(117+9)-5.325)
+knode, 117+11, node(kx(117+10), ky(117+10)+0.795,kz(117+10)-0.795)
+knode, 117+12, node(kx(117+11), ky(117+11)+2.365,kz(117+11))
+knode, 117+13, node(kx(117+7)-0.6625, ky(117+7),kz(117+7))
+knode, 117+14, node(kx(117+13)-0.4875, ky(117+13),kz(117+13)-0.4875)
+knode, 117+15, node(kx(117+14), ky(117+14),kz(117+14)-6.9125)
+knode, 117+16, node(kx(117+15), ky(117+15),kz(117+15)-0.67)
+knode, 117+17, node(kx(117+16), ky(117+16),kz(117+16)-2.071)
+knode, 117+18, node(kx(117+17), ky(117+17)+0.639,kz(117+17)-0.639)
+
+knode, 22, node(kx(117+18), ky(117+18)+3.242,kz(117+18))
+
+!<
+!> адсорбер В
+
+knode, 217, node(nx(C200B_32)+0.005, ny(C200b_32),nz(C200b_32))
+knode, 217+1, node(kx(217)+0.795, ky(217),kz(217)+0.795)
+knode, 217+2, node(kx(217+1), ky(217+1),kz(217+1)+1.691)
+knode, 217+3, node(kx(217+2)-0.795, ky(217+2),kz(217+2)+0.795)
+knode, 217+4, node(kx(217+3)-4.265, ky(217+3),kz(217+3))
+knode, 217+5, node(kx(217+4)-0.795, ky(217+4),kz(217+4)-0.795)
+knode, 217+6, node(kx(217+5), ky(217+5),kz(217+5)-7.550+0.795)
+knode, 217+7, node(kx(217+6), ky(217+6),kz(217+6)-1.47)
+knode, 217+8, node(kx(217+7), ky(217+7),kz(217+7)-1.5)
+knode, 217+9, node(kx(217+8), ky(217+8),kz(217+8)-5.08)
+knode, 217+10, node(kx(217+9), ky(217+9),kz(217+9)-5.325)
+knode, 217+11, node(kx(217+10), ky(217+10)+0.795,kz(217+10)-0.795)
+knode, 217+12, node(kx(217+11), ky(217+11)+2.365,kz(217+11))
+knode, 217+13, node(kx(217+7)-0.6625, ky(217+7),kz(217+7))
+knode, 217+14, node(kx(217+13)-0.4875, ky(217+13),kz(217+13)-0.4875)
+knode, 217+15, node(kx(217+14), ky(217+14),kz(217+14)-6.9125)
+knode, 217+16, node(kx(217+15), ky(217+15),kz(217+15)-0.67)
+knode, 217+17, node(kx(217+16), ky(217+16),kz(217+16)-2.071)
+knode, 217+18, node(kx(217+17), ky(217+17)+0.639,kz(217+17)-0.639)
+
+knode, 217+19, node(kx(217+18), ky(217+18)+0.792,kz(217+18))
+knode, 217+20, node(kx(217+19)-0.639, ky(217+19)+0.639,kz(217+19))
+knode, 217+21, node(kx(217+20)-3.922, ky(217+20),kz(217+20))
+knode, 217+22, node(kx(217+21)-0.639, ky(217+21)+0.639,kz(217+21))
+knode, 217+23, node(kx(217+22), ky(217+22)+1.811,kz(217+22))
+
+!<
+!> адсорбер С
+knode, 317, node(nx(C200C_32)+0.005, ny(C200C_32),nz(C200C_32))
+knode, 317+1, node(kx(317)+0.795, ky(317),kz(317)+0.795)
+knode, 317+2, node(kx(317+1), ky(317+1),kz(317+1)+1.691)
+knode, 317+3, node(kx(317+2)-0.795, ky(317+2),kz(317+2)+0.795)
+knode, 317+4, node(kx(317+3)-4.265, ky(317+3),kz(317+3))
+knode, 317+5, node(kx(317+4)-0.795, ky(317+4),kz(317+4)-0.795)
+knode, 317+6, node(kx(317+5), ky(317+5),kz(317+5)-7.550+0.795)
+knode, 317+7, node(kx(317+6), ky(317+6),kz(317+6)-1.47)
+knode, 317+8, node(kx(317+7), ky(317+7),kz(317+7)-1.5)
+knode, 317+9, node(kx(317+8), ky(317+8),kz(317+8)-5.08)
+knode, 317+10, node(kx(317+9), ky(317+9),kz(317+9)-5.325)
+knode, 317+11, node(kx(317+10), ky(317+10)+0.795,kz(317+10)-0.795)
+knode, 317+12, node(kx(317+11), ky(317+11)+2.365,kz(317+11))
+knode, 317+13, node(kx(317+7)-0.6625, ky(317+7),kz(317+7))
+knode, 317+14, node(kx(317+13)-0.4875, ky(317+13),kz(317+13)-0.4875)
+knode, 317+15, node(kx(317+14), ky(317+14),kz(317+14)-6.9125)
+knode, 317+16, node(kx(317+15), ky(317+15),kz(317+15)-0.67)
+knode, 317+17, node(kx(317+16), ky(317+16),kz(317+16)-2.071)
+knode, 317+18, node(kx(317+17), ky(317+17)+0.639,kz(317+17)-0.639)
+
+knode, 317+19, node(kx(317+18), ky(317+18)+0.792,kz(317+18))
+knode, 317+20, node(kx(317+19)+0.639, ky(317+19)+0.639,kz(317+19))
+knode, 317+21, node(kx(317+20)+1.922, ky(317+20),kz(317+20))
+knode, 317+22, node(kx(317+21)+0.639, ky(317+21)+0.639,kz(317+21))
+knode, 317+23, node(kx(317+22), ky(317+22)+1.811,kz(317+22))
+!<
+!> адсорбер D
+knode, 417, node(nx(C200D_32)+0.005, ny(C200D_32),nz(C200D_32))
+knode, 417+1, node(kx(417)+0.795, ky(417),kz(417)+0.795)
+knode, 417+2, node(kx(417+1), ky(417+1),kz(417+1)+1.691)
+knode, 417+3, node(kx(417+2)-0.795, ky(417+2),kz(417+2)+0.795)
+knode, 417+4, node(kx(417+3)-4.265, ky(417+3),kz(417+3))
+knode, 417+5, node(kx(417+4)-0.795, ky(417+4),kz(417+4)-0.795)
+knode, 417+6, node(kx(417+5), ky(417+5),kz(417+5)-7.550+0.795)
+knode, 417+7, node(kx(417+6), ky(417+6),kz(417+6)-1.47)
+knode, 417+8, node(kx(417+7), ky(417+7),kz(417+7)-1.5)
+knode, 417+9, node(kx(417+8), ky(417+8),kz(417+8)-5.08)
+knode, 417+10, node(kx(417+9), ky(417+9),kz(417+9)-5.325)
+knode, 417+11, node(kx(417+10), ky(417+10)+0.795,kz(417+10)-0.795)
+knode, 417+12, node(kx(417+11), ky(417+11)+2.365,kz(417+11))
+knode, 417+13, node(kx(417+7)-0.6625, ky(417+7),kz(417+7))
+knode, 417+14, node(kx(417+13)-0.4875, ky(417+13),kz(417+13)-0.4875)
+knode, 417+15, node(kx(417+14), ky(417+14),kz(417+14)-6.9125)
+knode, 417+16, node(kx(417+15), ky(417+15),kz(417+15)-0.67)
+knode, 417+17, node(kx(417+16), ky(417+16),kz(417+16)-2.071)
+knode, 417+18, node(kx(417+17), ky(417+17)+0.639,kz(417+17)-0.639)
+
+knode, 417+19, node(kx(417+18), ky(417+18)+0.792,kz(417+18))
+knode, 417+20, node(kx(417+19)-0.639, ky(417+19)+0.639,kz(417+19))
+knode, 417+21, node(kx(417+20)-1.922, ky(417+20),kz(417+20))
+knode, 417+22, node(kx(417+21)-0.639, ky(417+21)+0.639,kz(417+21))
+knode, 417+23, node(kx(417+22), ky(417+22)+1.811,kz(417+22))
+!<
+!> адсорбер E
+knode, 517, node(nx(C200E_32)+0.005, ny(C200E_32),nz(C200E_32))
+knode, 517+1, node(kx(517)+0.795, ky(517),kz(517)+0.795)
+knode, 517+2, node(kx(517+1), ky(517+1),kz(517+1)+1.691)
+knode, 517+3, node(kx(517+2)-0.795, ky(517+2),kz(517+2)+0.795)
+knode, 517+4, node(kx(517+3)-4.265, ky(517+3),kz(517+3))
+knode, 517+5, node(kx(517+4)-0.795, ky(517+4),kz(517+4)-0.795)
+knode, 517+6, node(kx(517+5), ky(517+5),kz(517+5)-7.550+0.795)
+knode, 517+7, node(kx(517+6), ky(517+6),kz(517+6)-1.47)
+knode, 517+8, node(kx(517+7), ky(517+7),kz(517+7)-1.5)
+knode, 517+9, node(kx(517+8), ky(517+8),kz(517+8)-5.08)
+knode, 517+10, node(kx(517+9), ky(517+9),kz(517+9)-5.325)
+knode, 517+11, node(kx(517+10), ky(517+10)+0.795,kz(517+10)-0.795)
+knode, 517+12, node(kx(517+11), ky(517+11)+1.57,kz(517+11))
+knode, 517+13, node(kx(517+7)-0.6625, ky(517+7),kz(517+7))
+knode, 517+14, node(kx(517+13)-0.4875, ky(517+13),kz(517+13)-0.4875)
+knode, 517+15, node(kx(517+14), ky(517+14),kz(517+14)-6.9125)
+knode, 517+16, node(kx(517+15), ky(517+15),kz(517+15)-0.67)
+knode, 517+17, node(kx(517+16), ky(517+16),kz(517+16)-2.071)
+knode, 517+18, node(kx(517+17), ky(517+17)+0.639,kz(517+17)-0.639)
+
+knode, 517+19, node(kx(517+18), ky(517+18)+0.792,kz(517+18))
+knode, 517+20, node(kx(517+19)+0.639, ky(517+19)+0.639,kz(517+19))
+knode, 517+21, node(kx(517+20)+3.922, ky(517+20),kz(517+20))
+knode, 517+22, node(kx(517+21)+0.639, ky(517+21)+0.639,kz(517+21))
+knode, 517+23, node(kx(517+22), ky(517+22)+1.811,kz(517+22))
+!<
+
+!> коллектор Г11 - АВО
+knode, 23, node(kx(22)-0.639, ky(22)+0.639,kz(22))
+knode, 24, node(kx(23)-54.342, ky(23),kz(23))
+knode, 25, node(kx(24)-0.639, ky(24)-0.639,kz(24))
+knode, 26, node(kx(25), ky(25)-3.872,kz(25))
+knode, 27, node(kx(26), ky(26)-0.639,kz(26)-0.639)
+knode, 28, node(kx(27), ky(27),kz(27)-2.922)
+knode, 29, node(kx(28)-0.639, ky(28),kz(28)-0.639)
+knode, 30, node(kx(29)-4.282, ky(29),kz(29))
+knode, 31, node(kx(30)-0.639, ky(30),kz(30)+0.639)
+knode, 32, node(kx(31), ky(31),kz(31)+9.222)
+knode, 33, node(kx(32)+0.639, ky(32),kz(32)+0.639)
+knode, 34, node(kx(33)+3.612, ky(33),kz(33))
+knode, 35, node(kx(34)+0.639, ky(34),kz(34)+0.639)
+knode, 36, node(kx(35), ky(35),kz(35)+9.711)
+
+!> аво 1
+
+knode, 37, node(kx(36)+1.49, ky(36),kz(36))
+knode, 38, node(kx(37)+3.8775, ky(37),kz(37))
+knode, 39, node(kx(38)+0.4875, ky(38),kz(38)+0.4875)
+knode, 40, node(kx(39), ky(39),kz(39)+4.195)
+knode, 41, node(kx(40)+0.4875, ky(40),kz(40)+0.4875)
+knode, 42, node(kx(41)+3.45, ky(41),kz(41))
+knode, 43, node(kx(42)+0.4875, ky(42)+0.4875,kz(42))
+
+knode, 601, node(kx(43), ky(43)+3.125,kz(43))
+knode, 602, node(kx(601), ky(601)+0.4875,kz(601)+0.4875)
+knode, 603, node(kx(602), ky(602),kz(602)+1.0925)
+knode, 604, node(kx(603), ky(603),kz(603)+0.2125)
+knode, 605, node(kx(604), ky(604)+0.4875,kz(604)+0.4875)
+knode, 606, node(kx(605), ky(605)+2.5125,kz(605))
+knode, 607, node(kx(606), ky(606)+3.0625,kz(606))
+knode, 608, node(kx(607), ky(607)+0.4875,kz(607)+0.4875)
+knode, 609, node(kx(608), ky(608),kz(608)+1.7725)
+avo1 = 610
+knode, avo1, node(kx(avo1-1), ky(avo1-1),kz(avo1-1)+0.73)
+knode, avo1+1, node(kx(avo1)+0.6, ky(avo1),kz(avo1))
+knode, avo1+2, node(kx(avo1+1)+1.4125-0.6, ky(avo1+1),kz(avo1+1))
+knode, avo1+3, node(kx(avo1+2)+0.4875, ky(avo1+2),kz(avo1+2)+0.4875)
+knode, avo1+4, node(kx(avo1+3), ky(avo1+3),kz(avo1+3)+0.1625)
+knode, avo1+5, node(kx(avo1+1), ky(avo1+1),kz(avo1+1)+0.65)
+knode, avo1+6, node(kx(avo1)-0.6, ky(avo1),kz(avo1))
+knode, avo1+7, node(kx(avo1+6)-1.4125+0.6, ky(avo1+6),kz(avo1+6))
+knode, avo1+8, node(kx(avo1+7)-0.4875, ky(avo1+7),kz(avo1+7)+0.4875)
+knode, avo1+9, node(kx(avo1+8), ky(avo1+8),kz(avo1+8)+0.1625)
+knode, avo1+10, node(kx(avo1+6), ky(avo1+6),kz(avo1+6)+0.65)
+
+!<
+!> аво 3
+
+knode, 44, node(kx(36)-2.535, ky(36),kz(36))
+knode, 45, node(kx(44)-4.9225, ky(44),kz(44))
+knode, 46, node(kx(45)-0.4875, ky(45),kz(45)+0.4875)
+knode, 47, node(kx(46), ky(46),kz(46)+4.195)
+knode, 48, node(kx(47)+0.4875, ky(47),kz(47)+0.4875)
+knode, 49, node(kx(48)+3.45, ky(48),kz(48))
+knode, 50, node(kx(49)+0.4875, ky(49)+0.4875,kz(49))
+
+knode, 801, node(kx(50), ky(50)+3.125,kz(50))
+knode, 802, node(kx(801), ky(801)+0.4875,kz(801)+0.4875)
+knode, 803, node(kx(802), ky(802),kz(802)+1.0925)
+knode, 804, node(kx(803), ky(803),kz(803)+0.2125)
+knode, 805, node(kx(804), ky(804)+0.4875,kz(804)+0.4875)
+knode, 806, node(kx(805), ky(805)+2.5125,kz(805))
+knode, 807, node(kx(806), ky(806)+3.0625,kz(806))
+knode, 808, node(kx(807), ky(807)+0.4875,kz(807)+0.4875)
+knode, 809, node(kx(808), ky(808),kz(808)+1.7725)
+avo1 = 810
+knode, avo1, node(kx(avo1-1), ky(avo1-1),kz(avo1-1)+0.73)
+knode, avo1+1, node(kx(avo1)+0.6, ky(avo1),kz(avo1))
+knode, avo1+2, node(kx(avo1+1)+1.4125-0.6, ky(avo1+1),kz(avo1+1))
+knode, avo1+3, node(kx(avo1+2)+0.4875, ky(avo1+2),kz(avo1+2)+0.4875)
+knode, avo1+4, node(kx(avo1+3), ky(avo1+3),kz(avo1+3)+0.1625)
+knode, avo1+5, node(kx(avo1+1), ky(avo1+1),kz(avo1+1)+0.65)
+knode, avo1+6, node(kx(avo1)-0.6, ky(avo1),kz(avo1))
+knode, avo1+7, node(kx(avo1+6)-1.4125+0.6, ky(avo1+6),kz(avo1+6))
+knode, avo1+8, node(kx(avo1+7)-0.4875, ky(avo1+7),kz(avo1+7)+0.4875)
+knode, avo1+9, node(kx(avo1+8), ky(avo1+8),kz(avo1+8)+0.1625)
+knode, avo1+10, node(kx(avo1+6), ky(avo1+6),kz(avo1+6)+0.65)
+!<
+
+!> аво 2
+
+knode, 51, node(kx(36)-1.045, ky(36),kz(36))
+knode, 52, node(kx(51), ky(51),kz(51)+4.6825)
+knode, 53, node(kx(52)+0.4875, ky(52),kz(52)+0.4875)
+knode, 54, node(kx(53)+3.45, ky(53),kz(53))
+knode, 55, node(kx(54)+0.4875, ky(54)+0.4875,kz(54))
+
+knode, 701, node(kx(55), ky(55)+3.125,kz(55))
+knode, 702, node(kx(701), ky(701)+0.4875,kz(701)+0.4875)
+knode, 703, node(kx(702), ky(702),kz(702)+1.0925)
+knode, 704, node(kx(703), ky(703),kz(703)+0.2125)
+knode, 705, node(kx(704), ky(704)+0.4875,kz(704)+0.4875)
+knode, 706, node(kx(705), ky(705)+2.5125,kz(705))
+knode, 707, node(kx(706), ky(706)+3.0625,kz(706))
+knode, 708, node(kx(707), ky(707)+0.4875,kz(707)+0.4875)
+knode, 709, node(kx(708), ky(708),kz(708)+1.7725)
+avo1 = 710
+knode, avo1, node(kx(avo1-1), ky(avo1-1),kz(avo1-1)+0.73)
+knode, avo1+1, node(kx(avo1)+0.6, ky(avo1),kz(avo1))
+knode, avo1+2, node(kx(avo1+1)+1.4125-0.6, ky(avo1+1),kz(avo1+1))
+knode, avo1+3, node(kx(avo1+2)+0.4875, ky(avo1+2),kz(avo1+2)+0.4875)
+knode, avo1+4, node(kx(avo1+3), ky(avo1+3),kz(avo1+3)+0.1625)
+knode, avo1+5, node(kx(avo1+1), ky(avo1+1),kz(avo1+1)+0.65)
+knode, avo1+6, node(kx(avo1)-0.6, ky(avo1),kz(avo1))
+knode, avo1+7, node(kx(avo1+6)-1.4125+0.6, ky(avo1+6),kz(avo1+6))
+knode, avo1+8, node(kx(avo1+7)-0.4875, ky(avo1+7),kz(avo1+7)+0.4875)
+knode, avo1+9, node(kx(avo1+8), ky(avo1+8),kz(avo1+8)+0.1625)
+knode, avo1+10, node(kx(avo1+6), ky(avo1+6),kz(avo1+6)+0.65)
+!<
+
+
+
+!<
+
+!> CM11
+!> коллектор
+
+!> 
+k1 = 22
+k2 = 23
+nsel, s, loc, x, kx(k1),kx(k2)
+nsel, r, loc, y, ky(k1),ky(k2)
+nsel, r, loc, z, kz(k1),kz(k2)
+esln, s, 1
+
+cm, e22_23, elem
+nsel, all
+esel, all
+!<
+!> 
+k1 = 23
+k2 = 24
+nsel, s, loc, x, kx(k1),kx(k2)
+nsel, r, loc, y, ky(k1),ky(k2)
+nsel, r, loc, z, kz(k1),kz(k2)
+esln, s, 1
+
+cm, e23_24, elem
+nsel, all
+esel, all
+!<
+
+!<
+
+
+

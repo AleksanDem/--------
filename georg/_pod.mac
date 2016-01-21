@@ -1,0 +1,833 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!          
+!                КС "Георгиевская" подземка основное
+!    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+finish
+/clear
+/filnam, georg, 1
+
+*ulib,_mymac1,mlib
+
+*use,nachalo
+
+*use, svoistva
+
+_raspar
+
+visota_opori_pod_zemlei=0.50
+
+grunt = 1600
+
+u = 0
+
+u1 = u
+u2 = u
+u3 = u
+u4 = u
+u5 = u
+u6 = u
+u7 = u
+u8 = u
+
+
+
+
+!> геометрия
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!
+!!!!!							Г Е О М Е Т Р И Я
+!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+POPT, nc
+
+
+x = 0
+y = 0
+z = 0
+
+!> входной коллектор от перспективы до конца рециркуляции
+
+BRANCH, , ,-3.56,
+*get,a11,node,0,num,maxd
+*use, pipespec, 3
+
+pfluid, ((grunt*4*3.52)/(3.14*1.02))
+
+x = -4.1
+*use, otvod
+
+pfluid, 0
+
+y = 1.815+3.56
+*use, otvod
+z = -3.79
+*use, opora
+z = -1.7
+*use, kran, 3
+z = -1.7
+*use, opora
+z = -3.41
+*use, otvod
+y = -1.62 - 1.815
+*use, otvod
+
+pfluid, ((grunt*4*3.52)/(3.14*1.02))
+
+x = -2.9
+*use, opora
+x = -4.9
+*use, end
+*get,pu41,node,0,num,maxd
+
+
+x = -4.6
+*use, opora
+x = -12
+*use, opora
+x = -12
+*use, opora
+x = -2.6
+*use, end
+*get,pu31,node,0,num,maxd
+x = -7.4
+*use, opora
+x = -12
+*use, opora
+x = -11
+*use, opora
+x = -1.6
+*use, end
+*get,pu21,node,0,num,maxd
+x = -2.7
+*use, end
+
+*do, step, 1, 100, 1
+pspec, 1, , , 1.02+(1.220-1.02)*step/100, 0.016+(0.019-0.016)*step/100
+run, -0.3/100
+*enddo
+
+run, -1
+*get,vhod1,node,0,num,maxd
+run, -1
+
+*do, step, 1, 100, 1
+pspec, 1, , , 1.22-(1.220-1.02)*step/100, 0.019-(0.019-0.016)*step/100
+run, -0.3/100
+*enddo
+
+x = -2.1
+*use, opora
+x = -11
+*use, opora
+x = -8
+*use, opora
+x = -5.6
+*use, end
+*get,pu11,node,0,num,maxd
+x = -3.9
+*use, opora
+x = -9
+*use, opora
+x = -10
+*use, opora
+x = -9
+*use, opora
+x = -2
+*use, end
+*get,vhod2,node,0,num,maxd
+x = -1.8
+*use, end
+
+branch, vhod2
+*use, pipespec, 1
+
+y = -1.96
+z = 1.96
+*use, otvod
+
+
+pfluid, ((grunt*4*3.2)/(3.14*0.72))
+
+z = 4.94
+*use, opora
+z = 10
+*use, opora
+z = 10
+*use, opora
+z = 4.54														! +0.94 для интервала рец/вход ГПА
+*use, otvod
+y = 1.51
+z = 1.51
+*use, otvod
+
+pfluid, ((grunt*4*1.56)/(3.14*0.72))
+
+x = 4.85
+*use, opora
+x = 12.15
+*use, opora
+x = 1.35
+*use, end
+*get,rec11,node,0,num,maxd
+x = 9.15
+*use, opora
+x = 10
+*use, opora
+x = 11
+*use, opora
+x = 1.85
+*use, end
+*get,rec21,node,0,num,maxd
+x = 9.15
+*use, opora
+x = 10
+*use, opora
+x = 11
+*use, opora
+x = 1.85
+*use, end
+*get,rec31,node,0,num,maxd
+x = 8.15
+*use, opora
+x = 10
+*use, opora
+x = 12
+*use, opora
+x = 1.85
+*use, end
+*get,rec41,node,0,num,maxd
+x = 1.85
+*use, end
+
+!<
+
+!> выходной коллектор
+branch, ,nx(a11), ny(a11), nz(a11) +2
+*get,a21,node,0,num,maxd
+*use, pipespec, 3
+
+pfluid, ((grunt*4*3.05)/(3.14*1.02))
+
+x = -7.1
+*use, otvod
+
+pfluid, 0
+
+y = 1.815+3.56
+*use, otvod
+z = -3.79
+*use, opora
+z = -1.7
+*use, kran, 3
+z = -1.7
+*use, opora
+z = -3.41
+*use, otvod
+y = -1.62 - 1.815
+*use, otvod
+
+pfluid, ((grunt*4*1.11)/(3.14*1.02))
+
+x = -2.9
+*use, opora
+x = -6.5
+*use, opora
+x = -3.6
+*use, end
+*get,avo422,node,0,num,maxd
+x = -6
+*use, end
+*get,avo412,node,0,num,maxd
+x = -2.4
+*use, opora
+x = -12
+*use, opora
+x = -10
+*use, opora
+x = -1.6
+*use, end
+*get,avo322,node,0,num,maxd
+x = -6
+*use, end
+*get,avo312,node,0,num,maxd
+x = -4.4
+*use, opora
+x = -11
+*use, opora
+x = -9
+*use, opora
+x = -1.6
+*use, end
+*get,avo222,node,0,num,maxd
+x = -1.7
+*use, end
+
+*do, step, 1, 100, 1
+pspec, 1, , , 1.02+(1.220-1.02)*step/100, 0.016+(0.019-0.016)*step/100
+run, -0.3/100
+*enddo
+
+run, -1
+*get,vihod1,node,0,num,maxd
+run, -1
+
+*do, step, 1, 100, 1
+pspec, 1, , , 1.22-(1.220-1.02)*step/100, 0.019-(0.019-0.016)*step/100
+run, -0.3/100
+*enddo
+
+x = -1.7
+*use, end
+*get,avo212,node,0,num,maxd
+x = -3.4
+*use, opora
+x = -8
+*use, opora
+x = -9.5
+*use, opora
+x = -5.1
+*use, end
+*get,avo122,node,0,num,maxd
+x = -3.9
+*use, opora
+x = -2.1
+*use, end
+*get,avo112,node,0,num,maxd
+x = -7.9
+*use, opora
+x = -8.5
+*use, end
+!<
+
+!> хвосты на шлейфы	+ моквел
+
+
+
+branch, vhod1
+*use, pipespec, 2
+
+pfluid, ((grunt*4*3.0)/(3.14*1.22))
+
+y = -1.8
+z = -3.85
+*use, otvod
+x = 12.4
+*use, otvod
+z = -2.5
+*use, opora
+z = -2
+*use, end
+*get,a12,node,0,num,maxd
+z = -2
+*use, opora
+z = -2
+*use, end
+*get,a13,node,0,num,maxd
+
+branch, vihod1
+*use, pipespec, 2
+y = -1.8
+z = -1.8
+*use, otvod
+z = -4.05
+*use, otvod
+x = -5.6
+*use, otvod
+z = -2.5
+*use, opora
+z = -2
+*use, end
+*get,a22,node,0,num,maxd
+z = -2
+*use, opora
+z = -2
+*use, end
+*get,a23,node,0,num,maxd
+
+branch, a12
+*use, pipespec, 5
+x = -8.8
+*use, otvod
+
+pfluid, 0
+
+y = 4
+*use, otvod
+x = -2.3
+*use, end
+*get,mok1,node,0,num,maxd
+x = -1
+*use, opora
+x = -1.9
+*use, kran, 5
+x = -2.1
+*use, opora
+x = -2.1
+*use, kran, 5
+x = -1.4
+*use, opora
+x = -1.6
+*use, end
+*get,mok2,node,0,num,maxd
+x = -1.5
+*use, otvod
+y = -4
+*use, otvod
+
+pfluid, ((grunt*4*3.0)/(3.14*1.22))
+
+x = -3.3
+*use, end
+
+pfluid, 0
+
+branch, mok1
+*use, pipespec, 4
+z = 1.2
+y = -0.347
+*use, otvod
+x = -1
+*use, opora
+x = -4
+*use, opora
+x = -2.1
+*use, kran, 4
+x = -1.4
+*use, opora
+x = -1.6
+*use, otvod
+z = -1.2
+y = 0.347
+*use, end
+
+!<
+
+!> вход гитара (кольцо от выхода пыльников до входа в гпа)
+
+branch, ,nx(a11), ny(a11), nz(a11) +4
+*get,a31,node,0,num,maxd
+*use, pipespec, 3
+
+pfluid, ((grunt*4*3.05)/(3.14*1.02))
+
+x = -7.1
+*use, otvod
+
+pfluid, 0
+
+y = 1.815+3.56
+*use, otvod
+z = 5.7
+*use, opora
+z = 1.7
+*use, kran, 3
+z = 1.7
+*use, opora
+z = 3.5
+*use, otvod
+y = -1.92 - 1.815
+*use, end
+*get,a32,node,0,num,maxd
+
+pfluid, ((grunt*4*1.41)/(3.14*1.02))
+
+z = -3.2
+*use, otvod
+x = -2.9
+*use, opora
+x = -1.9
+*use, end
+*get,pu42,node,0,num,maxd
+x = -4.6
+*use, opora
+x = -12
+*use, opora
+x = -12
+*use, opora
+x = -2.6
+*use, end
+*get,pu32,node,0,num,maxd
+x = -7.4
+*use, opora
+x = -12
+*use, opora
+x = -11
+*use, opora
+x = -1.6
+*use, end
+*get,pu22,node,0,num,maxd
+x = -7.4
+*use, opora
+x = -11
+*use, opora
+x = -8
+*use, opora
+x = -5.6
+*use, end
+*get,pu12,node,0,num,maxd
+x = -3.9
+*use, opora
+x = -9
+*use, opora
+x = -10
+*use, opora
+x = -6.15
+*use, otvod
+z = 5.25
+*use, opora
+z = 2.2
+*use, otvod
+x = 3.15
+*use, end
+*get,gpavh1,node,0,num,maxd
+x = 2
+*use, opora
+x = 7
+*use, opora
+x = 10.5
+*use, opora
+x = 10
+*use, opora
+x = 2.5
+*use, end
+*get,gpavh2,node,0,num,maxd
+x = 8.5
+*use, opora
+x = 11
+*use, opora
+x = 10
+*use, opora
+x = 2.5
+*use, end
+*get,gpavh3,node,0,num,maxd
+x = 8.5
+*use, opora
+x = 10
+*use, opora
+x = 10
+*use, opora
+x = 3.5
+*use, end
+*get,gpavh4,node,0,num,maxd
+x = 8.5
+*use, opora
+x = 12
+*use, opora
+x = 7
+*use, opora
+x = 2.4
+*use, otvod
+z = -2.1
+*use, opora
+z = -2.15
+*use, end
+!<
+
+!> выход гитара (кольцо от выхода ГПА до входа в АВО)
+
+branch, ,nx(a11), ny(a11), nz(a11) +6
+*get,a41,node,0,num,maxd
+*use, pipespec, 3
+
+pfluid, ((grunt*4*3.05)/(3.14*1.02))
+
+x = -4.1
+*use, otvod
+
+pfluid, 0
+
+y = 1.815+3.56
+*use, otvod
+z = 3.7
+*use, opora
+z = 1.7
+*use, kran, 3
+z = 1.7
+*use, opora
+z = 3.5
+*use, otvod
+y = -1.92 - 1.815
+x = 1.6
+*use, end
+*get,a42,node,0,num,maxd
+
+pfluid, ((grunt*4*1.41)/(3.14*1.02))
+
+z = -5.2
+*use, otvod
+x = -7.5
+*use, opora
+x = -6.5
+*use, opora
+
+x = -3.6
+*use, end
+*get,avo421,node,0,num,maxd
+x = -6
+*use, end
+*get,avo411,node,0,num,maxd
+x = -2.4
+*use, opora
+x = -12
+*use, opora
+x = -10
+*use, opora
+x = -1.6
+*use, end
+*get,avo321,node,0,num,maxd
+x = -6
+*use, end
+*get,avo311,node,0,num,maxd
+x = -4.4
+*use, opora
+x = -11
+*use, opora
+x = -9
+*use, opora
+x = -1.6
+*use, end
+*get,avo221,node,0,num,maxd
+x = -6
+*use, end
+*get,avo211,node,0,num,maxd
+x = -3.4
+*use, opora
+x = -8
+*use, opora
+x = -9.5
+*use, opora
+x = -5.1
+*use, end
+*get,avo121,node,0,num,maxd
+x = -3.9
+*use, opora
+x = -2.1
+*use, end
+*get,avo111,node,0,num,maxd
+x = -7.9
+*use, opora
+x = -9
+*use, opora
+x = -3.5
+*use, otvod
+z = 4.9
+*use, opora
+z = 7.55
+*use, otvod
+x = 6.35
+*use, opora
+x = 9
+*use, end
+*get,gpavih1,node,0,num,maxd
+x = 3.15
+*use, opora
+x = 10.5
+*use, opora
+x = 10
+*use, opora
+x = 8.35
+*use, end
+*get,gpavih2,node,0,num,maxd
+x = 2.65
+*use, opora
+x = 11
+*use, opora
+x = 10
+*use, opora
+x = 8.35
+*use, end
+*get,gpavih3,node,0,num,maxd
+x = 2.65
+*use, opora
+x = 10
+*use, opora
+x = 10
+*use, opora
+x = 9.35
+*use, end
+*get,gpavih4,node,0,num,maxd
+x = 2.65
+*use, opora
+x = 12
+*use, opora
+x = 9.6
+*use, opora
+x = 4.4
+*use, otvod
+z = -5.1
+*use, opora
+z = -2.15
+*use, end
+
+!<
+
+pfluid, 0
+
+branch, gpavh1
+_gpa
+branch, gpavh2
+_gpa
+branch, gpavh3
+_gpa
+branch, gpavh4
+_gpa
+
+branch, pu11
+_pu
+branch, pu21
+_pu
+branch, pu31
+_pu
+branch, pu41
+_pu
+
+branch, avo111
+_avo
+branch, avo121
+_avo
+branch, avo211
+_avo
+branch, avo221
+_avo
+branch, avo311
+_avo
+branch, avo321
+_avo
+branch, avo411
+_avo
+branch, avo421
+_avo
+
+NUMMRG, node, 
+
+!>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!
+!!!!                                      Г Р А Н И Ч Н Ы Е   У С Л О В И Я
+!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!> опоры
+
+*do,k,1,i,1
+d,opora2(k),uy
+*enddo
+
+!<
+
+!> соски АВО
+
+nsel, s, loc, z, -4.6
+nsel, r, loc, y, 4.77
+
+d, all, ux
+d, all, uy
+d, all, uz
+
+nsel, s, loc, z, 7.4
+nsel, r, loc, y, 4.77
+
+d, all, ux
+d, all, uy
+d, all, uz
+
+nsel, all
+
+!<
+
+!> ПУ
+
+nsel, s, loc, z, 1.4
+nsel, r, loc, y, 4.94
+
+d, all, ux
+d, all, uy
+d, all, uz
+
+nsel, s, loc, z, 2.9
+nsel, r, loc, y, 2.39
+
+d, all, ux
+d, all, uy
+d, all, uz
+
+nsel, all
+
+!<
+
+!> шлейфы и перспектива
+
+d, a11, all
+d, a21, all
+d, a31, all
+d, a41, all
+
+!<
+
+!> нагрузки
+!<
+sfe, all, , pres,, 5500000
+acel,0,9.81,0
+
+!<
+!> входной коллектор входов в пыльник
+
+*do,k,3,16,1
+d,opora2(k),uy, u1
+*enddo
+
+! перемычка вход рециркуляция
+*do,k,17,19,1
+d,opora2(k),uy, u2
+*enddo
+
+! коллектор рециркуляции
+*do,k,20,30,1
+d,opora2(k),uy, u3
+*enddo
+
+! коллектор выходной выход аво
+*do,k,33,45,1
+d,opora2(k),uy, u4
+*enddo
+
+! коллектор входной кольцо выход пыльников вход ГПА
+*do,k,58,85,1
+d,opora2(k),uy, u5
+*enddo
+
+! коллектор выходной кольцо вход АВО выход ГПА
+*do,k,88,116,1
+d,opora2(k),uy, u6
+*enddo
+
+!выходной шлейф
+
+*do,k,48,49,1
+d,opora2(k),uy, u7
+*enddo
+
+*do,k,52,55,3
+d,opora2(k),uy, u8
+*enddo
+
+d, 2327, uy, u
+d, 2228, uy, u
+
+d, 3467, uy, u
+d, 2414, uy, u
+d, 1323, uy, u
+d, 9, uy, u
+
+
+!<
+!<
+/solu
+solve

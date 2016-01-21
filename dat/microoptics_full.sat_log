@@ -1,0 +1,11 @@
+ 
+ *** ANSYS Connection for SAT Log File ***
+ 
+   Version:    14.0 - ACIS 21.00
+   Build Date: 10/11/11
+   File:       D:\WORK\ANSYS_WORK\ANSYS_WORK\DAT\microoptics_full.SAT
+ 
+*** Warning:
+The following error was encountered during translation
+API Error: save file is from a later version of Acis
+Translation aborted
